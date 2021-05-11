@@ -10,7 +10,7 @@ function Application() {
     <BrowserRouter>
       <Switch>
         <Route path={"/learn"}>
-          <Learn></Learn>
+        <Learn/>
         </Route>
         <Route path={"/profile"}>
           <h1>This is the profile page</h1>
@@ -25,6 +25,5 @@ function Application() {
       </Switch>
     </BrowserRouter>
   );
-}
 
 ReactDOM.render(Application(), document.getElementById("app"));
