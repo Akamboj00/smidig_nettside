@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter, Link} from "react-router-dom";
 import {Route, Switch} from "react-router";
-import { Learn } from '../components/Learn/Learn'
+import { Learn } from '../components/learn/learn'
 import { Header } from '../components/header/header'
 
 function Application() {

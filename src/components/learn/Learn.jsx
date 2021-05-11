@@ -1,8 +1,7 @@
 import React from "react"
 import "./learn.css";
 
-export function Learn(){
-
+export const Learn = () =>{
 
     //bytter dette med request til firebase / eller backend
     const testdata = [
