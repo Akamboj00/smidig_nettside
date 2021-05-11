@@ -3,9 +3,13 @@ import ReactDOM from "react-dom";
 import {BrowserRouter, Link} from "react-router-dom";
 import {Route, Switch} from "react-router";
 import { Learn } from './Learn'
+import { Header } from '../components/header/header'
 
 function Application() {
     return <BrowserRouter>
+    <header>
+        <Header />
+    </header>
         <Switch>
             <Route path={"/learn"}>
             <Learn/>
@@ -20,11 +24,6 @@ function Application() {
                 <h1>This is the login page</h1>
             </Route>
             <Route exact path={"/"}>
-                <ul>
-                    <li><Link to={"/learn"}>Link to Learn</Link></li>
-                    <li><Link to={"/report"}>Link to report</Link></li>
-                    <li><Link to={"/profile"}>Link to Profile</Link></li>
-                </ul>
             </Route>
             <Route>
                 page not found
