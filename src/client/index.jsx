@@ -8,13 +8,16 @@ function Application() {
     return <BrowserRouter>
         <Switch>
             <Route path={"/learn"}>
-            <Learn></Learn>
+            <Learn/>
             </Route>
               <Route path={"/profile"}>
                 <h1>This is the profile page</h1>
             </Route>
               <Route path={"/report"}>
                 <h1>This is the report page</h1>
+            </Route>
+            <Route path={"/login"}>
+                <h1>This is the login page</h1>
             </Route>
             <Route exact path={"/"}>
                 <ul>
