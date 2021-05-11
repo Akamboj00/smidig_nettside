@@ -29,4 +29,4 @@ function Application() {
     </BrowserRouter>;
 }
 
-ReactDOM.render(<div>Hello world</div>, document.getElementById("app"));
+ReactDOM.render(Application(), document.getElementById("app"));
