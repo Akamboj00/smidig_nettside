@@ -1,46 +1,34 @@
-.learn_container{
-    display: grid;
-    justify-content: center;
-}
-.learn_heading{
-    margin-bottom: 20px;
+.learn_heading_container{
+    position: absolute;
+    top: 200px;
+    left: 47%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
 }
 .learn_icon{
-    margin: 0 20px 0 20px;
     height: 120px;
-    grid-row: 8;
-    grid-column: 8;
-    margin-left: 370px;
-    margin-right: auto;
     position: relative;
+    margin-left: 350px;
     top: -40px;
     transform: rotate(10deg);
 }
-.line{
-    border: 2px solid black;
-    width: 350px;
-    display: block;
-    position: relative;
-    bottom: 40px;
-    left: 150px;
-}
 .learn_text{
-    font-size: 50px;
+    font-size: 100px;
     top: 50px;
     position: relative;
-    margin: 50px -100px 0 0;
-    text-align: center;
-}
-.learn_text::after{
-    content: "";
-    height: 3px;
-    background-color: #242424;
-    width: 280px;
-    justify-content: center;
+    margin-left: 100px;
+    margin-bottom: -30px;
 }
 .learn_card_container{
+    margin-top: 300px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    justify-self: center;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding-left: 210px;
+    padding-right: 210px;
+    padding-top: 20px;
 }
 .learn_card{
     height: 200px;
@@ -51,7 +39,6 @@
     cursor: pointer;
     padding: 25px;
     position: relative;
-    margin: 20px;
     transition: 0.3s;
 }
 .learn_card:hover{
@@ -61,7 +48,7 @@
 .learn_card_text{
 margin-top: 20px;
   position: relative;
-  top: -40px;
+  top: -25px;
   font-size: 25px;
   color: black;
   text-align: center;
