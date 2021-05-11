@@ -1,4 +1,5 @@
 import React from "react"
+import "./learn.css";
 
 export function Learn(){
 
@@ -32,6 +33,21 @@ export function Learn(){
         },
         {
             product_id: 5,
+            product_name: "sunbelle",
+            product_img: "url:../img/test.png"
+        },
+        {
+            product_id: 6,
+            product_name: "sunbelle",
+            product_img: "url:../img/test.png"
+        },
+        {
+            product_id: 7,
+            product_name: "sunbelle",
+            product_img: "url:../img/test.png"
+        },
+        {
+            product_id: 8,
             product_name: "sunbelle",
             product_img: "url:../img/test.png"
         }
