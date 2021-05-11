@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter, Link} from "react-router-dom";
 import {Route, Switch} from "react-router";
+import { Learn } from './Learn'
 
 function Application() {
     return <BrowserRouter>
         <Switch>
             <Route path={"/learn"}>
-                <h1>This is the learn page</h1>
+            <Learn></Learn>
             </Route>
               <Route path={"/profile"}>
                 <h1>This is the profile page</h1>
