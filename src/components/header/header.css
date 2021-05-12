@@ -25,11 +25,12 @@ body,
 }
 .header_urlContainer {
   display: flex;
-  text-align: center;
-  padding-left: 100px;
+  text-align: left;
+  float: right;
+  margin-left: 39vh;
   text-decoration: none;
-  justify-content: space-around;
   width: 60%;
+  padding-top: 30px;
 }
 .header_links {
   list-style: none;
@@ -38,9 +39,11 @@ body,
 .header_linkName {
   color: white;
   font-weight: bold;
-  font-size: 4vh;
+  font-size: 2vh;
   text-decoration: none;
   padding-top: 0px;
+  text-align: right;
+  padding-right: 60px;
   /*text-decoration: underline;
   text-decoration-color: #c3dc93; */
 }
@@ -49,6 +52,7 @@ svg {
   height: 50px;
   width: 50px;
   color: white;
+  align-items: center;
 }
 
 h2 {
