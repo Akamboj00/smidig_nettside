@@ -3,7 +3,7 @@ body,
 * {
   margin: 0;
   padding: 0%;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .header_container {
@@ -12,11 +12,12 @@ body,
   max-height: 15vh;
   align-items: center;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header_title {
   color: white;
-  font-size: 6vh;
+  font-size: 7vh;
   padding-top: 0px;
   padding-left: 5vh;
   text-transform: uppercase;
@@ -32,10 +33,24 @@ body,
 }
 .header_links {
   list-style: none;
+  text-decoration: none;
 }
 .header_linkName {
   color: white;
   font-weight: bold;
   font-size: 4vh;
+  text-decoration: none;
+  padding-top: 0px;
+  /*text-decoration: underline;
+  text-decoration-color: #c3dc93; */
+}
+svg {
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+
+h2 {
   text-decoration: none;
 }
