@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter, Link} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import {Route, Switch} from "react-router";
-import { Learn } from './Learn'
-import { Header } from '../components/header/header'
+import {Learn} from './Learn'
+import {Header} from '../components/header/header'
+import {Profile} from "./profile";
 
 function Application() {
     return <BrowserRouter>
@@ -15,7 +16,7 @@ function Application() {
             <Learn/>
             </Route>
               <Route path={"/profile"}>
-                <h1>This is the profile page</h1>
+                <Profile/>
             </Route>
               <Route path={"/report"}>
                 <h1>This is the report page</h1>
