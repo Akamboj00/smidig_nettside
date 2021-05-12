@@ -4,6 +4,10 @@ const path = require("path");
 
 const app = express();
 
+app.get("/api/profile", (req, res) => {
+    res.json({username: "User from server"})
+})
+
 app.use(express.static(path.resolve(__dirname, "..", "..", "dist")));
 
 app.use((req, res, next) => {
