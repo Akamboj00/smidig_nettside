@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router";
 import { Learn } from "./Learn";
 import { Header } from "../components/header/header";
 import { Profile } from "./profile";
+import { Login } from "./login";
 
 function Application() {
   return (
@@ -23,9 +24,11 @@ function Application() {
           <h1>This is the report page</h1>
         </Route>
         <Route path={"/login"}>
-          <h1>This is the login page</h1>
+          <Login />
         </Route>
-        <Route exact path={"/"}></Route>
+        <Route exact path={"/"}>
+          <h1>This is the home page</h1>
+        </Route>
         <Route>page not found</Route>
       </Switch>
     </BrowserRouter>

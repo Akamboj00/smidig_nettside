@@ -14,3 +14,13 @@ export async function fetchJson(url) {
   checkResult(result, url);
   return await result.json();
 }
+export async function postJson(url, json) {
+  const res = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(json),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  checkResult(res, url);
+}
