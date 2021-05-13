@@ -1,6 +1,6 @@
 export class HttpExeption extends Error {
   constructor(result, url) {
-    super(`Errow while loading ${url}: ${result.status} ${result.statusText}`);
+    super(`Error while loading ${url}: ${result.status} ${result.statusText}`);
     this.status = result.status;
   }
 }

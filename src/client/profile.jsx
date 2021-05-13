@@ -1,8 +1,8 @@
 import React from "react";
-import { useLoading } from "./useLoading";
-import { fetchJson } from "./http";
-import { ErrorView } from "./errorView";
-import { LoadingView } from "./loadingView";
+import { useLoading } from "./lib/useLoading";
+import { fetchJson } from "./lib/http";
+import { ErrorView } from "../components/errorView";
+import { LoadingView } from "../components/loadingView";
 
 export function Profile() {
   const { loading, error, data } = useLoading(() => fetchJson("api/profile"));
@@ -14,11 +14,11 @@ export function Profile() {
     return <LoadingView />;
   }
 
-  const { username } = data;
+  const { email } = data;
 
   return (
     <div>
-      <h1>Profile Page for {username}</h1>
+      <h1>Profile Page for {email}</h1>
       <div>
         Current certificates:
         <ul>

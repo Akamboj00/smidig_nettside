@@ -18,16 +18,16 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.get("/api/profile", (req, res) => {
-  const { username } = req.session; // = "Johannes fra serveren";
-  if (!username) {
+  const { email } = req.session;
+  if (!email) {
     return res.status(401).send();
   }
-  res.json({ username });
+  res.json({ email });
 });
 
 app.post("/api/login", (req, res) => {
-  const { username } = req.body;
-  req.session.username = username;
+  const { email } = req.body;
+  req.session.email = email;
   res.end();
 });
 
