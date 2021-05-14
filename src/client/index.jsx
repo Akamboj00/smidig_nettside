@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router";
 import { Learn } from "../components/learn/learn";
 import { Header } from "../components/header/header";
 import { MainMenu } from "../client/mainMenu/mainMenu";
+import { Product } from "../components/product/product"
 
 function Application() {
   return (
@@ -27,6 +28,9 @@ function Application() {
         </Route>
         <Route exact path={"/"}>
           <MainMenu />
+        </Route>
+        <Route path={"/product"} component={Product}>
+         <Product/>
         </Route>
         <Route>page not found</Route>
       </Switch>
