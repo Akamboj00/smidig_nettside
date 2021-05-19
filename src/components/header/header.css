@@ -28,10 +28,10 @@ body,
   display: flex;
   text-align: left;
   float: right;
-  margin-left: 70vh;
   text-decoration: none;
-  width: 60%;
+  width: 100vh;
   padding-top: 30px;
+  margin-left: 400px;
 }
 .header_links {
   list-style: none;
