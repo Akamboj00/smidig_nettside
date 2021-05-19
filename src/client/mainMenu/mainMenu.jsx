@@ -1,7 +1,7 @@
 import React from "react";
 import "./mainMenu.css";
 
-export const MainMenu = () => {
+export function MainMenu() {
   return (
     <div className="main_container">
       <div className="box1">
@@ -15,4 +15,4 @@ export const MainMenu = () => {
       </div>
     </div>
   );
-};
+}

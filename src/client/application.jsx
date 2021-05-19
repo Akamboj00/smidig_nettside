@@ -1,6 +1,7 @@
 import { Header } from "../components/header/header";
-import { Redirect, Route, Router, Switch } from "react-router";
-import { Learn } from "./Learn";
+import { Redirect, Route, Switch } from "react-router";
+import { MainMenu } from "./mainMenu/mainMenu";
+import { Learn } from "../components/learn/Learn";
 import { Profile } from "./profile";
 import { Login } from "../sessions/login";
 import React from "react";
@@ -17,11 +18,12 @@ export function Application() {
           <Profile />
         </Route>
         <Route path={"/report"}>
+          <Header />
           <h1>This is the report page</h1>
         </Route>
-        <Route path={"/home"}>
+        <Route path={"/MainMenu"}>
           <Header />
-          <h1>This is the home page</h1>
+          <MainMenu />
         </Route>
         <Route exact path={"/"}>
           <Redirect to={"/login"} />
