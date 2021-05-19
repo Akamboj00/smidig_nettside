@@ -1,0 +1,73 @@
+{
+    "users": [{
+        "id": "12345",
+        "firstname": "test",
+        "lastname": "testest",
+        "language": "norsk",
+        "userId": "testestest"
+    }],
+    "progress": [{
+        "id": "12345",
+        "userId": "8765342",
+        "sunbell":
+            {
+                "part1": 1,
+                "part2": 1,
+                "part3": 1,
+                "part4": 0,
+                "part5": 0,
+                "part6": 0
+            },
+        "moveSmart":
+        {
+            "part1": 1,
+            "part2": 1,
+            "part3": 1,
+            "part4": 0,
+            "part5": 0,
+            "part6": 0
+        },
+        "startPluss":
+        {
+            "part1": 1,
+            "part2": 1,
+            "part3": 1,
+            "part4": 0,
+            "part5": 0,
+            "part6": 0
+        },
+        "sunTurtle":
+        {
+            "part1": 1,
+            "part2": 1,
+            "part3": 1,
+            "part4": 0,
+            "part5": 0,
+            "part6": 0
+        },
+        "home":
+        {
+            "part1": 1,
+            "part2": 1,
+            "part3": 1,
+            "part4": 0,
+            "part5": 0,
+            "part6": 0
+        },
+        "report":
+        {
+            "part1": 1,
+            "part2": 1,
+            "part3": 1,
+            "part4": 0,
+            "part5": 0,
+            "part6": 0
+        }
+    }],
+    "report": [{
+        "id": "12345",
+        "productId": "1234",
+        "partId": "1234",
+        "description": "hehehe"
+    }]
+}
