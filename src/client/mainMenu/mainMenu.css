@@ -6,7 +6,7 @@
   grid-row-gap: 50px;
   margin-left: 20px;
   margin-top: 7vh;
-  margin-right: 30vh;
+  margin-right: 60vh;
 }
 .box {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -59,7 +59,7 @@
 h1 {
   margin-left: 50px;
   padding-top: 50px;
-  color: white;
+  color: #c3dc93;
 }
 
 .mainMenuSvg {

@@ -17,7 +17,7 @@ body,
 }
 
 .header_title {
-  color: white;
+  color: #c3dc93;
   font-size: 7vh;
   padding-top: 0px;
   padding-left: 5vh;
@@ -28,7 +28,7 @@ body,
   display: flex;
   text-align: left;
   float: right;
-  margin-left: 30vh;
+  margin-left: 70vh;
   text-decoration: none;
   width: 60%;
   padding-top: 30px;
@@ -44,7 +44,9 @@ body,
   text-decoration: none;
   padding-top: 0px;
   text-align: right;
-  padding-right: 60px;
+  padding-right: 80px;
+
+  color: #c3dc93;
   /*text-decoration: underline;
   text-decoration-color: #c3dc93; */
 }
