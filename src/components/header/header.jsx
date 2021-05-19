@@ -16,6 +16,7 @@ export const Header = () => {
       <h1 className="header_title">BR!GHT</h1>
       <ul className="header_urlContainer">
         <li className="header_links">
+          <Link to={"/home"}>
           <Link to={"/"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
