@@ -1,0 +1,15 @@
+.main_container {
+  background-color: red;
+  display: grid;
+  grid-row: auto 1fr auto;
+}
+
+.box1 {
+  background-color: blue;
+}
+.box2 {
+  background-color: green;
+}
+.box3 {
+  background-color: purple;
+}

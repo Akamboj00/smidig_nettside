@@ -1,0 +1,59 @@
+.learn_heading_container{
+    position: absolute;
+    font-size: 5vh;
+    top: 22vh;
+    left: 47%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+.learn_icon{
+    height: 10vh;
+    position: relative;
+    margin-left: 200px;
+    top: 0px;
+    transform: rotate(10deg);
+}
+.learn_text{
+    top: 50px;
+    position: relative;
+    margin-left: 100px;
+    margin-bottom: -30px;
+}
+.learn_card_container{
+    margin-top: 15vh;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding-left: 210px;
+    padding-right: 210px;
+    padding-top: 20px;
+}
+.learn_card{
+    height: 200px;
+    width: 200px;
+    border-radius: 10%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    cursor: pointer;
+    padding: 25px;
+    position: relative;
+    transition: 0.3s;
+}
+.learn_card:hover{
+    background-color: #174a5b;
+    color: white;
+}
+.learn_card_text{
+margin-top: 20px;
+  position: relative;
+  top: -25px;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+}
+.learn_card_icon{
+    margin-top: -15px;
+    height: 100%;
+}
