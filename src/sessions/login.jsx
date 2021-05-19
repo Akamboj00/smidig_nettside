@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 import { useSubmit } from "../client/lib/useSubmit";
 import { InputField } from "../components/inputField";
 import fire from "../server/firebase";
+import "./login.css";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -20,11 +21,11 @@ export function Login() {
       await fire.auth().signInWithEmailAndPassword(email, password);
       await postJson("/api/login", { email: email, password });
     },
-    () => history.push("/")
+    () => history.push("/MainMenu")
   );
 
   return (
-    <div>
+    <div className="loginContainer">
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
         {submitting && <div>Please wait</div>}
