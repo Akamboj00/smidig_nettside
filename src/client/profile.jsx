@@ -3,6 +3,7 @@ import { useLoading } from "./lib/useLoading";
 import { fetchJson } from "./lib/http";
 import { ErrorView } from "../components/errorView";
 import { LoadingView } from "../components/loadingView";
+import { Header } from "../components/header/header";
 
 export function Profile() {
   const { loading, error, data } = useLoading(() => fetchJson("api/profile"));
@@ -18,6 +19,7 @@ export function Profile() {
 
   return (
     <div>
+      <Header />
       <h1>Profile Page for {email}</h1>
       <div>
         Current certificates:

@@ -19,7 +19,7 @@ export function Login() {
       await fire.auth().signInWithEmailAndPassword(email, password);
       await postJson("/api/login", { email: email, password });
     },
-    () => history.push("/")
+    () => history.push("/profile")
   );
 
   return (
