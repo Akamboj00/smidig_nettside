@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import { postJson } from "../../client/lib/http";
 import { postJson } from "../client/lib/http";
 import { useHistory } from "react-router";
 import { useSubmit } from "../client/lib/useSubmit";
@@ -19,7 +20,7 @@ export function Login() {
       await fire.auth().signInWithEmailAndPassword(email, password);
       await postJson("/api/login", { email: email, password });
     },
-    () => history.push("/profile")
+    () => history.push("/")
   );
 
   return (

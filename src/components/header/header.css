@@ -10,13 +10,14 @@ body,
   background-color: #174a5b;
   min-height: 15vh;
   max-height: 15vh;
+  width: 100%;
   align-items: center;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header_title {
-  color: white;
+  color: #c3dc93;
   font-size: 7vh;
   padding-top: 0px;
   padding-left: 5vh;
@@ -27,7 +28,7 @@ body,
   display: flex;
   text-align: left;
   float: right;
-  margin-left: 39vh;
+  margin-left: 70vh;
   text-decoration: none;
   width: 60%;
   padding-top: 30px;
@@ -43,7 +44,9 @@ body,
   text-decoration: none;
   padding-top: 0px;
   text-align: right;
-  padding-right: 60px;
+  padding-right: 80px;
+
+  color: #c3dc93;
   /*text-decoration: underline;
   text-decoration-color: #c3dc93; */
 }
