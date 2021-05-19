@@ -2,7 +2,7 @@ import React from "react";
 import "./mainMenu.css";
 import { BrowserRouter, Link } from "react-router-dom";
 
-export const MainMenu = () => {
+export function MainMenu() {
   return (
     <div className="main_container">
       <Link to={"/profile"}>
@@ -56,4 +56,4 @@ export const MainMenu = () => {
       </Link>
     </div>
   );
-};
+}
