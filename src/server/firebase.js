@@ -1,5 +1,4 @@
 import firebase from "firebase";
-import dotenv from 'dotenv';
 
 
 const firebaseConfig = {
@@ -13,6 +12,7 @@ const firebaseConfig = {
 };
 
 try {
+  console.log(firebaseConfig)
   firebase.initializeApp(firebaseConfig);
 } catch (e) {
   if (!/already exists/.test(e.message)) {
