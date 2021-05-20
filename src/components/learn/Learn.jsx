@@ -4,6 +4,13 @@ import { ProgressBar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Header } from "../header/header";
 require("url:../img/test.png")
+require("url:../img/sunbell_image.png")
+require("url:../img/movesmart_image.png")
+require("url:../img/startpluss_image.png")
+require("url:../img/sunturtle_image.png")
+require("url:../img/home_image.png")
+require("url:../img/home_image.png")
+require("url:../img/reporticon.png")
 export const Learn = () => {
   const [clicked, setclicked] = useState();
   console.log(clicked);
@@ -13,31 +20,31 @@ export const Learn = () => {
     {
       product_id: 0,
       product_name: "Learn Sunbell",
-      product_img: "url:../img/test.png",
+      product_img: "url:../img/sunbell_image.png",
       product_progress: Math.floor((8 / 14) * 100),
     },
     {
       product_id: 1,
       product_name: "Learn MoveSmart",
-      product_img: "url:../img/test.png",
+      product_img: "url:../img/movesmart_image.png",
       product_progress: Math.floor((6 / 9) * 100),
     },
     {
       product_id: 2,
       product_name: "Learn Start+",
-      product_img: "url:../img/test.png",
+      product_img: "url:../img/startpluss_image.png",
       product_progress: Math.floor((10 / 19) * 100),
     },
     {
       product_id: 3,
       product_name: "Learn SunTurtle",
-      product_img: "url:../img/test.png",
+      product_img: "url:../img/sunturtle_image.png",
       product_progress: Math.floor((2 / 20) * 100),
     },
     {
       product_id: 4,
       product_name: "Learn Home",
-      product_img: "url:../img/test.png",
+      product_img: "url:../img/home_image.png",
       product_progress: Math.floor((8 / 11) * 100),
     },
     {

@@ -56,11 +56,9 @@
   transition: 2s;
   width: 110%;
 }
-.header_title {
-  margin-left: 50px;
+h1 {
   color: #c3dc93;
 }
-
 .mainMenuSvg {
   margin-left: 200px;
   margin-top: -100px;
