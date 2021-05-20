@@ -31,9 +31,10 @@ export function Login() {
         {submitting && <div>Please wait</div>}
         {error && <div>Error: {error.toString()}</div>}
         <InputField
-          className="loginMail"
+          className="loginEmail"
           label={"Email"}
           value={email}
+          type="email"
           onValueChange={setEmail}
         />
         <InputField
@@ -43,7 +44,9 @@ export function Login() {
           value={password}
           onValueChange={setPassword}
         />
-        <button disabled={submitting}>Log in</button>
+        <button className="submitBtn" disabled={submitting}>
+          <a> Log in</a>
+        </button>
       </form>
     </div>
   );
