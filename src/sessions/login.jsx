@@ -30,8 +30,14 @@ export function Login() {
       <form onSubmit={handleLogin}>
         {submitting && <div>Please wait</div>}
         {error && <div>Error: {error.toString()}</div>}
-        <InputField label={"Email"} value={email} onValueChange={setEmail} />
         <InputField
+          className="loginMail"
+          label={"Email"}
+          value={email}
+          onValueChange={setEmail}
+        />
+        <InputField
+          className="loginPassword"
           label={"Password"}
           type="password"
           value={password}
