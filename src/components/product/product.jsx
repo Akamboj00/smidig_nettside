@@ -6,7 +6,7 @@ export const Product = (props) => {
     useEffect(() => {
       }, []);
 
-
+      
     return(
         <>
         </>

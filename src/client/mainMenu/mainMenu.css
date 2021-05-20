@@ -56,9 +56,8 @@
   transition: 2s;
   width: 110%;
 }
-h1 {
+.header_title {
   margin-left: 50px;
-  padding-top: 50px;
   color: #c3dc93;
 }
 
