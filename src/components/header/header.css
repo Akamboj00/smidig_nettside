@@ -2,60 +2,67 @@ html,
 body,
 * {
   margin: 0;
-  padding: 0%;
+  padding: 0;
   font-family: "Open Sans", sans-serif;
 }
 
 .header_container {
   position: absolute;
-  background-color: #174a5b;
+  background-color: #ffffff;
   height: 80px;
   width: 100%;
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .header_title {
-  position: relative;
+  position: absolute;
   color: #c3dc93;
-  font-size: 7vh;
-  top: 20px;
+  font-size: 3vh;
+  top: 16px;
   left: 40px;
   text-transform: uppercase;
+  font-weight: 600;
   letter-spacing: 5px;
 }
 .header_urlContainer {
-  display: flex;
   position: absolute;
+  display: flex;
   text-decoration: none;
-  left: 700px;
-  top: 25px;
+  right: 0;
 }
+
 .header_links {
+  transition: 0.2s;
+  position: relative;
   list-style: none;
   text-decoration: none;
+  margin-right: 50px;
+  width: 150px;
+  height: 60px;
+  margin-top: 10px;
+  background: #ffffff;
+  border-radius: 12px;
 }
-.header_linkName {
-  position: relative;
-  color: white;
-  font-weight: bold;
-  font-size: 2vh;
-  text-decoration: none;
-  text-align: right;
-  margin-right: 9vh;
+.header_links:hover{
+  filter: brightness(95%);
+}
 
-  color: #c3dc93;
-  /*text-decoration: underline;
-  text-decoration-color: #c3dc93; */
+.header_linkName {
+  position: absolute;
+  left: 60px;
+  bottom: 10px;
+  color: #434343;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
 }
 .header_svg {
-  position: relative;
-  height: 6vh;
-  width: 6vh;
-  color: white;
+  position: absolute;
+  height: 40px;
+  width: 40px;
   align-items: center;
-}
-
-h2 {
-  text-decoration: none;
+  color: #174a5b;
+  left: 10px;
+  bottom: 10px;
 }

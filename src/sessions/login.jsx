@@ -26,7 +26,6 @@ export function Login() {
     );
 
     const [trigger, setTrigger] = useState(false);
-    const [finish, setFinish] = useState(false);
 
     function moveLight(event){
         callOnce();
@@ -44,7 +43,6 @@ export function Login() {
     }
 
     function loginLight(){
-        setFinish(true);
         let flashlight = document.getElementById("flashlight");
         flashlight.style.transition = "0.1s";
         flashlight.style.clipPath = `circle(300px)`;
