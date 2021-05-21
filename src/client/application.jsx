@@ -6,6 +6,8 @@ import { Profile } from "./profile";
 import { Login } from "../sessions/login";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { Product } from "../components/product/product";
+import { Report } from "./report";
 
 export function Application() {
   return (
@@ -19,7 +21,7 @@ export function Application() {
         </Route>
         <Route path={"/report"}>
           <Header />
-          <h1>This is the report page</h1>
+          <Report />
         </Route>
         <Route path={"/MainMenu"}>
           <Header />
@@ -30,6 +32,9 @@ export function Application() {
         </Route>
         <Route path={"/login"}>
           <Login />
+        </Route>
+        <Route path={"/product"}>
+          <Product />
         </Route>
         <Route>page not found</Route>
       </Switch>

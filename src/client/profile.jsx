@@ -30,9 +30,6 @@ export function Profile() {
         </ul>
         <div>Progress bar 60%</div>
       </div>
-      <Link to="../../test.jpg" target="_blank" download>
-        Download
-      </Link>
     </div>
   );
 }
