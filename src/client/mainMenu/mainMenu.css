@@ -1,12 +1,13 @@
 .main_container {
+  position: absolute;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 50px;
-  margin-left: 20px;
-  margin-top: 7vh;
-  margin-right: 60vh;
+  top: 200px;
+  left: 40px;
+  width: 70vh;
 }
 .box {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -19,15 +20,14 @@
 #box1 {
   background-color: #174a5b;
   grid-area: 1 / 1 / 2 / 2;
-  height: 150px;
-  transition: 0.2s;
+  height: 16vh;
 }
 #box1:hover {
   background-color: #174a5b;
   grid-area: 1 / 1 / 2 / 2;
-  height: 150px;
-  width: 110%;
-  transition: 0.2s;
+  height: 16vh;
+  width: 130%;
+  transition: 1s;
 }
 
 #box2 {
@@ -56,12 +56,19 @@
   transition: 2s;
   width: 110%;
 }
-h1 {
+.box_Titles {
   color: #c3dc93;
+  position: relative;
+  top: 50px;
+  left: 30px;
+  font-size: 40px;
+  font-weight: 400;
+  text-decoration: none;
 }
 .mainMenuSvg {
-  margin-left: 200px;
-  margin-top: -100px;
+  position: relative;
+  left: 200px;
+  bottom: 30px;
   height: 100px;
   width: 100px;
   color: white;

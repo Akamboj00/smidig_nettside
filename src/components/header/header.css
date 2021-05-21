@@ -3,56 +3,55 @@ body,
 * {
   margin: 0;
   padding: 0%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .header_container {
+  position: absolute;
   background-color: #174a5b;
   height: 80px;
   width: 100%;
-  align-items: center;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header_title {
+  position: relative;
   color: #c3dc93;
   font-size: 7vh;
-  padding-top: 0px;
-  padding-left: 5vh;
+  top: 20px;
+  left: 40px;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
 .header_urlContainer {
   display: flex;
-  text-align: left;
-  float: right;
+  position: absolute;
   text-decoration: none;
-  width: 100vh;
-  padding-top: 30px;
-  margin-left: 400px;
+  left: 700px;
+  top: 25px;
 }
 .header_links {
   list-style: none;
   text-decoration: none;
 }
 .header_linkName {
+  position: relative;
   color: white;
   font-weight: bold;
   font-size: 2vh;
   text-decoration: none;
-  padding-top: 0px;
   text-align: right;
-  padding-right: 80px;
+  margin-right: 9vh;
 
   color: #c3dc93;
   /*text-decoration: underline;
   text-decoration-color: #c3dc93; */
 }
-svg {
-  padding: 0;
-  height: 50px;
-  width: 50px;
+.header_svg {
+  position: relative;
+  height: 6vh;
+  width: 6vh;
   color: white;
   align-items: center;
 }
