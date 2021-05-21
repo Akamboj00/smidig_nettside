@@ -1,7 +1,7 @@
 .learn_heading_container{
     position: relative;
     text-align: center;
-    height: 120px;
+    height: 190px;
 }
 .learn_icon{
     height: 10vh;
@@ -10,8 +10,15 @@
     top: 0px;
     transform: rotate(10deg);
 }
+.learn_container{
+    height: calc(100vh - 80px);
+    position: absolute;
+    width: 100vw;
+    margin-top: 80px;
+
+}
 .learn_text{
-    top: 50px;
+    padding-top: 50px;
     position: relative;
 }
 .learn_card_container{
