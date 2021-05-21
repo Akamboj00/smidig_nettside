@@ -32,7 +32,7 @@ export function Login() {
     async function moveLight(event){
         await callOnce();
         let flashlight = document.getElementById("flashlight");
-        flashlight.style.clipPath = `circle(250px at ${event.offsetX}px ${event.offsetY}px)`;
+        flashlight.style.clipPath = `circle(250px at ${event.offsetX + 15}px ${event.offsetY + 15}px)`;
     }
 
     function hoverLight(event){
