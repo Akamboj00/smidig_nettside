@@ -62,12 +62,10 @@ export const Learn = () => {
       <div className="learn_heading_container">
         <h1 className="learn_text">Total learning progress</h1>
         <ProgressBar
-                  className="bar"
-                    variant="primary"
-                    animated
-                    now={"20"}
-                    label={`%`}
-                  />
+          variant="primary"
+          animated
+          now={"20"}
+        />
       </div>
       <div className="learn_card_container">
         {testdata.map(
@@ -81,7 +79,7 @@ export const Learn = () => {
                 <img className="learn_card_icon" src={require(product_img)} />
                 <div className="card_info">
                   <h2 className="learn_card_text">{product_name}</h2>
-                  <ProgressBar
+                 <ProgressBar
                   className="progress_bar"
                     variant="primary"
                     animated
