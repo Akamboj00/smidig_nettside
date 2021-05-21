@@ -51,7 +51,7 @@ export function Menu() {
                         <h5 className={"center"}>REPORT</h5>
                     </div>
                 </Link>
-                <Link to={"/dev-log"}>
+                <Link to={"/learn"}>
                     <div className={"header-item-hamburger"}>
                         <LearnIcon
                             className={"hamburger-svg"}
@@ -59,7 +59,7 @@ export function Menu() {
                         <h5 className={"center"}>LEARN</h5>
                     </div>
                 </Link>
-                <Link to={"/dev-log"}>
+                <Link to={"/profile"}>
                     <div className={"header-item-hamburger"}>
                         <UserIcon
                             className={"hamburger-svg"}
@@ -67,7 +67,7 @@ export function Menu() {
                         <h5 className={"center"}>USERS</h5>
                     </div>
                 </Link>
-                <Link to={"/dev-log"}>
+                <Link to={"/language"}>
                     <div className={"header-item-hamburger"}>
                         <LanguageIcon
                             className={"hamburger-svg"}
