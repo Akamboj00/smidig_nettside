@@ -61,6 +61,13 @@ export const Learn = () => {
       <div className="learn_container">
       <div className="learn_heading_container">
         <h1 className="learn_text">Total learning progress</h1>
+        <ProgressBar
+                  className="bar"
+                    variant="primary"
+                    animated
+                    now={"20"}
+                    label={`%`}
+                  />
       </div>
       <div className="learn_card_container">
         {testdata.map(

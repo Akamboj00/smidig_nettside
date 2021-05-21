@@ -1,4 +1,4 @@
-.learn_heading_container {
+.learn_heading_container{
     position: relative;
     text-align: center;
     height: 190px;
@@ -10,8 +10,7 @@
     margin-top: 80px;
     position: absolute;
 }
-
-.learn_text {
+.learn_text{
     padding-top: 50px;
     position: relative;
 }
@@ -23,11 +22,13 @@
     grid-template-columns: repeat(auto-fit, minmax(459px, 1fr));
     overflow: auto;
     overflow-x: hidden;
-    width: 100vw;
-    padding-left: 5vw;
+    width: 85vw;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.learn_card {
+.learn_card{
     height: 200px;
     width: 500px;
     border-radius: 10px;
@@ -43,31 +44,21 @@
     transform: scale(1.1);
     z-index: 1;
 }
+.learn_card_text{
+  position: relative;
+  text-align: center;
 
-.learn_card_text {
-    position: relative;
-    text-align: center;
-
-    margin-top: 35px;
-    font-size: 25px;
-    color: black;
+  margin-top: 35px; 
+  font-size: 25px;
+  color: black;
 }
-
-.learn_card_icon {
+.learn_card_icon{
 }
-
-.progress_bar {
+.progress_bar{
     position: relative;
     width: 300px;
 }
-
-.card_info {
+.card_info{
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-          "."
-          ".";
     width: 300px;
 }
