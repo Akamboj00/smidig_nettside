@@ -12,7 +12,6 @@ const firebaseConfig = {
 };
 
 try {
-  console.log(firebaseConfig)
   firebase.initializeApp(firebaseConfig);
 } catch (e) {
   if (!/already exists/.test(e.message)) {

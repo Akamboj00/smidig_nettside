@@ -1,10 +1,7 @@
 .learn_heading_container{
-    position: absolute;
-    font-size: 5vh;
-    top: 22vh;
-    left: 47%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) 
+    position: relative;
+    text-align: center;
+    height: 120px;
 }
 .learn_icon{
     height: 10vh;
@@ -16,25 +13,22 @@
 .learn_text{
     top: 50px;
     position: relative;
-    margin-left: 100px;
-    margin-bottom: -30px;
 }
 .learn_card_container{
-    margin-top: 15vh;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-left: 100px;
     display: grid;
-    justify-content: center;
-    justify-self: center;
-    gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    padding-left: 210px;
-    padding-right: 210px;
-    padding-top: 20px;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(490px, 1fr));
+    overflow: auto;
+    
 }
 .learn_card{
     height: 200px;
-    width: 200px;
-    border-radius: 10%;
-    background-color: white;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
     cursor: pointer;
     padding: 25px;
@@ -46,14 +40,26 @@
     color: white;
 }
 .learn_card_text{
-margin-top: 20px;
   position: relative;
-  top: -25px;
+  text-align: center;
+
+  margin-top: 35px; 
   font-size: 25px;
   color: black;
-  text-align: center;
 }
 .learn_card_icon{
-    margin-top: -15px;
-    height: 100%;
+}
+.progress_bar{
+    position: relative;
+    width: 300px;
+}
+.card_info{
+    position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+          "."
+          ".";
+    width: 300px;
 }
