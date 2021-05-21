@@ -18,17 +18,77 @@ export function Login() {
         error,
     } = useSubmit(
         async () => {
+            loginLight();
             await fire.auth().signInWithEmailAndPassword(email, password);
             await postJson("/api/login", {email: email, password});
         },
         () => history.push("/MainMenu")
     );
 
+    const [trigger, setTrigger] = useState(false);
+    const [finish, setFinish] = useState(false);
+
+    function moveLight(event){
+        callOnce();
+        let flashlight = document.getElementById("flashlight");
+        flashlight.style.clipPath = `circle(300px at ${event.offsetX}px ${event.offsetY}px)`;
+        console.log(flashlight);
+    }
+
+    function hoverLight(event){
+        event.preventDefault();
+        setTrigger(false);
+        let flashlight = document.getElementById("flashlight");
+        flashlight.style.transition = "2s";
+        flashlight.style.clipPath = `circle(400px)`;
+    }
+
+    function loginLight(){
+        setFinish(true);
+        let flashlight = document.getElementById("flashlight");
+        flashlight.style.transition = "0.1s";
+        flashlight.style.clipPath = `circle(300px)`;
+        setTimeout(loginLightTransition1, 100);
+    }
+
+    function loginLightTransition1(){
+        let flashlight = document.getElementById("flashlight");
+        flashlight.style.transition = "0.1s";
+        flashlight.style.clipPath = `circle(500px)`;
+        setTimeout(loginLightTransition2, 100);
+    }
+
+    function loginLightTransition2(){
+        let flashlight = document.getElementById("flashlight");
+        flashlight.style.transition = "0.3s";
+        flashlight.style.clipPath = `circle(2000px)`;
+    }
+
+    function callOnce() {
+        if (!trigger)
+        {
+            setTrigger(true);
+            let flashlight = document.getElementById("flashlight");
+            flashlight.style.transition = "1s";
+            setTimeout(countDown, 300);
+        }
+    }
+
+    function countDown(){
+        let flashlight = document.getElementById("flashlight");
+        flashlight.style.transition = "0s";
+    }
+
     return (
         <div className={"login_page_container"}>
             <div className={"login_page"}>
-                <div className={"login_page_background"}></div>
+                <div className={"login_page_background"}>
+                </div>
+                <div className={"darkness"} onMouseMove={() => moveLight(event)}>
+                    <div id={"flashlight"}/>
+                </div>
                 <div className="loginContainer center">
+                    <div className={"light_extra_trigger"} onMouseMove={() => hoverLight(event)}>
                     <div className={"login_header_container"}>
                         <div className={"login_header_learnBright"}>
                             <h1 className={"center"}>LearnBright</h1>
@@ -61,6 +121,7 @@ export function Login() {
                                 </button>
                             </div>
                         </form>
+                    </div>
                     </div>
                 </div>
             </div>

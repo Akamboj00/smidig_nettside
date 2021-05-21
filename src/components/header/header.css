@@ -8,8 +8,7 @@ body,
 
 .header_container {
   background-color: #174a5b;
-  min-height: 15vh;
-  max-height: 15vh;
+  height: 80px;
   width: 100%;
   align-items: center;
   display: flex;
