@@ -16,6 +16,7 @@ export const Learn = () => {
   console.log(clicked);
 
   //bytter dette med request til firebase / eller backend
+  const total_progress = Math.floor((44/87)*100)
   const testdata = [
     {
       product_id: 0,
@@ -61,6 +62,13 @@ export const Learn = () => {
       <div className="learn_container">
       <div className="learn_heading_container">
         <h1 className="learn_text">Total learning progress</h1>
+        <ProgressBar className="learn_total_progress">
+        <ProgressBar className="learn_progress_background"
+          animated
+          now={total_progress}
+        />
+        <p className="progress_total_text font-weight-bold center">{`${total_progress}%`}</p>
+        </ProgressBar>
       </div>
       <div className="learn_card_container">
         {testdata.map(
@@ -74,13 +82,14 @@ export const Learn = () => {
                 <img className="learn_card_icon" src={require(product_img)} />
                 <div className="card_info">
                   <h2 className="learn_card_text">{product_name}</h2>
-                  <ProgressBar
-                  className="progress_bar"
-                    variant="primary"
-                    animated
-                    now={product_progress}
-                    label={`${product_progress}%`}
-                  />
+                  <ProgressBar>
+                    <ProgressBar
+                      className="progress_bar font-weight-bold"
+                        animated
+                        now={product_progress}
+                      />
+                      <p className="progress_on_card font-weight-bold center">{`${product_progress}%`}</p>
+                  </ProgressBar>
                 </div>
             </Link>
           ))}
