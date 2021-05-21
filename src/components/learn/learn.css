@@ -47,7 +47,6 @@
 .learn_card_text{
   position: relative;
   text-align: center;
-
   margin-top: 35px; 
   font-size: 25px;
   color: black;
@@ -55,8 +54,29 @@
 .progress_bar{
     position: relative;
     width: 300px;
+    background-color: #174859 !important;
 }
 .card_info{
     position: relative;
     width: 300px;
+}
+
+.learn_total_progress{
+    width: 400px;
+    margin: auto;
+    height: 25px !important;
+}
+
+.progress_total_text{
+    padding-top: 96px;
+    font-size: 18px;
+}
+
+.progress_on_card{
+    color: black;
+    padding-top: 48px;
+    font-size: 14px;
+}
+.learn_progress_background{
+    background-color: #174859 !important;
 }
