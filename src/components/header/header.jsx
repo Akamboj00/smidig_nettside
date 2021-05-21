@@ -19,7 +19,7 @@ export const Header = () => {
           <Link to={"/mainMenu"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="header_svg"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -32,7 +32,7 @@ export const Header = () => {
           <Link to={"/learn"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-2 w-2"
+              className="header_svg"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -45,7 +45,7 @@ export const Header = () => {
           <Link to={"/profile"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="header_svg"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -62,7 +62,7 @@ export const Header = () => {
           <Link to={"/report"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="header_svg"
               viewBox="0 0 20 20"
               fill="currentColor"
             >

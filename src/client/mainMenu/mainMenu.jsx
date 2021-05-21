@@ -7,7 +7,7 @@ export function MainMenu() {
     <div className="main_container">
       <Link to={"/profile"}>
         <div className="box" id="box1">
-          <h1>Learn</h1>
+          <h1 className="box_Titles">Learn</h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mainMenuSvg"
@@ -21,7 +21,7 @@ export function MainMenu() {
 
       <Link to={"/report"}>
         <div className="box" id="box2">
-          <h1>Report</h1>
+          <h1 className="box_Titles">Report</h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mainMenuSvg"
@@ -39,7 +39,7 @@ export function MainMenu() {
 
       <Link to={"/profile"}>
         <div className="box" id="box3">
-          <h1>Profile</h1>
+          <h1 className="box_Titles">Profile</h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mainMenuSvg"
