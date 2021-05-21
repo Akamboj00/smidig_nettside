@@ -58,6 +58,7 @@ export const Learn = () => {
   return (
     <>
       <Header />
+      <div className="learn_container">
       <div className="learn_heading_container">
         <h1 className="learn_text">Total learning progress</h1>
       </div>
@@ -65,6 +66,7 @@ export const Learn = () => {
         {testdata.map(
           ({ product_id, product_name, product_img, product_progress }) => (
             <Link
+            style={{ textDecoration: 'none' }}
             key={product_id} className="learn_card"
               to={{ pathname: "/product", state: clicked }}
               onClick={() => setclicked(testdata[product_id])}
@@ -74,7 +76,7 @@ export const Learn = () => {
                   <h2 className="learn_card_text">{product_name}</h2>
                   <ProgressBar
                   className="progress_bar"
-                    variant="success"
+                    variant="primary"
                     animated
                     now={product_progress}
                     label={`${product_progress}%`}
@@ -82,6 +84,7 @@ export const Learn = () => {
                 </div>
             </Link>
           ))}
+      </div>
       </div>
     </>
   );
