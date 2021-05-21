@@ -100,10 +100,10 @@
 }
 
 .loginFormContainer{
-  position: absolute;
-  width: 100%;
-  margin-top: 190px;
-  height: calc(100% - 190px);
+    position: absolute;
+    width: 100%;
+    margin-top: 190px;
+    height: calc(100% - 190px);
 }
 
 .loginForm{
@@ -161,4 +161,10 @@
 
 .submitBtn h5{
   color: #f2f2f2;
+}
+
+.error{
+  width: 100%;
+  padding: 2px !important;
+  text-align: center;
 }
