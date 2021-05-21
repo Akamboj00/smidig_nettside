@@ -31,11 +31,11 @@
   width: 100vw;
   height: 100vh;
   pointer-events: all;
-  cursor: none;
   background:linear-gradient(rgba(23,74,91,1),rgba(0,0,0,1)),url("../components/img/blur.jpg") center no-repeat;
   animation-name: bright;
   animation-duration: 15s;
   animation-iteration-count: infinite;
+  cursor: url('../components/img/cursorSmall.png'), auto;
 }
 
 #flashlight {

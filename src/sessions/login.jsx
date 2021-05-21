@@ -29,8 +29,8 @@ export function Login() {
 
     const [trigger, setTrigger] = useState(false);
 
-    function moveLight(event){
-        callOnce();
+    async function moveLight(event){
+        await callOnce();
         let flashlight = document.getElementById("flashlight");
         flashlight.style.clipPath = `circle(300px at ${event.offsetX}px ${event.offsetY}px)`;
     }
@@ -63,19 +63,25 @@ export function Login() {
         flashlight.style.clipPath = `circle(2000px)`;
     }
 
-    function callOnce() {
+    async function callOnce() {
         if (!trigger)
         {
             setTrigger(true);
             let flashlight = document.getElementById("flashlight");
-            flashlight.style.transition = "1s";
+            flashlight.style.transition = "0.4s";
             setTimeout(countDown, 300);
         }
     }
 
     function countDown(){
         let flashlight = document.getElementById("flashlight");
-        flashlight.style.transition = "0s";
+        flashlight.style.transition = "0.2s";
+        setTimeout(countDown2, 200);
+    }
+
+    function countDown2(){
+        let flashlight = document.getElementById("flashlight");
+        flashlight.style.transition = "0.1s";
     }
 
     return (
