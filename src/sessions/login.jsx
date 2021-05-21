@@ -6,6 +6,8 @@ import {useSubmit} from "../client/lib/useSubmit";
 import {InputField} from "../components/inputField";
 import fire from "../server/firebase";
 import "./login.css";
+import { LoadingView } from "../components/loadingView";
+import Alert from 'react-bootstrap/Alert'
 
 export function Login() {
     const [email, setEmail] = useState("");
@@ -31,7 +33,6 @@ export function Login() {
         callOnce();
         let flashlight = document.getElementById("flashlight");
         flashlight.style.clipPath = `circle(300px at ${event.offsetX}px ${event.offsetY}px)`;
-        console.log(flashlight);
     }
 
     function hoverLight(event){
@@ -92,13 +93,21 @@ export function Login() {
                             <h1 className={"center"}>LearnBright</h1>
                         </div>
                         <div className={"login_header_description"}>
+                        {submitting && <LoadingView></LoadingView>}
+                            {error &&
+                            <>
+                            <Alert className="error" variant="danger">
+                                {error.toString()}
+                            </Alert>
+                            </>
+                            }
+                            {!error && !submitting && 
                             <h5 className={"center"}>Login to continue</h5>
+                            }
                         </div>
                     </div>
                     <div className={"loginFormContainer"}>
                         <form className={"loginForm"} onSubmit={handleLogin}>
-                            {submitting && <div>Please wait</div>}
-                            {error && <div>Error: {error.toString()}</div>}
                             <InputField
                                 className="loginEmail"
                                 label={"Email"}
