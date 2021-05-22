@@ -8,13 +8,17 @@ body,
     font-family: "Open Sans", sans-serif;
 }
 
+html{
+    min-height: 100vh !important;
+    height: 100vh;
+}
+
 #container_main_please{
     position: absolute;
     height: calc(100vh - 80px);
     width: 100vw;
     margin-top: 80px;
     background: #eeeeee;
-    overflow: hidden;
     overflow-y: auto;
     overflow-x: hidden;
 }

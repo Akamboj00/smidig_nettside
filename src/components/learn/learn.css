@@ -11,18 +11,20 @@
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.learn {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     background: #f2f2f2;
 }
 
 .learn_text {
     padding-top: 50px;
     position: relative;
+}
+
+.learn_card_container_fix{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: #f2f2f2;
+    padding-bottom: 40px;
 }
 
 .learn_card_container {
@@ -33,7 +35,6 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    background: orange;
 }
 
 .learn_card {
@@ -103,4 +104,16 @@
 
 .learn_progress_background {
     background-color: #174859 !important;
+}
+
+@media (max-width:1400px){
+    .learn_card_container {
+        width: calc(100% - 100px);
+    }
+}
+
+@media (max-width:600px){
+    .learn_card_container {
+        width: calc(100% - 15px);
+    }
 }

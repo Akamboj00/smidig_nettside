@@ -62,17 +62,17 @@ export const Learn = () => {
         <>
             <div id={"container_main_please"}>
                 <div className={"learn_container"}>
-                    <div className={"learn"}>
-                        <div className="learn_heading_container">
-                            <h3 className="learn_text">Total learning progress</h3>
-                            <ProgressBar className="learn_total_progress">
-                                <ProgressBar className="learn_progress_background"
-                                             animated
-                                             now={total_progress}
-                                />
-                                <h5 className="progress_total_text h5 center">{`${total_progress}%`}</h5>
-                            </ProgressBar>
-                        </div>
+                    <div className="learn_heading_container">
+                        <h3 className="learn_text">Total learning progress</h3>
+                        <ProgressBar className="learn_total_progress">
+                            <ProgressBar className="learn_progress_background"
+                                         animated
+                                         now={total_progress}
+                            />
+                            <h5 className="progress_total_text h5 center">{`${total_progress}%`}</h5>
+                        </ProgressBar>
+                    </div>
+                    <div className={"learn_card_container_fix"}>
                         <div className="learn_card_container">
                             {testdata.map(
                                 ({product_id, product_name, product_img, product_progress}) => (
