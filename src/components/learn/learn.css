@@ -1,82 +1,106 @@
-.learn_heading_container{
+.learn_heading_container {
     position: relative;
     text-align: center;
     height: 190px;
 }
-.learn_container{
-    height: calc(100vh - 80px);
-    position: absolute;
-    width: 100vw;
-    margin-top: 80px;
-    position: absolute;
-}
-.learn_text{
-    padding-top: 50px;
+
+.learn_container {
     position: relative;
-}
-.learn_card_container{
-    padding-bottom: 40px;
-    padding-top: 40px;
-    display: grid;
-    gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(459px, 1fr));
-    overflow: auto;
-    overflow-x: hidden;
-    width: 85vw;
-    padding-left: 40px;
-    padding-right: 40px;
+    height: 100%;
+    width: 100vw;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
-.learn_card{
-    height: 200px;
-    width: 500px;
-    border-radius: 10px;
-    background-color: white;
+
+.learn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+}
+
+.learn_text {
+    padding-top: 50px;
+    position: relative;
+}
+
+.learn_card_container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    height: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: orange;
+}
+
+.learn_card {
     display: flex;
-    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    height: 200px;
+    width: 100%;
+    border-radius: 0;
+    background-color: white;
     cursor: pointer;
     padding: 25px;
     position: relative;
-    transition: 0.3s;
+    transition: 0.1s;
+    border: 2px solid #eeeeee;
 }
-.learn_card:hover{
-    transform: scale(1.1);
+
+.learn_card:hover {
+    transform: scale(1.04);
     z-index: 1;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #174a5b;
+    border-radius: 6px;
 }
-.learn_card_text{
-  position: relative;
-  text-align: center;
-  margin-top: 35px; 
-  font-size: 25px;
-  color: black;
+
+.learn_card_text {
+    position: relative;
+    text-align: center;
+    margin-top: 35px;
+    color: black;
 }
-.progress_bar{
+
+.progress_bar {
     position: relative;
     width: 300px;
     background-color: #174859 !important;
 }
-.card_info{
+
+.learn_single_progress {
+    height: 25px !important;
+}
+
+.card_info {
     position: relative;
     width: 300px;
 }
 
-.learn_total_progress{
+.learn_total_progress {
     width: 400px;
     margin: auto;
     height: 25px !important;
 }
 
-.progress_total_text{
+.progress_total_text {
     padding-top: 96px;
-    font-size: 18px;
+    font-weight: 600 !important;
 }
 
-.progress_on_card{
+.single_progress_text{
+    margin-top: 20px;
+    font-weight: 600 !important;
+}
+
+.progress_on_card {
     color: black;
     padding-top: 48px;
     font-size: 14px;
 }
-.learn_progress_background{
+
+.learn_progress_background {
     background-color: #174859 !important;
 }

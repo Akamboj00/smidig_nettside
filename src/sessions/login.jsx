@@ -4,7 +4,7 @@ import {postJson} from "../client/lib/http";
 import {useHistory} from "react-router";
 import {useSubmit} from "../client/lib/useSubmit";
 import {InputField} from "../components/inputField";
-import fire from "../server/firebase";
+import firebase from "firebase";
 import "./login.css";
 import { LoadingView } from "../components/loadingView";
 import Alert from 'react-bootstrap/Alert'
@@ -21,7 +21,7 @@ export function Login() {
     } = useSubmit(
         async () => {
             loginLight();
-            await fire.auth().signInWithEmailAndPassword(email, password);
+            await firebase.auth().signInWithEmailAndPassword(email, password);
             await postJson("/api/login", {email: email, password});
         },
         () => history.push("/MainMenu")
@@ -117,6 +117,7 @@ export function Login() {
                             <InputField
                                 className="loginEmail"
                                 label={"Email"}
+                                placeholder={"name@email.com"}
                                 value={email}
                                 type="email"
                                 onValueChange={setEmail}
@@ -125,6 +126,7 @@ export function Login() {
                                 className="loginInputField loginPassword"
                                 label={"Password"}
                                 type="password"
+                                placeholder={"******"}
                                 value={password}
                                 onValueChange={setPassword}
                             />

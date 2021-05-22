@@ -1,6 +1,5 @@
 import firebase from "firebase";
 
-
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
@@ -9,6 +8,7 @@ const firebaseConfig = {
   messagingSenderId: process.env.MESSAGING_SENDER_ID,
   appId: process.env.APP_ID,
   measurementId: process.env.MEASUREMENT_ID,
+  databaseURL: "https://reportapp-36c50-default-rtdb.europe-west1.firebasedatabase.app",
 };
 
 try {
@@ -20,4 +20,5 @@ try {
 }
 
 const fire = firebase;
+
 export default fire;

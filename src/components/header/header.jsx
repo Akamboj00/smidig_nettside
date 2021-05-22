@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import "./header.css";
 import {HamburgerIcon, ReportIcon, LearnIcon, UserIcon, LanguageIcon} from "../svg/svg"
+import {useLocation} from "react-router";
 
 export function Menu() {
     const [size, setSize] = useState(() => {
@@ -37,11 +38,12 @@ export function Menu() {
 
     const burger = (
         <>
-            <HamburgerIcon
-                onClick={() => openHamburger()}
-                fill={"#f2f2f2"}
-                className={"header-hamburger"}>
-            </HamburgerIcon>
+            <div className={"hamburger-container"} onClick={() => openHamburger()}>
+                <HamburgerIcon
+                    fill={"#f2f2f2"}
+                    className={"header-hamburger"}>
+                </HamburgerIcon>
+            </div>
             <div className={"header-hamburger-menu"} id={"burgerMenu"} style={{display: "none"}}>
                 <Link to={"/report"}>
                     <div className={"header-item-hamburger"}>
@@ -59,7 +61,7 @@ export function Menu() {
                         <h5 className={"center"}>LEARN</h5>
                     </div>
                 </Link>
-                <Link to={"/profile"}>
+                <Link to={"/users"}>
                     <div className={"header-item-hamburger"}>
                         <UserIcon
                             className={"hamburger-svg"}
@@ -87,7 +89,7 @@ export function Menu() {
                         className={"header_svg"}
                     />
                     <div className="header_links_text_container">
-                        <h2 className="header_linkName center">REPORT</h2>
+                        <h6 className="header_linkName center">REPORT</h6>
                     </div>
                 </li>
             </Link>
@@ -97,17 +99,17 @@ export function Menu() {
                         className={"header_svg"}
                     />
                     <div className="header_links_text_container">
-                        <h2 className="header_linkName center">LEARN</h2>
+                        <h6 className="header_linkName center">LEARN</h6>
                     </div>
                 </li>
             </Link>
-            <Link to={"/profile"}>
+            <Link to={"/users"}>
                 <li className="header_links">
                     <UserIcon
                         className={"header_svg"}
                     />
                     <div className="header_links_text_container">
-                        <h2 className="header_linkName center">USERS</h2>
+                        <h6 className="header_linkName center">USERS</h6>
                     </div>
                 </li>
             </Link>
@@ -117,7 +119,7 @@ export function Menu() {
                         className={"header_svg"}
                     />
                     <div className="header_links_text_container">
-                        <h2 className="header_linkName center">LANGUAGE</h2>
+                        <h6 className="header_linkName center">LANGUAGE</h6>
                     </div>
                 </li>
             </Link>
@@ -135,13 +137,26 @@ export function Menu() {
 }
 
 export const Header = () => {
+    const location = useLocation();
+    const loginPage = (location.pathname.startsWith("/login"));
 
-    return (
+    const header = (
         <div className="header_container">
-            <h1 className="header_title">BR!GHT</h1>
-            <ul className="header_urlContainer">
-                <Menu/>
-            </ul>
+            <div className={"header"}>
+                <h1 className="header_title">BR!GHT</h1>
+                <ul className="header_urlContainer">
+                    <Menu/>
+                </ul>
+            </div>
         </div>
-    );
-};
+    )
+
+    if (!loginPage)
+    {
+        return header;
+    }
+    else
+    {
+        return <></>;
+    }
+}
