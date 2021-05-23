@@ -9,7 +9,7 @@ import {ProgressBar} from "react-bootstrap";
 
 export function User() {
     const [users, setUsers] = useState([]);
-
+ /*
     const authKey = Object.keys(window.sessionStorage)
         .filter(item => item.startsWith('firebase:authUser'))[0];
     const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
@@ -19,7 +19,7 @@ export function User() {
 
     dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
         setUsers(snapshot.val());
-    })
+    })*/
 
     //dbReference.child('reports').child(authUser.uid).on('value', snap => console.log(snap.val()));
     //const users = dbReference.child('users').child(authUser.uid);
