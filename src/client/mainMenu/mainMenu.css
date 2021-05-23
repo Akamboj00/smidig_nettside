@@ -1,9 +1,10 @@
 .main_container {
+  margin-top: 10px;
   position: absolute;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 150px;
   grid-row-gap: 50px;
   top: 200px;
   left: 40px;
@@ -12,6 +13,13 @@
 .box {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: #174a5b;
+  height: 16vh;
+  width: 70vh;
+  border-radius: 5px;
+}
+.box:hover {
+  width: 120%;
+  transition: 1s;
 }
 /* .box:hover {
   width: 110%;
@@ -20,57 +28,59 @@
 #box1 {
   background-color: #174a5b;
   grid-area: 1 / 1 / 2 / 2;
-  height: 16vh;
 }
 #box1:hover {
   background-color: #174a5b;
   grid-area: 1 / 1 / 2 / 2;
-  height: 16vh;
-  width: 130%;
-  transition: 1s;
 }
 
 #box2 {
   background-color: #174a5b;
-  height: 150px;
   grid-area: 2 / 1 / 3 / 2;
-  transition: 2s;
 }
 #box2:hover {
   background-color: #174a5b;
-  height: 150px;
   grid-area: 2 / 1 / 3 / 2;
-  transition: 2s;
-  width: 110%;
 }
 #box3 {
   background-color: #174a5b;
-  height: 150px;
   grid-area: 3 / 1 / 4 / 2;
-  transition: 2s;
 }
 #box3:hover {
   background-color: #174a5b;
-  height: 150px;
   grid-area: 3 / 1 / 4 / 2;
-  transition: 2s;
-  width: 110%;
 }
 .box_Titles {
   color: #c3dc93;
   position: relative;
   top: 50px;
   left: 30px;
-  font-size: 40px;
+  font-size: 5vh;
   font-weight: 400;
   text-decoration: none;
 }
 .mainMenuSvg {
   position: relative;
+  margin-top: 10px;
   left: 200px;
   bottom: 30px;
-  height: 100px;
-  width: 100px;
+  height: 10vh;
+  width: 10vh;
   color: white;
-  align-items: center;
+}
+
+.Image_Container {
+  grid-area: 1 / 2 / 4 / 3;
+  height: 61vh;
+  width: 100vh;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  image-rendering: auto;
+}
+.slide_image {
+  height: 61vh;
+  width: 100vh;
+
+  border-radius: 10px;
 }
