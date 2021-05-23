@@ -18,7 +18,9 @@ export function User() {
 
 
     dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
-        setUsers(snapshot.val());
+        if(snapshot.val() != null){
+            setUsers(snapshot.val());
+        }
     })
 
     //dbReference.child('reports').child(authUser.uid).on('value', snap => console.log(snap.val()));
