@@ -26,6 +26,7 @@ export function User() {
     //dbReference.child('reports').child(authUser.uid).on('value', snap => console.log(snap.val()));
     //const users = dbReference.child('users').child(authUser.uid);
 
+    // TODO -> Lage component av "user-card".
     return (
         <div id={"container_main"}>
             <div className={"container_inner"}>
