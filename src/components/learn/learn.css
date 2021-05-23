@@ -4,6 +4,7 @@
     height: 190px;
 }
 
+/*
 .learn_container {
     position: relative;
     height: 100%;
@@ -13,6 +14,7 @@
     margin-right: auto;
     background: #f2f2f2;
 }
+ */
 
 .learn_text {
     padding-top: 50px;
@@ -109,6 +111,18 @@
 @media (max-width:1400px){
     .learn_card_container {
         width: calc(100% - 100px);
+    }
+}
+
+@media (max-width: 1000px){
+    .learn_card_container {
+        width: calc(80%);
+    }
+
+    .learn_card {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

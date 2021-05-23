@@ -23,22 +23,27 @@ export function Menu() {
     function openHamburger() {
         const burgerMenu = document.getElementById("burgerMenu");
         const cheese = document.getElementById("cheese");
+        const burgerContainer = document.getElementById("hamburger-container");
         console.log(burgerMenu.style.display);
         if (burgerMenu.style.display === "none")
         {
             burgerMenu.style.display = "block";
             cheese.style.transform = "rotate(90deg)";
+            cheese.style.fill = "#ffffff";
+            burgerContainer.style.background = "#174a5b";
         }
         else
         {
             burgerMenu.style.display = "none";
             cheese.style.transform = "rotate(0deg)";
+            cheese.style.fill = "#434343";
+            burgerContainer.style.background = "#ffffff";
         }
     }
 
     const burger = (
         <>
-            <div className={"hamburger-container"} onClick={() => openHamburger()}>
+            <div id={"hamburger-container"} onClick={() => openHamburger()}>
                 <HamburgerIcon
                     fill={"#f2f2f2"}
                     className={"header-hamburger"}>

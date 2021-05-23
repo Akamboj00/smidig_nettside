@@ -21,7 +21,9 @@ export function Login() {
     } = useSubmit(
         async () => {
             loginLight();
-            await firebase.auth().signInWithEmailAndPassword(email, password);
+            await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
+                return firebase.auth().signInWithEmailAndPassword(email, password);
+            })
             await postJson("/api/login", {email: email, password});
         },
         () => history.push("/MainMenu")
@@ -99,7 +101,7 @@ export function Login() {
                             <h1 className={"center"}>LearnBright</h1>
                         </div>
                         <div className={"login_header_description"}>
-                        {submitting && <LoadingView></LoadingView>}
+                        {submitting && <LoadingView/>}
                             {error &&
                             <>
                             <Alert className="error" variant="danger">

@@ -72,18 +72,21 @@
   fill: #174a5b;
 }
 
-.hamburger-container{
+#hamburger-container{
   position: relative;
   height: 60px;
   width: 60px;
+  background: #ffffff;
   margin-top: 10px;
   margin-right: 10px;
-  background: #ffffff;
   border-radius: 3px;
-  background: orange;
   display: flex;
   align-items: center;
   justify-content: center
+}
+
+#hamburger-container:hover{
+  filter: brightness(95%);
 }
 
 .hamburger-svg{
@@ -92,7 +95,7 @@
   width: 40px;
   align-items: center;
   left: 20px;
-  bottom: 15px;
+  bottom: 17px;
   fill: #434343;
 }
 
@@ -102,11 +105,7 @@
   display: inline-block;
   width: 35px;
   height: 35px;
-  fill: #174a5b;
-}
-
-.header-hamburger:hover{
-  filter: brightness(80%);
+  fill: #434343;
 }
 
 .header-hamburger-menu {

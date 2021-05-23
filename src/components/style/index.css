@@ -13,7 +13,7 @@ html{
     height: 100vh;
 }
 
-#container_main_please{
+#container_main{
     position: absolute;
     height: calc(100vh - 80px);
     width: 100vw;
@@ -21,5 +21,15 @@ html{
     background: #eeeeee;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.container_inner{
+    position: relative;
+    height: 100%;
+    width: 100vw;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #f2f2f2;
 }
 

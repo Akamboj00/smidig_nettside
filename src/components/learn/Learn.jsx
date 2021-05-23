@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import "./learn.css";
 import {ProgressBar} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import {Header} from "../header/header";
-import {Container} from "../container";
 
 require("url:../img/test.png")
 require("url:../img/sunbell_image.png")
@@ -60,8 +58,8 @@ export const Learn = () => {
 
     return (
         <>
-            <div id={"container_main_please"}>
-                <div className={"learn_container"}>
+            <div id={"container_main"}>
+                <div className={"container_inner"}>
                     <div className="learn_heading_container">
                         <h3 className="learn_text">Total learning progress</h3>
                         <ProgressBar className="learn_total_progress">
