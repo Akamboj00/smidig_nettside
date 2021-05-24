@@ -52,15 +52,19 @@
 }
 
 .videoContainer{
+    display: grid;
+    justify-content: center;
     position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:    repeat(3, 1fr);
 }
 .player {
-    display: block;
+    grid-column: 2;
+    grid-row: auto;
     font-size: 5vh;
     top: 22vh;
-    left:35%;
-    /*width: 100%;*/
-    max-width: 750px;
+    width: 750px;
     position:relative;
     overflow: hidden;
     border-radius: 15px;  
@@ -68,10 +72,10 @@
 
 .leftArrow{
     color: #174A5B;
-    position: absolute;
+    position: relative;
     cursor: pointer;
-    bottom: 5%;
-    left: 5%;  
+    grid-column: 1;
+    grid-row:2;
 }
 
 .leftArrow:hover{
