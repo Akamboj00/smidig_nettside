@@ -1,0 +1,78 @@
+
+.learn_text {
+    padding-top: 50px;
+    position: relative;
+}
+
+.learn_card_container_fix{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: #f2f2f2;
+    padding-bottom: 40px;
+}
+
+.learn_card_container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    height: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.learn_card {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    border-radius: 0;
+    background-color: white;
+    cursor: pointer;
+    padding: 25px;
+    position: relative;
+    transition: 0.1s;
+    border: 2px solid #eeeeee;
+}
+
+.learn_card:hover {
+    transform: scale(1.04);
+    z-index: 1;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #174a5b;
+    border-radius: 6px;
+}
+
+.learn_card_text {
+    position: relative;
+    text-align: center;
+    margin-top: 35px;
+    color: black;
+}
+
+.learn_single_progress {
+    height: 25px !important;
+}
+
+.card_info {
+    position: relative;
+    width: 300px;
+}
+@media (max-width:1400px){
+    .learn_card_container {
+        width: calc(100% - 100px);
+    }
+}
+
+@media (max-width: 1000px){
+    .learn_card_container {
+        width: calc(80%);
+    }
+
+    .learn_card {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
