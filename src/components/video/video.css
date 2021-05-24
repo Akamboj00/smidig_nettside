@@ -1,0 +1,83 @@
+.video-js{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.video-js .vjs-big-play-button {
+    border: none !important;
+    border-radius: 10px;  
+ }
+ .vjs-control-bar{
+     border-bottom-left-radius: 10px;
+     border-bottom-right-radius:10px ;
+     background: #174A5B;
+ }
+
+ .vjs-play-progress {
+    background: #C3DC93!important;
+} 
+
+.vjs-remaining-time-display{
+    display: none;
+}
+
+.video-js .vjs-volume-level{
+    background: #C3DC93;
+}
+.headline h1 {
+    color: #C3DC93;
+    padding: 5vh;
+    font-size: 40px;
+    position: relative;
+    left: 50px;
+    top: 0px;
+  }
+.headline{
+    background-color: #174A5B;
+    height: 80px;
+    width: 100%;
+    position: relative;  
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.headline h1{
+    position: relative;
+    padding: 0;
+    margin-top: auto;
+    top:20px; 
+}
+
+.videoContainer{
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:    repeat(3, 1fr);
+}
+.player {
+    grid-column: 2;
+    grid-row: auto;
+    font-size: 5vh;
+    top: 22vh;
+    width: 750px;
+    position:relative;
+    overflow: hidden;
+    border-radius: 15px;  
+}
+
+.leftArrow{
+    color: #174A5B;
+    position: relative;
+    cursor: pointer;
+    grid-column: 1;
+    grid-row:2;
+}
+
+.leftArrow:hover{
+    color:#C3DC93;
+}
