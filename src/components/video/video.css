@@ -1,0 +1,79 @@
+.video-js{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.video-js .vjs-big-play-button {
+    border: none !important;
+    border-radius: 10px;  
+ }
+ .vjs-control-bar{
+     border-bottom-left-radius: 10px;
+     border-bottom-right-radius:10px ;
+     background: #174A5B;
+ }
+
+ .vjs-play-progress {
+    background: #C3DC93!important;
+} 
+
+.vjs-remaining-time-display{
+    display: none;
+}
+
+.video-js .vjs-volume-level{
+    background: #C3DC93;
+}
+.headline h1 {
+    color: #C3DC93;
+    padding: 5vh;
+    font-size: 40px;
+    position: relative;
+    left: 50px;
+    top: 0px;
+  }
+.headline{
+    background-color: #174A5B;
+    height: 80px;
+    width: 100%;
+    position: relative;  
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.headline h1{
+    position: relative;
+    padding: 0;
+    margin-top: auto;
+    top:20px; 
+}
+
+.videoContainer{
+    position: absolute;
+}
+.player {
+    display: block;
+    font-size: 5vh;
+    top: 22vh;
+    left:35%;
+    /*width: 100%;*/
+    max-width: 750px;
+    position:relative;
+    overflow: hidden;
+    border-radius: 15px;  
+}
+
+.leftArrow{
+    color: #174A5B;
+    position: absolute;
+    cursor: pointer;
+    bottom: 5%;
+    left: 5%;  
+}
+
+.leftArrow:hover{
+    color:#C3DC93;
+}

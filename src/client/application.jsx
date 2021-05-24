@@ -8,6 +8,7 @@ import {Login} from "../sessions/login";
 import {BrowserRouter} from "react-router-dom";
 import {Product} from "../components/product/product";
 import {Report} from "./report";
+import {Video} from "../components/video/video";
 // Main Stylesheet -> Shared values between all pages
 import "../components/style/index.css"
 
@@ -37,6 +38,9 @@ export function Application() {
                     </Route>
                     <Route path={"/product"}>
                         <Product/>
+                    </Route>
+                    <Route path={"/video"}>
+                        <Video/>
                     </Route>
                     <Route>page not found</Route>
                 </Switch>
