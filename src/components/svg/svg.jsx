@@ -41,3 +41,11 @@ export function LanguageIcon(props) {
         </svg>
     );
 }
+
+export function ArrowIcon(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 436.63 231.76" fill={`${props.fill}`} className={`${props.className}`} onClick={props.onClick}>
+            <path id="arrow_up" className="cls-1" d="M461.93,358.16h0a21.83,21.83,0,0,0,0-30.85L281.52,146.9a43.64,43.64,0,0,0-61.71,0L38.08,328.63a21.81,21.81,0,0,0-.23,30.63h0a21.82,21.82,0,0,0,31.08.23l166.3-166.31a21.82,21.82,0,0,1,30.86,0l165,165A21.82,21.82,0,0,0,461.93,358.16Z" transform="translate(-31.69 -134.12)"/>
+        </svg>
+    );
+}

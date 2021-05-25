@@ -19,17 +19,23 @@ html{
     width: 100vw;
     margin-top: 80px;
     background: #eeeeee;
-    overflow-y: auto;
+    overflow: scroll;
+    scrollbar-face-color: orange;
+    scrollbar-track-color: pink;
     overflow-x: hidden;
 }
 
 .container_inner{
     position: relative;
-    height: 100%;
+    height: auto;
     width: 100vw;
-    max-width: 1400px;
+    max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
-    background: #f2f2f2;
+}
+
+#container_main::-webkit-scrollbar {
+    scrollbar-face-color: orange;
+    scrollbar-track-color: pink;
 }
 

@@ -1,18 +1,143 @@
 .users_card_container{
-    position: absolute;
+    position: relative;
     width: 100%;
-    margin-top: 125px;
+}
+
+.wrap_container{
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.wrap_user_header {
+    background-image: url("../img/blur.jpg");
+    background-size: cover;
+    background-position: center;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes brightU {
+    0%   {filter: brightness(100%)}
+    25%  {filter: brightness(96%)}
+    50%  {filter: brightness(92%)}
+    75%  {filter: brightness(96%)}
+    100% {filter: brightness(100%)}
+}
+
+.wrap_user_list{
     background: #f2f2f2;
 }
+
+.user_header_container{
+    position: relative;
+    height: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user_header_content_container{
+    position: relative;
+    transition: 0.4s;
+}
+
+.user_arrow_btn{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: -30px;
+}
+
+.user_header_arrow_container{
+    position: absolute;
+    height: 56px;
+    bottom: 0;
+    width: 100%;
+    transform: rotate(180deg);
+}
+
+.user_header_arrow{
+    transition: 0.2s;
+    width: 50px;
+    height: 50px;
+    fill: rgba(195, 220, 147, 1);
+    filter: brightness(90%);
+}
+
+.admin_info_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap_user_header:hover .user_header_arrow{
+    filter: brightness(80%);
+}
+
+.user_arrow_btn:hover .user_header_arrow{
+    filter: brightness(50%);
+}
+
+.admin-info-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
+    align-items: center;
+}
+
+.admin_id_user{
+    padding: 10px;
+    width: fit-content;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    color: #434343;
+    animation-name: adminInfoFade;
+    animation-duration: 0.5s;
+    filter: opacity(70%);
+}
+
+.admin_email_user{
+    padding: 10px;
+    width: fit-content;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #434343;
+    animation-name: adminInfoFade;
+    animation-duration: 0.5s;
+    filter: opacity(70%);
+}
+
+@keyframes adminInfoFade {
+    0%   {filter: opacity(0%)}
+    25%  {filter: opacity(0%)}
+    50%  {filter: opacity(50%)}
+    100% {filter: opacity(70%)}
+}
+
 
 .users_grid{
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    height: auto;
+    height: fit-content;
     width: 80%;
+    gap: 5px;
     margin-left: auto;
     margin-right: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.1);
 }
 
 .user_card{
@@ -122,18 +247,6 @@
     font-size: 12px;
 }
 
-.user_card_create_new{
-    display: flex;
-    height: 200px;
-    width: 100%;
-    border-radius: 0;
-    background: #174a5b;
-    cursor: pointer;
-    position: relative;
-    transition: 0.1s;
-    border: 2px solid #eeeeee;
-}
-
 .user_card_create_new_description{
     font-weight: 700;
     color: #ffffff;
@@ -158,15 +271,7 @@
     border-radius: 6px;
 }
 
-.user_card_create_new:hover{
-    transform: scale(1.08);
-    z-index: 1;
-    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
-    border: 2px solid #174a5b;
-    border-radius: 6px;
-}
-
-.user_card_create_new:hover ~ .user_card{
+.create_new_user_initial:hover ~ .user_card{
     filter: opacity(20%);
 }
 
@@ -176,4 +281,38 @@
     bottom: 10px;
     padding: 0;
     margin: 0;
+}
+
+#create_new_user{
+    width: 100%;
+}
+
+.create_new_user_initial{
+    display: flex;
+    height: 200px;
+    border-radius: 0;
+    background: #174a5b;
+    cursor: pointer;
+    position: relative;
+    transition: 0.1s;
+    border: 2px solid #eeeeee;
+}
+
+.create_new_user_initial:hover{
+    transform: scale(1.08);
+    z-index: 1;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #174a5b;
+    border-radius: 6px;
+}
+
+
+.create_new_user_toggle{
+    transition: 0.5s;
+    width: 50%;
+    height: 800px;
+    min-height: 500px;
+    border: 2px solid #eeeeee;
+    border-radius: 6px;
+    background: orange;
 }

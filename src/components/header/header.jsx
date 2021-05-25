@@ -84,7 +84,7 @@ export function Menu() {
                 </Link>
             </div>
         </>
-    )
+    );
 
     const normal = (
         <>
@@ -129,7 +129,7 @@ export function Menu() {
                 </li>
             </Link>
         </>
-    )
+    );
 
     if (size)
     {
@@ -154,7 +154,7 @@ export const Header = () => {
                 </ul>
             </div>
         </div>
-    )
+    );
 
     if (!loginPage)
     {
