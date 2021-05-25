@@ -1,6 +1,17 @@
 import React from "react";
 import "./mainMenu.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Carousel } from "react-bootstrap";
 import { BrowserRouter, Link } from "react-router-dom";
+import image1 from "url:../../components/img/mainMenu/bright1.jpeg";
+import image2 from "url:../../components/img/mainMenu/bright2.webp";
+import image3 from "url:../../components/img/mainMenu/bright3.jpeg";
+import image4 from "url:../../components/img/mainMenu/bright4.jpeg";
+import image5 from "url:../../components/img/mainMenu/bright5.jpeg";
+import image6 from "url:../../components/img/mainMenu/bright6.jpeg";
+import image7 from "url:../../components/img/mainMenu/bright7.jpeg";
+import image8 from "url:../../components/img/mainMenu/bright8.jpeg";
+import image9 from "url:../../components/img/mainMenu/bright9.jpeg";
 
 export function MainMenu() {
   return (
@@ -54,6 +65,38 @@ export function MainMenu() {
           </svg>
         </div>
       </Link>
+
+      <div className="Image_Container">
+        <Carousel>
+          <Carousel.Item>
+            <img className="slide_image" src={image1} alt="First slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image2} alt="Second slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image3} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image4} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image5} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image6} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image7} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image8} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="slide_image" src={image9} alt="Third slide" />
+          </Carousel.Item>
+        </Carousel>
+      </div>
     </div>
   );
 }
