@@ -3,13 +3,6 @@
     width: 100%;
 }
 
-.wrap_container{
-    width: 100%;
-    height: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
 .wrap_user_header {
     background-image: url("../img/blur.jpg");
     background-size: cover;
@@ -27,7 +20,7 @@
 }
 
 .wrap_user_list{
-    background: #f2f2f2;
+    background: #ffffff;
 }
 
 .user_header_container{
@@ -36,6 +29,8 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .user_header_content_container{
@@ -100,7 +95,7 @@
     color: #434343;
     animation-name: adminInfoFade;
     animation-duration: 0.5s;
-    filter: opacity(70%);
+    filter: opacity(80%);
 }
 
 .admin_email_user{
@@ -114,14 +109,14 @@
     color: #434343;
     animation-name: adminInfoFade;
     animation-duration: 0.5s;
-    filter: opacity(70%);
+    filter: opacity(80%);
 }
 
 @keyframes adminInfoFade {
     0%   {filter: opacity(0%)}
     25%  {filter: opacity(0%)}
     50%  {filter: opacity(50%)}
-    100% {filter: opacity(70%)}
+    100% {filter: opacity(80%)}
 }
 
 
@@ -131,13 +126,11 @@
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     height: fit-content;
     width: 80%;
-    gap: 5px;
     margin-left: auto;
     margin-right: auto;
     background: #ffffff;
     padding: 20px;
     border-radius: 3px;
-    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.1);
 }
 
 .user_card{

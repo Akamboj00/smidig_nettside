@@ -6,7 +6,7 @@ import {useSubmit} from "../client/lib/useSubmit";
 import {InputField} from "../components/inputField";
 import firebase from "firebase";
 import "./login.css";
-import { LoadingView } from "../components/loadingView";
+import {LoadingView} from "../components/loadingView";
 import Alert from 'react-bootstrap/Alert'
 
 export function Login() {
@@ -31,13 +31,13 @@ export function Login() {
 
     const [trigger, setTrigger] = useState(false);
 
-    async function moveLight(event){
+    async function moveLight(event) {
         await callOnce();
         let flashlight = document.getElementById("flashlight");
         flashlight.style.clipPath = `circle(250px at ${event.offsetX + 15}px ${event.offsetY + 15}px)`;
     }
 
-    function hoverLight(event){
+    function hoverLight(event) {
         event.preventDefault();
         setTrigger(false);
         let flashlight = document.getElementById("flashlight");
@@ -45,21 +45,21 @@ export function Login() {
         flashlight.style.clipPath = `circle(400px)`;
     }
 
-    function loginLight(){
+    function loginLight() {
         let flashlight = document.getElementById("flashlight");
         flashlight.style.transition = "0.1s";
         flashlight.style.clipPath = `circle(300px)`;
         setTimeout(loginLightTransition1, 100);
     }
 
-    function loginLightTransition1(){
+    function loginLightTransition1() {
         let flashlight = document.getElementById("flashlight");
         flashlight.style.transition = "0.1s";
         flashlight.style.clipPath = `circle(500px)`;
         setTimeout(loginLightTransition2, 100);
     }
 
-    function loginLightTransition2(){
+    function loginLightTransition2() {
         let flashlight = document.getElementById("flashlight");
         flashlight.style.transition = "0.3s";
         flashlight.style.clipPath = `circle(2000px)`;
@@ -75,13 +75,13 @@ export function Login() {
         }
     }
 
-    function countDown(){
+    function countDown() {
         let flashlight = document.getElementById("flashlight");
         flashlight.style.transition = "0.2s";
         setTimeout(countDown2, 200);
     }
 
-    function countDown2(){
+    function countDown2() {
         let flashlight = document.getElementById("flashlight");
         flashlight.style.transition = "0.1s";
     }
@@ -96,49 +96,51 @@ export function Login() {
                 </div>
                 <div className="loginContainer center">
                     <div className={"light_extra_trigger"} onMouseMove={() => hoverLight(event)}>
-                    <div className={"login_header_container"}>
-                        <div className={"login_header_learnBright"}>
-                            <h1 className={"center"}>LearnBright</h1>
-                        </div>
-                        <div className={"login_header_description"}>
-                        {submitting && <LoadingView/>}
-                            {error &&
-                            <>
-                            <Alert className="error" variant="danger">
-                                {error.toString()}
-                            </Alert>
-                            </>
-                            }
-                            {!error && !submitting && 
-                            <h5 className={"center"}>Login to continue</h5>
-                            }
-                        </div>
-                    </div>
-                    <div className={"loginFormContainer"}>
-                        <form className={"loginForm"} onSubmit={handleLogin}>
-                            <InputField
-                                className="loginEmail"
-                                label={"Email"}
-                                placeholder={"name@email.com"}
-                                value={email}
-                                type="email"
-                                onValueChange={setEmail}
-                            />
-                            <InputField
-                                className="loginInputField loginPassword"
-                                label={"Password"}
-                                type="password"
-                                placeholder={"******"}
-                                value={password}
-                                onValueChange={setPassword}
-                            />
-                            <div className={"submitBtn_container"}>
-                                <button className="submitBtn" disabled={submitting}>
-                                    <h5 className={"center"}> Log in</h5>
-                                </button>
+                        <div className={"login_header_container"}>
+                            <div className={"login_header_learnBright"}>
+                                <h1 className={"center"}>LearnBright</h1>
                             </div>
-                        </form>
-                    </div>
+                            <div className={"login_header_description"}>
+                                <div className={"loading_fix_login"}>
+                                    {submitting && <div className={"center sinnerFix"}><LoadingView/></div>}
+                                        {error &&
+                                        <>
+                                            <Alert className="error" variant="danger">
+                                                {error.toString()}
+                                            </Alert>
+                                        </>
+                                        }
+                                        {!error && !submitting &&
+                                        <h5 className={"center"}>Login to continue</h5>
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                        <div className={"loginFormContainer"}>
+                            <form className={"loginForm"} onSubmit={handleLogin}>
+                                <InputField
+                                    className="loginEmail"
+                                    label={"Email"}
+                                    placeholder={"name@email.com"}
+                                    value={email}
+                                    type="email"
+                                    onValueChange={setEmail}
+                                />
+                                <InputField
+                                    className="loginInputField loginPassword"
+                                    label={"Password"}
+                                    type="password"
+                                    placeholder={"******"}
+                                    value={password}
+                                    onValueChange={setPassword}
+                                />
+                                <div className={"submitBtn_container"}>
+                                    <button className="submitBtn" disabled={submitting}>
+                                        <h5 className={"center"}> Log in</h5>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

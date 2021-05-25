@@ -118,8 +118,8 @@ export function UserHeader(authKey) {
             <div className={"user_header_content_container"} style={{height: "150px"}}>
                 <div className={"admin_info_container"}>
                     <div className={"center admin-info-inner"}>
-                        <h4 className={"admin_email_user"}>Email: {authUser.email}</h4>
-                        <h4 className={"admin_id_user"}>Admin ID: {authUser.uid}</h4>
+                        <h5 className={"admin_email_user"}>Email: {authUser.email}</h5>
+                        <h5 className={"admin_id_user"}>Admin ID: {authUser.uid}</h5>
                     </div>
                 </div>
 
@@ -163,8 +163,7 @@ export function UserHeader(authKey) {
                      style={
                          (!state) ? ({backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`})
                              : ({
-                                 backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 0.6)),url(${require("url:../img/blur.jpg")})`,
-                                 animationName: "brightU"
+                                 backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`
                              })}>
                     <div className={"container_inner"}>
                         <div className={"user_header_container"}>
@@ -211,7 +210,7 @@ export function User() {
     return (
         <div id={"container_main"}>
             {UserHeader(authKey)}
-            <div className={"wrap_container wrap_user_list"}>
+            <div className={"wrap_container wrap_content"}>
                 <div className={"container_inner"}>
                     <div className={"users_card_container"}>
                         <div className={"users_grid"}>

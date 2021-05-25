@@ -18,7 +18,7 @@ html{
     height: calc(100vh - 80px);
     width: 100vw;
     margin-top: 80px;
-    background: #eeeeee;
+    background: #f2f2f2;
     overflow: scroll;
     scrollbar-face-color: orange;
     scrollbar-track-color: pink;
@@ -37,5 +37,15 @@ html{
 #container_main::-webkit-scrollbar {
     scrollbar-face-color: orange;
     scrollbar-track-color: pink;
+}
+
+.wrap_header{
+    background: #f2f2f2;
+}
+
+.wrap_content{
+    background: #ffffff;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
