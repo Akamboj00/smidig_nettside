@@ -146,14 +146,16 @@ export const Header = () => {
     const loginPage = (location.pathname.startsWith("/login"));
 
     const header = (
-        <div className="header_container">
-            <div className={"header"}>
-                <h1 className="header_title">BR!GHT</h1>
-                <ul className="header_urlContainer">
-                    <Menu/>
-                </ul>
+            <div className="header_container">
+                <div className={"header"}>
+                    <Link to={"/mainmenu"}>
+                        <h1 className="header_title">BR!GHT</h1>
+                    </Link>
+                    <ul className="header_urlContainer">
+                        <Menu/>
+                    </ul>
+                </div>
             </div>
-        </div>
     );
 
     if (!loginPage)

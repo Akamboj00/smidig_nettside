@@ -26,7 +26,7 @@ export function Login() {
             })
             await postJson("/api/login", {email: email, password});
         },
-        () => history.push("/MainMenu")
+        () => history.push("/users")
     );
 
     const [trigger, setTrigger] = useState(false);
