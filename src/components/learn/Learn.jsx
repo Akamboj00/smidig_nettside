@@ -1,7 +1,11 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import "./learn.css";
-import {ProgressBar} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { ProgressBar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import {useHistory} from "react-router";
+import { LoadingView } from '../loadingView'
+import fire from "../../server/firebase";
+
 
 require("url:../img/test.png");
 require("url:../img/sunbell_image.png");
@@ -12,48 +16,100 @@ require("url:../img/home_image.png");
 require("url:../img/home_image.png");
 require("url:../img/reporticon.png");
 export const Learn = () => {
+    const history = useHistory();
     const [clicked, setClicked] = useState();
-
+    const [users, setUsers] = useState(null);
+    const [total, setTotal] = useState(null);
+    const [totalfin, setTotalFin] = useState(null)
+    const [authKey, setAuthKey] = useState(() => {
+      let key = Object.keys(window.sessionStorage)
+          .filter(item => item.startsWith('firebase:authUser'))[0];
+      if(key === undefined) return history.push("/login");
+      return key;
+  });
+      var totalAmount = 0;
+      var totalfinished = 0;
+  
     //bytter dette med request til firebase / eller backend
-    const total_progress = Math.floor((44 / 87) * 100);
+    const total_progress = Math.floor((totalAmount / totalfinished) * 100);
     const testData = [
-        {
-            product_id: 0,
-            product_name: "Learn Sunbell",
-            product_img: "url:../img/sunbell_image.png",
-            product_progress: Math.floor((8 / 14) * 100),
-        },
-        {
-            product_id: 1,
-            product_name: "Learn MoveSmart",
-            product_img: "url:../img/movesmart_image.png",
-            product_progress: Math.floor((6 / 9) * 100),
-        },
-        {
-            product_id: 2,
-            product_name: "Learn Start+",
-            product_img: "url:../img/startpluss_image.png",
-            product_progress: Math.floor((10 / 19) * 100),
-        },
-        {
-            product_id: 3,
-            product_name: "Learn SunTurtle",
-            product_img: "url:../img/sunturtle_image.png",
-            product_progress: Math.floor((2 / 20) * 100),
-        },
-        {
-            product_id: 4,
-            product_name: "Learn Home",
-            product_img: "url:../img/home_image.png",
-            product_progress: Math.floor((8 / 11) * 100),
-        },
-        {
-            product_id: 5,
-            product_name: "Learn Report",
-            product_img: "url:../img/test.png",
-            product_progress: Math.floor((10 / 14) * 100),
-        },
+      {
+        product_id: 0,
+        product_name: "Learn Sunbell",
+        product_img: "url:../img/sunbell_image.png",
+        product_progress:[],
+      },
+      {
+        product_id: 1,
+        product_name: "Learn MoveSmart",
+        product_img: "url:../img/movesmart_image.png",
+        product_progress: [],
+      },
+      {
+        product_id: 2,
+        product_name: "Learn Start+",
+        product_img: "url:../img/startpluss_image.png",
+        product_progress: [],
+      },
+      {
+        product_id: 3,
+        product_name: "Learn SunTurtle",
+        product_img: "url:../img/sunturtle_image.png",
+        product_progress: [],
+      },
+      {
+        product_id: 4,
+        product_name: "Learn Home",
+        product_img: "url:../img/home_image.png",
+        product_progress: [],
+      },
+      {
+        product_id: 5,
+        product_name: "Learn Report",
+        product_img: "url:../img/test.png",
+        product_progress: [],
+      },
     ];
+  
+  
+    const getData = () => {
+      if(authKey){
+      const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
+      const dbReference = fire.database().ref();
+  
+      dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
+          if (snapshot.val() != null)
+          {
+            setUsers(snapshot.val());
+          }
+      });
+      }
+    }
+    const calculatePercentages = () => {
+      for (let index = 0; index < users.length; index++) {
+        for (let i = 0; i < users[index].progress.length; i++) {
+          for (let l = 0; l < users[index].progress[i].length; l++) {
+            totalAmount++
+            if(users[index].progress[i][l] === "0"){
+              console.log(l+i+index)
+              totalfinished++
+            }
+            if(l === users[index].progress[i].length){
+            }
+          }
+        }
+      }
+    }
+  
+  
+    useEffect(() => {
+      getData()
+    }, []);
+  
+    if (users === null){
+        return LoadingView();
+    }
+    calculatePercentages()
 
     return (
         <>
