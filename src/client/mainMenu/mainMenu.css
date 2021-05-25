@@ -54,10 +54,11 @@
 
 
 .card_img_container{
+  position: relative !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width:55%;
-  height: auto;
+  width:100%;
+  height: 160px;
 }
 
 .main_card_container{
@@ -71,4 +72,11 @@
   box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
   border: 2px solid #174a5b !important;
   border-radius: 6px !important;
+}
+.main_card_icon{
+  fill: #174a5b;
+  height: 100px;
+}
+.card_text{
+  margin-top: -39px;
 }

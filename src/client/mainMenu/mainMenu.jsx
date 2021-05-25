@@ -30,9 +30,11 @@ export function MainMenu() {
                 <Col>
                 <Card className="main_card">
                   <div className="card_img_container">
-                <Card.Img className="card_img" variant="top" src={require("url:../../components/img/reporticon.png/")} />
+                  <ReportIcon
+                            className={"main_card_icon center"}
+                        />
                 </div>
-                  <Card.Body>
+                  <Card.Body  className="card_text">
                     <Card.Title>Report</Card.Title>
                     <Card.Text>
                     Component documentation
@@ -43,9 +45,11 @@ export function MainMenu() {
                 <Col>
                 <Card className="main_card">
                 <div className="card_img_container">
-                <Card.Img className="card_img" variant="top" src={require("url:../../components/img/learnicon.png/")} />
+                <LearnIcon
+                            className={"main_card_icon center"}
+                        />
                 </div>
-                  <Card.Body>
+                  <Card.Body className="card_text">
                     <Card.Title>Learn</Card.Title>
                     <Card.Text>
                     Component documentation
@@ -56,9 +60,11 @@ export function MainMenu() {
                 <Col>
                 <Card className="main_card">
                 <div className="card_img_container">
-                <Card.Img className="card_img" variant="top" src={require("url:../../components/img/profileicon.png/")} />
+                <UserIcon
+                            className={"main_card_icon center"}
+                        />
                 </div>
-                  <Card.Body>
+                  <Card.Body className="card_text">
                     <Card.Title>Users</Card.Title>
                     <Card.Text>
                     Component documentation
@@ -69,9 +75,11 @@ export function MainMenu() {
                 <Col>
                 <Card className="main_card">
                 <div className="card_img_container">
-                <Card.Img className="card_img" variant="top" src={require("url:../../components/img/profileicon.png/")} />
+                <LanguageIcon
+                            className={"main_card_icon center"}
+                        />
                 </div>
-                  <Card.Body>
+                  <Card.Body className="card_text">
                     <Card.Title>Language</Card.Title>
                     <Card.Text>
                     Component documentation
