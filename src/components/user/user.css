@@ -145,6 +145,10 @@
     border: 2px solid #eeeeee;
 }
 
+.card_selected{
+    background: orange;
+}
+
 .user_card_info_container{
     position:absolute;
     width: 60%;

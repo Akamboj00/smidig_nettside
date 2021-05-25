@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import "./learn.css";
-import { ProgressBar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {ProgressBar} from "react-bootstrap";
+import {Link} from "react-router-dom";
 import {useHistory} from "react-router";
-import { LoadingView } from '../loadingView'
+import {LoadingView} from '../loadingView'
 import fire from "../../server/firebase";
+import {forEach} from "react-bootstrap/ElementChildren";
 
 
 require("url:../img/test.png");
@@ -19,97 +20,145 @@ export const Learn = () => {
     const history = useHistory();
     const [clicked, setClicked] = useState();
     const [users, setUsers] = useState(null);
+    const [_progress, setProgress] = useState(null);
     const [total, setTotal] = useState(null);
-    const [totalfin, setTotalFin] = useState(null)
+    const [totalFinished, setTotalFinished] = useState(null);
+    const [totalPercent ,setTotalPercent] = useState(null);
     const [authKey, setAuthKey] = useState(() => {
-      let key = Object.keys(window.sessionStorage)
-          .filter(item => item.startsWith('firebase:authUser'))[0];
-      if(key === undefined) return history.push("/login");
-      return key;
-  });
-      var totalAmount = 0;
-      var totalfinished = 0;
-  
+        let key = Object.keys(window.sessionStorage)
+            .filter(item => item.startsWith('firebase:authUser'))[0];
+        if (key === undefined) return history.push("/login");
+        return key;
+    });
+
+
     //bytter dette med request til firebase / eller backend
-    const total_progress = Math.floor((totalAmount / totalfinished) * 100);
+    const total_progress = Math.floor(totalPercent);
     const testData = [
-      {
-        product_id: 0,
-        product_name: "Learn Sunbell",
-        product_img: "url:../img/sunbell_image.png",
-        product_progress:[],
-      },
-      {
-        product_id: 1,
-        product_name: "Learn MoveSmart",
-        product_img: "url:../img/movesmart_image.png",
-        product_progress: [],
-      },
-      {
-        product_id: 2,
-        product_name: "Learn Start+",
-        product_img: "url:../img/startpluss_image.png",
-        product_progress: [],
-      },
-      {
-        product_id: 3,
-        product_name: "Learn SunTurtle",
-        product_img: "url:../img/sunturtle_image.png",
-        product_progress: [],
-      },
-      {
-        product_id: 4,
-        product_name: "Learn Home",
-        product_img: "url:../img/home_image.png",
-        product_progress: [],
-      },
-      {
-        product_id: 5,
-        product_name: "Learn Report",
-        product_img: "url:../img/test.png",
-        product_progress: [],
-      },
+        {
+            product_id: 0,
+            product_name: "Learn Sunbell",
+            product_img: "url:../img/sunbell_image.png",
+            product_progress: [],
+        },
+        {
+            product_id: 1,
+            product_name: "Learn MoveSmart",
+            product_img: "url:../img/movesmart_image.png",
+            product_progress: [],
+        },
+        {
+            product_id: 2,
+            product_name: "Learn Start+",
+            product_img: "url:../img/startpluss_image.png",
+            product_progress: [],
+        },
+        {
+            product_id: 3,
+            product_name: "Learn SunTurtle",
+            product_img: "url:../img/sunturtle_image.png",
+            product_progress: [],
+        },
+        {
+            product_id: 4,
+            product_name: "Learn Home",
+            product_img: "url:../img/home_image.png",
+            product_progress: [],
+        },
+        {
+            product_id: 5,
+            product_name: "Learn Report",
+            product_img: "url:../img/test.png",
+            product_progress: [],
+        },
     ];
-  
-  
+
+
     const getData = () => {
-      if(authKey){
-      const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
-      const dbReference = fire.database().ref();
-  
-      dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
-          if (snapshot.val() != null)
-          {
-            setUsers(snapshot.val());
-          }
-      });
-      }
-    }
-    const calculatePercentages = () => {
-      for (let index = 0; index < users.length; index++) {
-        for (let i = 0; i < users[index].progress.length; i++) {
-          for (let l = 0; l < users[index].progress[i].length; l++) {
-            totalAmount++
-            if(users[index].progress[i][l] === "0"){
-              console.log(l+i+index)
-              totalfinished++
-            }
-            if(l === users[index].progress[i].length){
-            }
-          }
+        if (authKey)
+        {
+            const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
+            const dbReference = fire.database().ref();
+
+            dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
+                if (snapshot.val() != null)
+                {
+                    setUsers(snapshot.val());
+                }
+            });
+
+            // TODO -> HOW TO SET ITEM
+            //dbReference.child('users').child(authUser.uid).child("3").child("1").set(0);
         }
-      }
     }
-  
-  
+
     useEffect(() => {
-      getData()
+        getData()
     }, []);
-  
-    if (users === null){
-        return LoadingView();
+
+    if (users === null)
+    {
+        return (
+            <>
+                <LoadingView/>
+            </>
+        );
     }
-    calculatePercentages()
+
+    if(_progress === null){
+        const key = JSON.parse(sessionStorage.getItem("user"));
+        setProgress(users[key].progress);
+    }
+
+    if (_progress === null)
+    {
+        return (
+            <>
+                <LoadingView/>
+            </>
+        );
+    }
+
+    let progressCountIndexBigMath = 0;
+
+    for (let i = 0; i < _progress.length; i++)
+    {
+        progressCountIndexBigMath += _progress[i].length;
+    }
+
+    //setTotal
+    //setTotalFinished
+    let calcTotal = 0;
+    let calcTotalFinished = 0;
+    if (total !== progressCountIndexBigMath)
+    {
+        for (let index = 0; index < _progress.length; index++)
+        {
+            for (let count = 0; count < _progress[index].length; count++)
+            {
+                calcTotal++;
+                if (_progress[index][count] === 1)
+                {
+                    calcTotalFinished++
+                }
+                if (calcTotal === progressCountIndexBigMath)
+                {
+                    setTotal(calcTotal);
+                    setTotalFinished(calcTotalFinished);
+                    setTotalPercent((calcTotalFinished / calcTotal) * 100);
+                }
+            }
+        }
+    }
+
+    if (total === null || totalFinished === null)
+    {
+        return (
+            <>
+                <LoadingView/>
+            </>
+        );
+    }
 
     return (
         <>

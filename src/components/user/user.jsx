@@ -4,14 +4,15 @@ import "./user.css";
 import {useHistory} from "react-router";
 import {LoadingView} from "../loadingView";
 import {ArrowIcon} from "../svg/svg"
+import {forEach} from "react-bootstrap/ElementChildren";
 
 // TODO -> MOVE LATER!!!!!!
 require("url:../img/blur.jpg");
 
 export function UserCards(users, authKey) {
     const [state, setState] = useState("list");
-
     const [check, setCheck] = useState(false);
+    const [user, setUser] = useState(null);
 
     if (users === null)
     {
@@ -44,12 +45,14 @@ export function UserCards(users, authKey) {
         }
     }
 
-
     const userCards = (
         <>
             {users.map(
                 ({firstName, id, language, lastName, userId}) => (
-                    <div key={userId} className={"user_card"}>
+                    <div key={userId} className={"user_card"}
+                         onClick={() => sessionStorage.setItem("user", userId)}
+                         style={{background: userId === sessionStorage.getItem("user") && "pink"}}
+                    >
                         <div className={"user_card_image_container"}>
                             <div className={"center user_card_image"}/>
                         </div>
@@ -82,6 +85,8 @@ export function UserCards(users, authKey) {
             {userCards}
         </>
     )
+
+
 
     if (authKey !== undefined)
     {
