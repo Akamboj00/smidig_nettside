@@ -16,6 +16,7 @@ require("url:../img/sunturtle_image.png");
 require("url:../img/home_image.png");
 require("url:../img/home_image.png");
 require("url:../img/reporticon.png");
+require("url:../img/reportIconBlue.png")
 export const Learn = () => {
     const history = useHistory();
     const [clicked, setClicked] = useState();
@@ -68,7 +69,7 @@ export const Learn = () => {
         {
             product_id: 5,
             product_name: "Learn Report",
-            product_img: "url:../img/test.png",
+            product_img: "url:../img/reportIconBlue.png",
             product_progress: [],
         },
     ];
@@ -126,8 +127,6 @@ export const Learn = () => {
         progressCountIndexBigMath += _progress[i].length;
     }
 
-    //setTotal
-    //setTotalFinished
     let calcTotal = 0;
     let calcTotalFinished = 0;
     if (total !== progressCountIndexBigMath)
