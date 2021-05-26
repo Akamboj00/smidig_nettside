@@ -225,7 +225,7 @@ export const Learn = () => {
                                                 <ProgressBar
                                                     className="progress_bar font-weight-bold"
                                                     animated
-                                                    now={product_progress}
+                                                    now={Math.floor(product_total_parts_done/product_total_parts * 100)}
                                                 />
                                                 <h4 className="progress_on_card center h6 single_progress_text">{`${Math.floor(product_total_parts_done/product_total_parts * 100)}%`}</h4>
                                             </ProgressBar>
