@@ -33,46 +33,59 @@ export const Learn = () => {
     });
 
 
+
     //bytter dette med request til firebase / eller backend
     const total_progress = Math.floor(totalPercent);
-    const testData = [
+    const [testData] = useState([
         {
             product_id: 0,
             product_name: "Learn Sunbell",
             product_img: "url:../img/sunbell_image.png",
+            product_total_parts: 0,
+            product_total_parts_done:0,
             product_progress: [],
         },
         {
             product_id: 1,
             product_name: "Learn MoveSmart",
             product_img: "url:../img/movesmart_image.png",
+            product_total_parts: 0,
+            product_total_parts_done:0,
             product_progress: [],
         },
         {
             product_id: 2,
             product_name: "Learn Start+",
             product_img: "url:../img/startpluss_image.png",
+            product_total_parts: 0,
+            product_total_parts_done:0,
             product_progress: [],
         },
         {
             product_id: 3,
             product_name: "Learn SunTurtle",
             product_img: "url:../img/sunturtle_image.png",
+            product_total_parts: 0,
+            product_total_parts_done:0,
             product_progress: [],
         },
         {
             product_id: 4,
             product_name: "Learn Home",
             product_img: "url:../img/home_image.png",
+            product_total_parts: 0,
+            product_total_parts_done:0,
             product_progress: [],
         },
         {
             product_id: 5,
             product_name: "Learn Report",
             product_img: "url:../img/reportIconBlue.png",
+            product_total_parts: 0,
+            product_total_parts_done:0,
             product_progress: [],
         },
-    ];
+    ]);
 
 
     const getData = () => {
@@ -92,6 +105,8 @@ export const Learn = () => {
             //dbReference.child('users').child(authUser.uid).child("3").child("1").set(0);
         }
     }
+
+    console.log(clicked)
 
     useEffect(() => {
         getData()
@@ -133,12 +148,16 @@ export const Learn = () => {
     {
         for (let index = 0; index < _progress.length; index++)
         {
+            testData[index].product_progress.push(_progress[index])
+
             for (let count = 0; count < _progress[index].length; count++)
             {
+                testData[index].product_total_parts ++
                 calcTotal++;
                 if (_progress[index][count] === 1)
                 {
                     calcTotalFinished++
+                    testData[index].product_total_parts_done ++
                 }
                 if (calcTotal === progressCountIndexBigMath)
                 {
@@ -149,7 +168,7 @@ export const Learn = () => {
             }
         }
     }
-
+    console.log(testData)
     if (total === null || totalFinished === null)
     {
         return (
@@ -186,12 +205,14 @@ export const Learn = () => {
                                      product_name,
                                      product_img,
                                      product_progress,
+                                     product_total_parts,
+                                     product_total_parts_done
                                  }) => (
                                     <Link
                                         style={{textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
-                                        to={{pathname: "/product", state: clicked}}
+                                        to={{pathname: "", state: clicked}}
                                         onClick={() => setClicked(testData[product_id])}
                                     >
                                         <img
@@ -206,7 +227,7 @@ export const Learn = () => {
                                                     animated
                                                     now={product_progress}
                                                 />
-                                                <h4 className="progress_on_card center h6 single_progress_text">{`${product_progress}%`}</h4>
+                                                <h4 className="progress_on_card center h6 single_progress_text">{`${Math.floor(product_total_parts_done/product_total_parts * 100)}%`}</h4>
                                             </ProgressBar>
                                         </div>
                                     </Link>
