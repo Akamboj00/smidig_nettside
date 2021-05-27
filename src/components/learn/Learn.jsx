@@ -7,7 +7,6 @@ import {LoadingView} from '../loadingView'
 import fire from "../../server/firebase";
 import {forEach} from "react-bootstrap/ElementChildren";
 
-
 require("url:../img/test.png");
 require("url:../img/sunbell_image.png");
 require("url:../img/movesmart_image.png");
@@ -36,7 +35,7 @@ export const Learn = () => {
 
     //bytter dette med request til firebase / eller backend
     const total_progress = Math.floor(totalPercent);
-    const [testData] = useState([
+    const [testData, setTestData] = useState([
         {
             product_id: 0,
             product_name: "Learn Sunbell",
@@ -107,7 +106,6 @@ export const Learn = () => {
     }
 
     console.log(clicked)
-
     useEffect(() => {
         getData()
     }, []);
@@ -115,9 +113,7 @@ export const Learn = () => {
     if (users === null)
     {
         return (
-            <>
-                <LoadingView/>
-            </>
+            loadComponent()
         );
     }
 
@@ -129,9 +125,7 @@ export const Learn = () => {
     if (_progress === null)
     {
         return (
-            <>
-                <LoadingView/>
-            </>
+            loadComponent()
         );
     }
 
@@ -172,13 +166,11 @@ export const Learn = () => {
     if (total === null || totalFinished === null)
     {
         return (
-            <>
-                <LoadingView/>
-            </>
+            loadComponent()
         );
     }
 
-    return (
+        return (
         <>
             <div id={"container_main"}>
                 <div className={"wrap_container wrap_header"}>
@@ -240,3 +232,18 @@ export const Learn = () => {
         </>
     );
 };
+export function loadComponent() {
+    return(
+        <div id={"container_main"}>
+        <div className={"wrap_container wrap_header"}>
+            <div className={"container_inner"}>
+                <div className="learn_heading_container">
+                    <div className="learn_loading">
+                        <LoadingView/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    )
+}
