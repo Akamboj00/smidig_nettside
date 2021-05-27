@@ -20,7 +20,6 @@ export const Product = (props) => {
     return key;
 });
   const { id } = useParams();
-  console.log(id)
 
   const testData = [
     {
@@ -72,12 +71,12 @@ if(products === null){
     <>
       <div id={"container_main"}>
         <div className="learn_card_container">
-          {products.map(({ part_image, part_name}) => (
+          {products.map(({part_id,part_image, part_name, part_video}) => (
             <Link
               style={{ textDecoration: "none" }}
-              
+              key={part_id}
               className="learn_card"
-              to={{ pathname: "/video" }}
+              to={{ pathname: "/video", video: part_video, product: id, part: part_id}}
             >
               <img className="learn_card_icon" src={part_image} />
               <div className="card_info">
