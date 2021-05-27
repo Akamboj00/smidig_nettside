@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import fire from "../../server/firebase";
 import "./user.css";
 import {useHistory} from "react-router";
@@ -87,7 +87,6 @@ export function UserCards(users, authKey) {
     )
 
 
-
     if (authKey !== undefined)
     {
         if (state === "list")
@@ -155,32 +154,27 @@ export function UserHeader(authKey) {
         content = open;
     }
 
-    if (authKey !== undefined)
-    {
-        return (
-            <>
-                <div className={"wrap_container wrap_user_header"} onClick={() => {
-                    if (!state)
-                    {
-                        setState(true);
-                    }
-                }}
-                     style={
-                         (!state) ? ({backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`})
-                             : ({
-                                 backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`
-                             })}>
-                    <div className={"container_inner"}>
-                        <div className={"user_header_container"}>
-                            {content}
-                        </div>
+    return (
+        <>
+            <div className={"wrap_container wrap_user_header"} onClick={() => {
+                if (!state)
+                {
+                    setState(true);
+                }
+            }}
+                 style={
+                     (!state) ? ({backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`})
+                         : ({
+                             backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`
+                         })}>
+                <div className={"container_inner"}>
+                    <div className={"user_header_container"}>
+                        {content}
                     </div>
                 </div>
-            </>
-        )
-    } else {
-        return LoadingView();
-    }
+            </div>
+        </>
+    )
 }
 
 export function User() {
@@ -193,19 +187,24 @@ export function User() {
         return key;
     });
 
-    if (authKey)
-    {
-        const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
-        const dbReference = fire.database().ref();
+    const getData = () => {
+        if (authKey)
+        {
+            const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
+            const dbReference = fire.database().ref();
 
-        dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
-            if (snapshot.val() != null)
-            {
-                setUsers(snapshot.val());
-            }
-        });
+            dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
+                if (snapshot.val() != null)
+                {
+                    setUsers(snapshot.val());
+                }
+            });
+        }
     }
 
+    useEffect(() => {
+        getData()
+    }, []);
 
     //dbReference.child('reports').child(authUser.uid).on('value', snap => console.log(snap.val()));
     //const users = dbReference.child('users').child(authUser.uid);
