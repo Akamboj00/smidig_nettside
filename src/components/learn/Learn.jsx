@@ -112,7 +112,6 @@ export const Learn = () => {
         }
     }
 
-    console.log(clicked)
     useEffect(() => {
         getData()
     }, []);
@@ -170,7 +169,6 @@ export const Learn = () => {
         }
     }
     //bytter dette med request til firebase / eller backend
-    console.log(testData)
     if (total === null || totalFinished === null)
     {
         return (
@@ -179,6 +177,7 @@ export const Learn = () => {
     }
 
     const total_progress = Math.floor(totalPercent);
+    console.log()
 
     return (
         <>
@@ -186,7 +185,7 @@ export const Learn = () => {
                 <div className={"wrap_container wrap_header"}>
                     <div className={"container_inner"}>
                         <div className="learn_heading_container">
-                            <h3 className="learn_text">Total learning progress</h3>
+                            <h3 className="learn_text">Total learning progress for {users[parseInt(sessionStorage.getItem("user"))].firstName}</h3>
                             <ProgressBar className="learn_total_progress">
                                 <ProgressBar
                                     className="learn_progress_background"
@@ -214,7 +213,7 @@ export const Learn = () => {
                                         style={{textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
-                                        to={{pathname: "", state: clicked}}
+                                        to={{pathname: `${"/product/" + product_id}`, state: clicked}}
                                         onClick={() => setClicked(testData[product_id])}
                                     >
                                         <img

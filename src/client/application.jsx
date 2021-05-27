@@ -36,7 +36,7 @@ export function Application() {
           <Route path={"/login"}>
             <Login />
           </Route>
-          <Route path={"/product"}>
+          <Route path={"/product/:id"}>
             <Product />
           </Route>
           <Route path={"/video"}>

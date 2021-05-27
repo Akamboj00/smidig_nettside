@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./product.css";
 import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
+import fire from "../../server/firebase";
+import { getDatabaseSingleProgress } from '../../components/lib/fb'
+import { LoadingView } from "../loadingView";
 
 require("url:../img/battery.png");
 require("url:../img/lampshade.png");
@@ -8,6 +12,16 @@ require("url:../img/solarpanel.png");
 require("url:../img/turtlelamp.png");
 
 export const Product = (props) => {
+  const [products, setProducts] = useState(null);
+  const [authKey, setAuthKey] = useState(() => {
+    let key = Object.keys(window.sessionStorage)
+        .filter(item => item.startsWith('firebase:authUser'))[0];
+    if (key === undefined) return history.push("/login");
+    return key;
+});
+  const { id } = useParams();
+  console.log(id)
+
   const testData = [
     {
       part_id: 0,
@@ -31,18 +45,41 @@ export const Product = (props) => {
     },
   ];
 
+async function getDatabaseSingleProgress() {
+  const dbReference = fire.database().ref();
+
+    dbReference.child("progress").child(id).once('value').then((snapshot) => {
+        setProducts(snapshot.val());
+    });
+}
+
+useEffect(() => {
+  getDatabaseSingleProgress()
+}, []);
+if(authKey === null){
+  history.push("/users")
+}
+if(products === null){
+    return(
+      <div id={"container_main"}>
+        <div className="learn_card_container">
+          <LoadingView></LoadingView>
+        </div>
+      </div>
+    )
+}else{
   return (
     <>
       <div id={"container_main"}>
         <div className="learn_card_container">
-          {testData.map(({ part_id, part_name, part_img }) => (
+          {products.map(({ part_image, part_name}) => (
             <Link
               style={{ textDecoration: "none" }}
-              key={part_id}
+              
               className="learn_card"
               to={{ pathname: "/video" }}
             >
-              <img className="learn_card_icon" src={require(part_img)} />
+              <img className="learn_card_icon" src={part_image} />
               <div className="card_info">
                 <h4 className="learn_card_text">{part_name}</h4>
               </div>
@@ -52,4 +89,5 @@ export const Product = (props) => {
       </div>
     </>
   );
-};
+}
+}
