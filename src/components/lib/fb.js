@@ -20,7 +20,7 @@ export async function getDatabaseWithKey(table, uid) {
 // childKey = user index
 // progress = "progress"
 // productKey = progress index
-export async function getDatabaseWith2Keys(users, authUID, childKey, progress, productKey) {
+export async function getDatabaseSingleProgress(users, authUID, childKey, progress, productKey) {
     return await getDatabaseRef().child(users).child(authUID).child(childKey).child(progress).child(productKey).once('value').then((snapshot) => {
         return snapshot.val();
     });
