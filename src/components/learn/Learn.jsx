@@ -18,6 +18,10 @@ require("url:../img/reporticon.png");
 require("url:../img/reportIconBlue.png")
 export const Learn = () => {
     const history = useHistory();
+    if(sessionStorage.getItem("user") === null){
+        history.push("/users");
+        alert("Please select a user")
+    }
     const [clicked, setClicked] = useState();
     const [users, setUsers] = useState(null);
     const [_progress, setProgress] = useState(null);
@@ -33,9 +37,8 @@ export const Learn = () => {
 
 
 
-    //bytter dette med request til firebase / eller backend
-    const total_progress = Math.floor(totalPercent);
-    const [testData, setTestData] = useState([
+
+    const [testData] = useState([
         {
             product_id: 0,
             product_name: "Learn Sunbell",
@@ -94,6 +97,10 @@ export const Learn = () => {
             const dbReference = fire.database().ref();
 
             dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
+                if(!snapshot.exists()){
+                    history.push("/users");
+                    alert("Please create a user")
+                }
                 if (snapshot.val() != null)
                 {
                     setUsers(snapshot.val());
@@ -162,6 +169,7 @@ export const Learn = () => {
             }
         }
     }
+    //bytter dette med request til firebase / eller backend
     console.log(testData)
     if (total === null || totalFinished === null)
     {
@@ -170,7 +178,9 @@ export const Learn = () => {
         );
     }
 
-        return (
+    const total_progress = Math.floor(totalPercent);
+
+    return (
         <>
             <div id={"container_main"}>
                 <div className={"wrap_container wrap_header"}>

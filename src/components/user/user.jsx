@@ -32,25 +32,30 @@ export function UserCards(users, authKey) {
         error,
     } = useSubmit(
         async () => {
-            if(firstName && lastName && language !== ""){
+            if (firstName && lastName && language !== "")
+            {
                 await postUser(firstName, lastName, language);
             }
         },
         () => {
-            const _userId = users.length;
+            let length;
+            if (users === null || users === "new")
+            {
+                length = 0;
+            }
+            else
+            {
+                length = users.length
+            }
+            const _userId = length;
             setState(true);
             setSelected(_userId);
-            sessionStorage.setItem("user", users.length);
+            sessionStorage.setItem("user", length);
             setFirstName("");
             setLastName("");
             setLanguage("");
         }
     );
-
-    if (users === null)
-    {
-        return LoadingView();
-    }
 
     const openCreateUser = () => {
         setState(false);
@@ -117,6 +122,15 @@ export function UserCards(users, authKey) {
             </div>
         </>
     );
+
+    if (users === null)
+    {
+        return LoadingView();
+    }
+    else if (users === "new")
+    {
+        return createUser;
+    }
     /*
    setCreateUser();
 
@@ -136,10 +150,10 @@ export function UserCards(users, authKey) {
         <>
             {users.map(
                 ({firstName, id, language, lastName, userId}) => (
-                    <div key={userId} className={(userId === selected) ? ("user_card user_card_selected") : ("user_card")}
+                    <div key={userId} className={(parseInt(userId) === parseInt(selected)) ? ("user_card user_card_selected") : ("user_card")}
                          onClick={() => {
-                             sessionStorage.setItem("user", userId);
                              setSelected(userId);
+                             sessionStorage.setItem("user", userId);
                          }}
                     >
                         <div className={"user_active_indicator"}/>
@@ -283,9 +297,17 @@ export function User() {
         const dbReference = fire.database().ref();
 
         dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
-            if (snapshot.val() != null)
+            if (snapshot.val() != null && users !== "new")
             {
                 setUsers(snapshot.val());
+            }
+            else if (sessionStorage.getItem("users") !== undefined && users === "new" && snapshot.val() != null)
+            {
+                setUsers(null);
+            }
+            else if (users !== "new")
+            {
+                setUsers("new");
             }
         });
     }
