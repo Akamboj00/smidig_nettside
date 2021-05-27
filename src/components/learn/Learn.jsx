@@ -7,7 +7,6 @@ import {LoadingView} from '../loadingView'
 import fire from "../../server/firebase";
 import {forEach} from "react-bootstrap/ElementChildren";
 
-
 require("url:../img/test.png");
 require("url:../img/sunbell_image.png");
 require("url:../img/movesmart_image.png");
@@ -19,6 +18,10 @@ require("url:../img/reporticon.png");
 require("url:../img/reportIconBlue.png")
 export const Learn = () => {
     const history = useHistory();
+    if(sessionStorage.getItem("user") === null){
+        history.push("/users");
+        alert("Please select a user")
+    }
     const [clicked, setClicked] = useState();
     const [users, setUsers] = useState(null);
     const [_progress, setProgress] = useState(null);
@@ -34,8 +37,7 @@ export const Learn = () => {
 
 
 
-    //bytter dette med request til firebase / eller backend
-    const total_progress = Math.floor(totalPercent);
+
     const [testData] = useState([
         {
             product_id: 0,
@@ -95,6 +97,10 @@ export const Learn = () => {
             const dbReference = fire.database().ref();
 
             dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
+                if(!snapshot.exists()){
+                    history.push("/users");
+                    alert("Please create a user")
+                }
                 if (snapshot.val() != null)
                 {
                     setUsers(snapshot.val());
@@ -107,7 +113,6 @@ export const Learn = () => {
     }
 
     console.log(clicked)
-
     useEffect(() => {
         getData()
     }, []);
@@ -115,9 +120,7 @@ export const Learn = () => {
     if (users === null)
     {
         return (
-            <>
-                <LoadingView/>
-            </>
+            loadComponent()
         );
     }
 
@@ -129,9 +132,7 @@ export const Learn = () => {
     if (_progress === null)
     {
         return (
-            <>
-                <LoadingView/>
-            </>
+            loadComponent()
         );
     }
 
@@ -168,15 +169,16 @@ export const Learn = () => {
             }
         }
     }
+    //bytter dette med request til firebase / eller backend
     console.log(testData)
     if (total === null || totalFinished === null)
     {
         return (
-            <>
-                <LoadingView/>
-            </>
+            loadComponent()
         );
     }
+
+    const total_progress = Math.floor(totalPercent);
 
     return (
         <>
@@ -240,3 +242,18 @@ export const Learn = () => {
         </>
     );
 };
+export function loadComponent() {
+    return(
+        <div id={"container_main"}>
+        <div className={"wrap_container wrap_header"}>
+            <div className={"container_inner"}>
+                <div className="learn_heading_container">
+                    <div className="learn_loading">
+                        <LoadingView/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    )
+}

@@ -14,15 +14,31 @@ export async function getDatabaseWithKey(table, uid) {
     });
 }
 
+// How to use GUIDE:
+// users = "users"
+// authUID = authUser.uid
+// childKey = user index
+// progress = "progress"
+// productKey = progress index
+export async function getDatabaseSingleProgress(users, authUID, childKey, progress, productKey) {
+    return await getDatabaseRef().child(users).child(authUID).child(childKey).child(progress).child(productKey).once('value').then((snapshot) => {
+        return snapshot.val();
+    });
+}
+
+
 export async function postUser(firstName, lastName, language) {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
     const userAuth = getSessionStorage(key);
 
     const data = await getDatabaseWithKey("users", userAuth.uid);
-
+    let count = 0;
+    if(data !== null){
+        count = data.length
+    }
     const newUser = {
         id: userAuth.uid,
-        userId: data.length,
+        userId: count,
         firstName: firstName,
         lastName: lastName,
         language: language,
@@ -79,7 +95,7 @@ export async function postUser(firstName, lastName, language) {
     }
 
     let posts = {};
-    posts[`users/${userAuth.uid}/${data.length}`] = newUser;
+    posts[`users/${userAuth.uid}/${count}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     return getDatabaseRef().update(posts);
