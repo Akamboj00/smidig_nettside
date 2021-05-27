@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./learn.css";
 import {ProgressBar} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {useHistory} from "react-router";
 import {LoadingView} from '../loadingView'
 import fire from "../../server/firebase";
@@ -22,6 +22,7 @@ export const Learn = () => {
         history.push("/users");
         alert("Please select a user")
     }
+    let location = useLocation()
     const [clicked, setClicked] = useState();
     const [users, setUsers] = useState(null);
     const [_progress, setProgress] = useState(null);
@@ -213,7 +214,7 @@ export const Learn = () => {
                                         style={{textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
-                                        to={{pathname: `${"/product/" + product_id}`, state: clicked}}
+                                        to={{pathname: `${"/product/" + product_id}`, _product_name : product_name}}
                                         onClick={() => setClicked(testData[product_id])}
                                     >
                                         <img

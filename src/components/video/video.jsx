@@ -18,7 +18,7 @@ export const Video = () => {
   var videoSrc =
     "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4";
     if(location.video === undefined){
-      history.push("/learn");
+      history.push(`${"/product/"+sessionStorage.getItem("current_product_id")}`);
     }
 
     const videoDone = () => {   
@@ -34,7 +34,10 @@ export const Video = () => {
     .child(location.part)
     .set(fire.database.ServerValue = 1)
 
-      history.push(`${"/product/"+location.product}`);
+      history.push(`${"/product/"+sessionStorage.getItem("current_product_id")}`);
+    }
+    if(location.product){
+      sessionStorage.setItem("current_product_id", location.product)
     }
     console.log(location.part)
     console.log(location.product)

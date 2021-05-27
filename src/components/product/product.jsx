@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./product.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import fire from "../../server/firebase";
 import { getDatabaseSingleProgress } from '../../components/lib/fb'
@@ -20,7 +20,9 @@ export const Product = (props) => {
     if (key === undefined) return history.push("/login");
     return key;
 });
+  let location = useLocation();
   const { id } = useParams();
+  console.log(location._product_name)
 
 async function getDatabaseSingleProgress() {
   const dbReference = fire.database().ref();
@@ -34,11 +36,12 @@ async function getDatabaseSingleProgress() {
       setProductsOnUsers(snapshot.val())
     })
 }
-
-
 useEffect(() => {
   getDatabaseSingleProgress()
 }, []);
+if(location._product_name){
+  sessionStorage.setItem("current_product", location._product_name)
+  }
 if(authKey === null){
   history.push("/users")
 }
@@ -55,8 +58,9 @@ if(products === null || productsOnUsers === null){
   return (
     <>
       <div id={"container_main"}>
+        <h2 className="product_name">{sessionStorage.getItem("current_product")}</h2>
         <div className="learn_card_container">
-          {products.map(({part_id,part_image, part_name, part_video}) => (
+          {products.map(({part_id, part_image, part_name, part_video}) => (
             <Link
               style={
                 { textDecoration: "none",
