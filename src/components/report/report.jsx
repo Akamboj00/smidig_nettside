@@ -22,11 +22,11 @@ export function Report() {
     <div id={"container_main"}>
       <div className={"container_inner"}>
         <div>
-          <h1>This is the report page</h1>
-
-          <Link to="../img/test.png" target="_blank" download>
-            <Button>Download</Button>
-          </Link>
+          <div className={"reportHeader_container"}>
+            <h1 className={"reportText"}>
+              Send inn a report about a product you fixed
+            </h1>
+          </div>
           <div className={"reportFormContainer"}>
             <form className={"reportForm"}>
               <div className={"productOption_container"}>
