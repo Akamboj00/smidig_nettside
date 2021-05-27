@@ -14,6 +14,19 @@ export async function getDatabaseWithKey(table, uid) {
     });
 }
 
+// How to use GUIDE:
+// users = "users"
+// authUID = authUser.uid
+// childKey = user index
+// progress = "progress"
+// productKey = progress index
+export async function getDatabaseWith2Keys(users, authUID, childKey, progress, productKey) {
+    return await getDatabaseRef().child(users).child(authUID).child(childKey).child(progress).child(productKey).once('value').then((snapshot) => {
+        return snapshot.val();
+    });
+}
+
+
 export async function postUser(firstName, lastName, language) {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
     const userAuth = getSessionStorage(key);
