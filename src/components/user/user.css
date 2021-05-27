@@ -146,6 +146,43 @@
     border: 2px solid #eeeeee;
 }
 
+.user_card_selected{
+    transform: scale(1.05);
+    z-index: 1;
+    background: #ffffff;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #c3dc93;
+    border-radius: 6px;
+}
+
+.user_active_indicator{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #08ff00;
+    right: -10px;
+    top: -10px;
+    border-radius: 100%;
+    display: none;
+
+    animation-name: onlineIndicator;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+}
+
+@keyframes onlineIndicator {
+    0%   {box-shadow: 0 0 0 1px rgba(17, 255, 0, 0.1);}
+    25%  {box-shadow: 0 0 0 1.5px rgba(17, 255, 0, 0.2);}
+    50%  {box-shadow: 0 0 0 2px rgba(17, 255, 0, 0.3);}
+    75%  {box-shadow: 0 0 0 1.5px rgba(17, 255, 0, 0.2);}
+    100% {box-shadow: 0 0 0 1px rgba(17, 255, 0, 0.1);}
+}
+
+
+.user_card_selected .user_active_indicator{
+    display: block;
+}
+
 .card_selected{
     background: orange;
 }

@@ -1,18 +1,51 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import fire from "../../server/firebase";
 import "./user.css";
 import {useHistory} from "react-router";
 import {LoadingView} from "../loadingView";
 import {ArrowIcon} from "../svg/svg"
 import {forEach} from "react-bootstrap/ElementChildren";
+import {InputField} from "../inputField";
+import {useSubmit} from "../../client/lib/useSubmit";
+import firebase from "firebase";
+import {postJson} from "../../client/lib/http";
+import Alert from "react-bootstrap/Alert";
+import {getDatabaseWithKey, postUser} from "../lib/fb";
 
 // TODO -> MOVE LATER!!!!!!
 require("url:../img/blur.jpg");
 
 export function UserCards(users, authKey) {
-    const [state, setState] = useState("list");
-    const [check, setCheck] = useState(false);
-    const [user, setUser] = useState(null);
+    const [state, setState] = useState(true);
+    const [selected, setSelected] = useState(() => {
+        return sessionStorage.getItem("user");
+    });
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [language, setLanguage] = useState("");
+    const history = useHistory();
+
+    const {
+        handleSubmit: handleLogin,
+        submitting,
+        error,
+    } = useSubmit(
+        async () => {
+            if(firstName && lastName && language !== ""){
+                await postUser(firstName, lastName, language);
+            }
+        },
+        () => {
+            const _userId = users.length;
+            setState(true);
+            setSelected(_userId);
+            sessionStorage.setItem("user", users.length);
+            setFirstName("");
+            setLastName("");
+            setLanguage("");
+        }
+    );
 
     if (users === null)
     {
@@ -20,39 +53,96 @@ export function UserCards(users, authKey) {
     }
 
     const openCreateUser = () => {
-        setState("create");
+        setState(false);
     }
 
     const createUser = (
         <>
-            <div id={"create_new_user"} className={"create_new_user_initial"} onClick={() => {
+            <div id={"create_new_user"} className={(state) ? ("create_new_user_initial") : ("create_new_user_toggle")} onClick={() => {
                 openCreateUser();
             }}>
-                <h4 className={"center user_card_create_new_description"}>Create new user</h4>
+                {(state) ? (
+                    <>
+                        <h4 className={"center user_card_create_new_description"}>Create new user</h4>
+                    </>
+                ) : (
+                    <>
+                        <div className={"loading_fix_login"}>
+                            {submitting && <div className={"center sinnerFix"}><LoadingView/></div>}
+                            {error &&
+                            <>
+                                <Alert className="error" variant="danger">
+                                    {error.toString()}
+                                </Alert>
+                            </>
+                            }
+                            {!error && !submitting &&
+                            <h5 className={"center"}>Login to continue</h5>
+                            }
+                        </div>
+                        <form onSubmit={handleLogin}>
+                            <label className={"user_input_label"}>
+                                <h5 className={"user_input_description"}>First name</h5>
+                                <input className={"user_input"}
+                                       type={"text"}
+                                       placeholder={"Bob"}
+                                       value={(state) ? ("") : (firstName)}
+                                       onChange={(e) => setFirstName(e.target.value)}
+                                />
+                            </label>
+                            <label className={"user_input_label"}>
+                                <h5 className={"user_input_description"}>Last name</h5>
+                                <input className={"user_input"}
+                                       type={"text"}
+                                       placeholder={"Gunnar"}
+                                       value={(state) ? ("") : (lastName)}
+                                       onChange={(e) => setLastName(e.target.value)}
+                                />
+                            </label>
+                            <label className={"user_input_label"}>
+                                <h5 className={"user_input_description"}>Last name</h5>
+                                <input className={"user_input"}
+                                       type={"text"}
+                                       placeholder={"Gunnar"}
+                                       value={(state) ? ("") : (language)}
+                                       onChange={(e) => setLanguage(e.target.value)}
+                                />
+                            </label>
+                            <button disabled={submitting}>
+                                <h5>Create user</h5>
+                            </button>
+                        </form>
+                    </>
+                )}
             </div>
         </>
     );
-    setCreateUser();
+    /*
+   setCreateUser();
 
-    function setCreateUser() {
-        const createUser = document.getElementById("create_new_user");
-        if (state === "create" && !createUser.classList.contains("create_new_user_toggle"))
-        {
+   function setCreateUser() {
+       const createUser = document.getElementById("create_new_user");
+       if (state === "create" && !createUser.classList.contains("create_new_user_toggle"))
+       {
 
-            createUser.classList.toggle("create_new_user_initial");
-            createUser.classList.toggle("create_new_user_toggle");
-            createUser.firstChild.remove();
-        }
-    }
+           createUser.classList.toggle("create_new_user_initial");
+           createUser.classList.toggle("create_new_user_toggle");
+           createUser.firstChild.remove();
+       }
+   }
+    */
 
     const userCards = (
         <>
             {users.map(
                 ({firstName, id, language, lastName, userId}) => (
-                    <div key={userId} className={"user_card"}
-                         onClick={() => sessionStorage.setItem("user", userId)}
-                         style={{background: userId === sessionStorage.getItem("user") && "pink"}}
+                    <div key={userId} className={(userId === selected) ? ("user_card user_card_selected") : ("user_card")}
+                         onClick={() => {
+                             sessionStorage.setItem("user", userId);
+                             setSelected(userId);
+                         }}
                     >
+                        <div className={"user_active_indicator"}/>
                         <div className={"user_card_image_container"}>
                             <div className={"center user_card_image"}/>
                         </div>
@@ -87,14 +177,13 @@ export function UserCards(users, authKey) {
     )
 
 
-
     if (authKey !== undefined)
     {
-        if (state === "list")
+        if (state)
         {
             return list;
         }
-        else if (state === "create")
+        else if (!state)
         {
             return createUser;
         }
@@ -155,32 +244,27 @@ export function UserHeader(authKey) {
         content = open;
     }
 
-    if (authKey !== undefined)
-    {
-        return (
-            <>
-                <div className={"wrap_container wrap_user_header"} onClick={() => {
-                    if (!state)
-                    {
-                        setState(true);
-                    }
-                }}
-                     style={
-                         (!state) ? ({backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`})
-                             : ({
-                                 backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`
-                             })}>
-                    <div className={"container_inner"}>
-                        <div className={"user_header_container"}>
-                            {content}
-                        </div>
+    return (
+        <>
+            <div className={"wrap_container wrap_user_header"} onClick={() => {
+                if (!state)
+                {
+                    setState(true);
+                }
+            }}
+                 style={
+                     (!state) ? ({backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`})
+                         : ({
+                             backgroundImage: `linear-gradient(rgba(195, 220, 147, 1),rgba(195, 220, 147, 1)),url(${require("url:../img/blur.jpg")})`
+                         })}>
+                <div className={"container_inner"}>
+                    <div className={"user_header_container"}>
+                        {content}
                     </div>
                 </div>
-            </>
-        )
-    } else {
-        return LoadingView();
-    }
+            </div>
+        </>
+    )
 }
 
 export function User() {
@@ -205,7 +289,6 @@ export function User() {
             }
         });
     }
-
 
     //dbReference.child('reports').child(authUser.uid).on('value', snap => console.log(snap.val()));
     //const users = dbReference.child('users').child(authUser.uid);

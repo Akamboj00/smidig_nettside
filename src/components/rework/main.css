@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrap_main{
+    position: absolute;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    margin-top: 80px;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.wrap{
+    position: relative;
+    width: auto;
+    height: max-content;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.wrap_width{
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrap_f2{
+    background: #f2f2f2;
+}
+
+.wrap_ff{
+    background: #ffffff;
+}
+
+.testContent{
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+
