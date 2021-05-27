@@ -24,7 +24,7 @@ export function Report() {
         <div>
           <div className={"reportHeader_container"}>
             <h1 className={"reportText"}>
-              Send inn a rapport about a product you fixed
+              Send inn a report about a product you fixed
             </h1>
           </div>
           <div className={"reportFormContainer"}>
