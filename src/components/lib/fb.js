@@ -19,10 +19,13 @@ export async function postUser(firstName, lastName, language) {
     const userAuth = getSessionStorage(key);
 
     const data = await getDatabaseWithKey("users", userAuth.uid);
-
+    let count = 0;
+    if(data !== null){
+        count = data.length
+    }
     const newUser = {
         id: userAuth.uid,
-        userId: data.length,
+        userId: count,
         firstName: firstName,
         lastName: lastName,
         language: language,
@@ -79,7 +82,7 @@ export async function postUser(firstName, lastName, language) {
     }
 
     let posts = {};
-    posts[`users/${userAuth.uid}/${data.length}`] = newUser;
+    posts[`users/${userAuth.uid}/${count}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     return getDatabaseRef().update(posts);

@@ -19,6 +19,10 @@ require("url:../img/reporticon.png");
 require("url:../img/reportIconBlue.png")
 export const Learn = () => {
     const history = useHistory();
+    if(sessionStorage.getItem("user") === null){
+        history.push("/users");
+        alert("Please select a user")
+    }
     const [clicked, setClicked] = useState();
     const [users, setUsers] = useState(null);
     const [_progress, setProgress] = useState(null);
@@ -34,8 +38,7 @@ export const Learn = () => {
 
 
 
-    //bytter dette med request til firebase / eller backend
-    const total_progress = Math.floor(totalPercent);
+
     const [testData] = useState([
         {
             product_id: 0,
@@ -95,6 +98,10 @@ export const Learn = () => {
             const dbReference = fire.database().ref();
 
             dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
+                if(!snapshot.exists()){
+                    history.push("/users");
+                    alert("Please create a user")
+                }
                 if (snapshot.val() != null)
                 {
                     setUsers(snapshot.val());
@@ -168,6 +175,7 @@ export const Learn = () => {
             }
         }
     }
+    //bytter dette med request til firebase / eller backend
     console.log(testData)
     if (total === null || totalFinished === null)
     {
@@ -177,6 +185,8 @@ export const Learn = () => {
             </>
         );
     }
+
+    const total_progress = Math.floor(totalPercent);
 
     return (
         <>
