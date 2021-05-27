@@ -6,8 +6,6 @@ import {useHistory} from "react-router";
 import "./video.css";
 
 export const Video = () => {
-  const [part, setPart] = useState("")
-  const [vid, setVid] = useState("")
   const [authKey, setAuthKey] = useState(() => {
     let key = Object.keys(window.sessionStorage)
         .filter(item => item.startsWith('firebase:authUser'))[0];
@@ -35,17 +33,11 @@ export const Video = () => {
     .child(location.product)
     .child(location.part)
     .set(fire.database.ServerValue = 1)
-    
-      history.push(`${"/product/"+location.part}`);
+
+      history.push(`${"/product/"+location.product}`);
     }
     console.log(location.part)
     console.log(location.product)
-
-
-
-useEffect(() => {
-  setPart(location.part)
-}, []);
 
   return (
     // headline skal hentes fra backend
