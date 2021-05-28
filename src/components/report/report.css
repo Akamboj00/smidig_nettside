@@ -84,3 +84,32 @@
     height: 100%;
     width: 175px;
 }
+.parts_report_card{
+    display: flex;
+    height: 140px;
+    width: 100%;
+    border-radius: 0;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    transition: 0.1s;
+    border: 2px solid #eeeeee;
+}
+.parts_report_card:hover{
+    transform: scale(1.04);
+    z-index: 1;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #174a5b;
+    border-radius: 6px;
+}
+.parts_card_info{
+    position: relative;
+    width: calc(100% - 200px);
+}
+.parts_image_container{
+    position: relative;
+}
+
+.parts_image{
+    height: 100%;
+}
