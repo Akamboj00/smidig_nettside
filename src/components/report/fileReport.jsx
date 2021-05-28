@@ -16,7 +16,7 @@ export function FileReport() {
               <div className={"wrap_container wrap_content"}>
                         <div className={"container_inner"}>
                         <Form.Group className="file_report_form">
-                            <h3>Part number</h3>
+                            <h3>Part number*</h3>
                             <Form.Control className="file_report_input" size="lg" type="text" placeholder="part number*" />
                             <br />
                             <h3>Comment (optional)</h3>

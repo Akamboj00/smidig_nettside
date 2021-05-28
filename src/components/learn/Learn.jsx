@@ -212,7 +212,7 @@ export const Learn = () => {
                                         style={{textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
-                                        to={{pathname: `${"/product/" + product_id}`, _product_name : product_name}}
+                                        to={{pathname: `${"/product/" + product_id}`, _product_name : product_name, _product_id : product_id}}
                                         onClick={() => setClicked(testData[product_id])}
                                     >
                                         <img

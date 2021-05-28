@@ -26,7 +26,7 @@ export const Product = () => {
 async function getDatabaseSingleProgress() {
   const dbReference = fire.database().ref();
 
-    dbReference.child("progress").child(id).once('value').then((snapshot) => {
+    dbReference.child("progress").child(sessionStorage.getItem("current_product_id")).once('value').then((snapshot) => {
         setProducts(snapshot.val());
     });
     const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
@@ -38,8 +38,10 @@ async function getDatabaseSingleProgress() {
 useEffect(() => {
   getDatabaseSingleProgress()
 }, []);
-if(location._product_name){
+
+if(location._product_name && location._product_id){
   sessionStorage.setItem("current_product", location._product_name)
+  sessionStorage.setItem("current_product_id", location._product_id)
   }
 if(authKey === null){
   history.push("/users")

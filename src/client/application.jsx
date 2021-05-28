@@ -38,7 +38,7 @@ export function Application() {
           <Route path={"/login"}>
             <Login />
           </Route>
-          <Route path={"/product/:id"}>
+          <Route  path={"/product/:id"}>
             <Product />
           </Route>
           <Route path={"/video"}>
@@ -47,7 +47,7 @@ export function Application() {
           <Route exact path={"/report/:p1?"}>
             <Parts />
           </Route>
-          <Route parth={"/report/:p1?/:p2?"}>
+          <Route  exact parth={"/report/:p1?/:p2?"}>
             <FileReport/>
           </Route>
           <Route>page not found</Route>

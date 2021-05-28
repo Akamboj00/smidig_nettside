@@ -46,7 +46,7 @@ export function Parts() {
               </div>
               <div className={"wrap_container wrap_content"}>
                 <div className={"container_inner"}>
-                    <div className="learn_card_container">
+                    <div className="parts_card_container">
                         {products.map(({part_id, part_image, part_name}) => (
                                 <Link
                                 key={part_id}
