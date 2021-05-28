@@ -54,7 +54,7 @@ export function User() {
             <div className={"wrap_container wrap_content"}>
                 <div className={"container_inner"}>
                     <div className={"users_card_container"}>
-                        <div className={"users_grid"}>
+                        <div className={(!edit) ? ("users_grid") : ("users_grid_edit")}>
                             <UserCards
                                 users={users}
                                 authKey={authKey}

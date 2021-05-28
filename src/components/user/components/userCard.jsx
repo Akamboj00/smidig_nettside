@@ -29,12 +29,6 @@ export function UserCard({user, selected, onSelected}) {
                         </div>
                     </div>
                 </div>
-                <div className={"user_card_right_top_container"}>
-                    <p className={"center"}>USER ID: {user.userId}</p>
-                </div>
-                <div className={"user_card_right_bottom_container"}>
-                    <p className={"user_card_admin_id_text"}>ADMIN ID: {user.id}</p>
-                </div>
                 </div>
                 <div className={"user_card_function_bar"}>
                     <div className={"user_card_extra_info"}>
