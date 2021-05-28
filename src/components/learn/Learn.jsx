@@ -207,17 +207,21 @@ export const Learn = () => {
                                      product_total_parts,
                                      product_total_parts_done
                                  }) => (
-                                    <Link
-                                        style={{textDecoration: "none"}}
+                                    <Link                                      
+                                        style={{ opacity: (product_total_parts === product_total_parts_done) ? "30%" : "100%",
+                                            backgroundColor: (product_total_parts === product_total_parts_done) ? "#c3dc93" : "",
+                                        textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
                                         to={{pathname: `${"/product/" + product_id}`, _product_name : product_name, _product_id : product_id}}
                                         onClick={() => setClicked(testData[product_id])}
                                     >
-                                        <img
-                                            className="learn_card_icon"
-                                            src={require(product_img)}
-                                        />
+                                        <div className="learn_card_image">
+                                            <img
+                                                className="learn_card_icon"
+                                                src={require(product_img)}
+                                            />
+                                        </div>
                                         <div className="card_info">
                                             <h4 className="learn_card_text">{product_name}</h4>
                                             <ProgressBar className={"learn_single_progress"}>

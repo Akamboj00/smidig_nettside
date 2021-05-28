@@ -74,8 +74,6 @@ if(data === null){
     </div>
   )
 }
-const value = "Big error my boy"
-console.log(clicked)
 
 useEffect(() => {
 }, []);
@@ -101,14 +99,16 @@ useEffect(() => {
                                   to={{pathname: `/report/${product_name.toLowerCase()}`, _product_id : product_id, _product_name : product_name}}
                                   onClick={() => setClicked(data[product_id])}
                               >
-                                        <img
-                                            className="report_card_icon"
-                                            src={require(product_img)}
-                                        />
-                                        <div className="report_card_info">
-                                            <h4 className="report_card_text">{product_name}</h4>
-                                        </div>
-                                    </Link>
+                                  <div className="image_container">
+                                          <img
+                                              className="report_card_icon center"
+                                              src={require(product_img)}
+                                          />
+                                  </div>
+                                    <div className="report_card_info">
+                                        <h4 className="report_card_text center">{product_name}</h4>
+                                    </div>
+                                  </Link>
                                 )
                             )}
                         </div>

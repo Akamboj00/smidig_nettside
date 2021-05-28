@@ -3,11 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import fire from "../../server/firebase";
 import { LoadingView } from "../loadingView";
 import {Form, Button} from 'react-bootstrap'
+import { errorView } from '../errorView'
+import Alert from 'react-bootstrap/Alert'
 
 export function FileReport() {
+    const [error, setError] = useState(false)
+    const submitReport = () => {
+
+        const part_number = document.getElementsByClassName("file_report_input").value
+        if(!part_number){
+            setError(true)
+        }
+    }
     return(
         <>
-            <div>
             <div id={"container_main"}>
               <div className="top_container">
                 <h1 >Finalize report</h1>
@@ -22,12 +31,14 @@ export function FileReport() {
                             <h3>Comment (optional)</h3>
                             <Form.Control className="file_report_input" size="lg" type="text" placeholder="optional comment" />
                             <br/>
-                            <Button>Submit report</Button>
+                            <Button type="submit" onClick={() => submitReport()} >Submit report</Button>
+                            {error && <Alert className="error" variant="danger">
+                                <h5>You need to fill in part number!</h5>
+                            </Alert>}
                         </Form.Group>
                         </div>
                     </div>
                 </div>
-            </div>
         </>
     )
 }
