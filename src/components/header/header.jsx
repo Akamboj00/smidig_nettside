@@ -50,7 +50,7 @@ export function Menu() {
                 </HamburgerIcon>
             </div>
             <div className={"header-hamburger-menu"} id={"burgerMenu"} style={{display: "none"}}>
-                <Link to={"/report"}>
+                <Link onClick={() => openHamburger()} to={"/report"} >
                     <div className={"header-item-hamburger"}>
                         <ReportIcon
                             className={"hamburger-svg"}
@@ -58,7 +58,7 @@ export function Menu() {
                         <h5 className={"center"}>REPORT</h5>
                     </div>
                 </Link>
-                <Link to={"/learn"}>
+                <Link onClick={() => openHamburger()} to={"/learn"}>
                     <div className={"header-item-hamburger"}>
                         <LearnIcon
                             className={"hamburger-svg"}
@@ -66,7 +66,7 @@ export function Menu() {
                         <h5 className={"center"}>LEARN</h5>
                     </div>
                 </Link>
-                <Link to={"/users"}>
+                <Link onClick={() => openHamburger()} to={"/users"}>
                     <div className={"header-item-hamburger"}>
                         <UserIcon
                             className={"hamburger-svg"}
@@ -74,7 +74,7 @@ export function Menu() {
                         <h5 className={"center"}>USERS</h5>
                     </div>
                 </Link>
-                <Link to={"/language"}>
+                <Link onClick={() => openHamburger()} to={"/language"}>
                     <div className={"header-item-hamburger"}>
                         <LanguageIcon
                             className={"hamburger-svg"}

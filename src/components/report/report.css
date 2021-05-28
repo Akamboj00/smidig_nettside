@@ -42,6 +42,7 @@
     width: 300px;
     text-align: center;
 }
+
 .report_card_text {
     position: relative;
     line-height: 180px;
@@ -51,11 +52,13 @@
 .file_report_form{
     text-align: center;
 }
+
 .file_report_input{
     margin-left: auto;
     margin-right: auto;
     width: 300px !important;
 }
+
 .parts_card_container {
     position: relative;
     display: grid;
@@ -65,4 +68,9 @@
     margin-left: auto;
     margin-right: auto;
     gap: 20px;
+}
+
+.report_card_icon{
+        max-height: 100%;
+        max-width: 100%;
 }
