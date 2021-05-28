@@ -8,7 +8,7 @@ import {UserCard} from "./userCard";
 import {UserCardEdit} from "./userCardEdit";
 import {forEach} from "react-bootstrap/ElementChildren";
 
-export function UserCards({users, authKey, edit}) {
+export function UserCards({users, authKey, edit, onDelete}) {
     if (users === null) return LoadingView();
 
     const [state, setState] = useState(true);
@@ -103,13 +103,14 @@ export function UserCards({users, authKey, edit}) {
     );
 
     if (users === "new") return createUser;
-
+    if (users === null) return LoadingView();
     const userCards = (
         <>
             {Object.keys(users).map((index, key) => ((edit)
                     ?
                     (<UserCardEdit
                         user={users[index]}
+                        onDelete={onDelete}
                     />)
                     :
                     (<UserCard

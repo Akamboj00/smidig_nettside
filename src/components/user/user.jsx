@@ -20,6 +20,10 @@ export function User() {
         console.log(edit);
     }
 
+    const onDelete = () => {
+        setUsers(null);
+    }
+
     if (authKey)
     {
         const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
@@ -28,14 +32,7 @@ export function User() {
         dbReference.child('users').child(authUser.uid).once('value').then(async (snapshot) => {
             if (snapshot.exists() && users !== "new" && snapshot.val() !== undefined && snapshot.val() !== null)
             {
-                if(users === null){
-                    setUsers(snapshot.val());
-                }
-                let dbUsers = snapshot.val();
-                if(users !== dbUsers)
-                {
-                    setUsers(dbUsers);
-                }
+                setUsers(snapshot.val());
             }
             else if (sessionStorage.getItem("user") !== undefined && users === "new" && snapshot.val() != null)
             {
@@ -59,6 +56,7 @@ export function User() {
                                 users={users}
                                 authKey={authKey}
                                 edit={edit}
+                                onDelete={onDelete}
                             />
                         </div>
                     </div>

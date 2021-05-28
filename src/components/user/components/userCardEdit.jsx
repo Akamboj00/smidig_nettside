@@ -1,16 +1,31 @@
 import React, {useEffect, useState} from "react";
 import {deleteUser} from "../../lib/fb";
+import {useHistory} from "react-router";
 
-export function UserCardEdit({user}) {
+export function UserCardEdit({user,onDelete}) {
     const [_firstName, setFirstName] = useState();
     const [_lastName, setLastName] = useState();
     const [_language, setLanguage] = useState();
+
+    const history = useHistory();
 
     useEffect(() => {
         setFirstName(user.firstName);
         setLastName(user.lastName);
         setLanguage(user.language);
     }, []);
+
+    const _deleteUser = async () =>{
+        if(confirm(`Confirm deleting user: ${user.firstName}`)){
+            await deleteUser(user.userId).then(() => {
+                if (user.userId=== sessionStorage.getItem("user"))
+                {
+                    sessionStorage.removeItem("user");
+                }
+                onDelete();
+            });
+        }
+    }
 
     return (
         <div
@@ -81,18 +96,7 @@ export function UserCardEdit({user}) {
                 <div className={"user_card_extra_info"}>
                     <h6 className={"center"}>CONFIRM CHANGES</h6>
                 </div>
-                <div className={"user_card_select_user"} onClick={
-                    async () => {
-                        if(confirm(`Confirm deleting user: ${user.firstName}`)){
-                            await deleteUser(user.userId)
-                            console.log(user.userId);
-                            console.log(sessionStorage.getItem("user"));
-                            if (user.userId === sessionStorage.getItem("user"))
-                            {
-                                sessionStorage.removeItem("user");
-                            }
-                        }
-                }}>
+                <div className={"user_card_select_user"} onClick={_deleteUser}>
                     <h6 className={"center"}>DELETE USER</h6>
                 </div>
             </div>
