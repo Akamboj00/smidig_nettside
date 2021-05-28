@@ -27,13 +27,13 @@
 .video-js .vjs-volume-level{
     background: #C3DC93;
 }
-.headline h1 {
+.headline h4 {
     color: #C3DC93;
-    padding: 5vh;
-    font-size: 40px;
+    margin-top: auto;
+    font-size: 35px;
+    padding-top: 20px;
     position: relative;
-    left: 50px;
-    top: 0px;
+    text-align: center;
   }
 .headline{
     background-color: #174A5B;

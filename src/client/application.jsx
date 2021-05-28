@@ -9,6 +9,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Product } from "../components/product/product";
 import { Report } from "../components/report/report";
 import { Video } from "../components/video/video";
+import { Parts } from "../components/report/parts";
+import { FileReport } from '../components/report/fileReport'
 // Main Stylesheet -> Shared values between all pages
 import "../components/style/index.css";
 
@@ -24,7 +26,7 @@ export function Application() {
           <Route path={"/users"}>
             <User />
           </Route>
-          <Route path={"/report"}>
+          <Route exact path={"/report"}>
             <Report />
           </Route>
           <Route path={"/MainMenu"}>
@@ -41,6 +43,12 @@ export function Application() {
           </Route>
           <Route path={"/video"}>
             <Video />
+          </Route>
+          <Route exact path={"/report/:p1?"}>
+            <Parts />
+          </Route>
+          <Route parth={"/report/:p1?/:p2?"}>
+            <FileReport/>
           </Route>
           <Route>page not found</Route>
         </Switch>

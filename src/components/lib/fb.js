@@ -27,7 +27,7 @@ export async function getDatabaseSingleProgress(users, authUID, childKey, progre
 }
 
 //lage progress data i firebase
-/*
+
 export async function postProgress(){
     const createParts= {
             0:{
@@ -39,43 +39,43 @@ export async function postProgress(){
                 },
                 1:{
                     part_id: 1,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell solar cable including plug. 4m",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 3:{
                     part_id: 3,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Battery pack and light unit complete",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 4:{
                     part_id: 4,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 }, 
                 5:{
                     part_id: 5,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 6:{
                     part_id: 6,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0/ REV D power switch cover",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Battery box and PCBA screws Torx",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
@@ -89,43 +89,43 @@ export async function postProgress(){
                 },
                 1:{
                     part_id: 1,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell solar cable including plug. 4m",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 3:{
                     part_id: 3,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Battery pack and light unit complete",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 4:{
                     part_id: 4,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 }, 
                 5:{
                     part_id: 5,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 6:{
                     part_id: 6,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0/ REV D power switch cover",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Battery box and PCBA screws Torx",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
@@ -139,43 +139,43 @@ export async function postProgress(){
                 },
                 1:{
                     part_id: 1,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell solar cable including plug. 4m",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 3:{
                     part_id: 3,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Battery pack and light unit complete",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 4:{
                     part_id: 4,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 }, 
                 5:{
                     part_id: 5,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 6:{
                     part_id: 6,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0/ REV D power switch cover",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Battery box and PCBA screws Torx",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
@@ -189,43 +189,43 @@ export async function postProgress(){
                 },
                 1:{
                     part_id: 1,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell solar cable including plug. 4m",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 3:{
                     part_id: 3,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Battery pack and light unit complete",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 4:{
                     part_id: 4,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 }, 
                 5:{
                     part_id: 5,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 6:{
                     part_id: 6,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0/ REV D power switch cover",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Battery box and PCBA screws Torx",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
@@ -239,43 +239,43 @@ export async function postProgress(){
                 },
                 1:{
                     part_id: 1,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell solar cable including plug. 4m",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 3:{
                     part_id: 3,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Battery pack and light unit complete",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 4:{
                     part_id: 4,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 }, 
                 5:{
                     part_id: 5,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 6:{
                     part_id: 6,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0/ REV D power switch cover",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Battery box and PCBA screws Torx",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
@@ -289,43 +289,43 @@ export async function postProgress(){
                 },
                 1:{
                     part_id: 1,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell solar cable including plug. 4m",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 3:{
                     part_id: 3,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Battery pack and light unit complete",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 4:{
                     part_id: 4,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 }, 
                 5:{
                     part_id: 5,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 6:{
                     part_id: 6,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Sunbell 2.0/ REV D power switch cover",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
-                    part_name: "Sunbell 2.0 Solar panel complete 4m cable",
+                    part_name: "Battery box and PCBA screws Torx",
                     part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
@@ -337,7 +337,6 @@ export async function postProgress(){
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     return getDatabaseRef().update(posts2)
 }
-*/
 
 
 export async function postUser(firstName, lastName, language) {
@@ -424,7 +423,7 @@ export async function postUser(firstName, lastName, language) {
     posts[`users/${userAuth.uid}/${count}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
-    //postProgress()
+    postProgress()
     return getDatabaseRef().update(posts);
 }
 

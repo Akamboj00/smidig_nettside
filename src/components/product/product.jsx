@@ -11,7 +11,7 @@ require("url:../img/lampshade.png");
 require("url:../img/solarpanel.png");
 require("url:../img/turtlelamp.png");
 
-export const Product = (props) => {
+export const Product = () => {
   const [products, setProducts] = useState(null);
   const [productsOnUsers, setProductsOnUsers] = useState(null)
   const [authKey, setAuthKey] = useState(() => {
@@ -22,7 +22,6 @@ export const Product = (props) => {
 });
   let location = useLocation();
   const { id } = useParams();
-  console.log(location._product_name)
 
 async function getDatabaseSingleProgress() {
   const dbReference = fire.database().ref();
@@ -54,7 +53,6 @@ if(products === null || productsOnUsers === null){
       </div>
     )
 }else{
-  
   return (
     <>
       <div id={"container_main"}>
@@ -69,7 +67,7 @@ if(products === null || productsOnUsers === null){
             }
               key={part_id}
               className="learn_card"
-              to={{ pathname: "/video", video: part_video, product: id, part: part_id}}
+              to={{ pathname: "/video", video: part_video, product: id, part: part_id, _part_name: part_name}}
             >
               <img className="learn_card_icon" src={part_image} />
               <div className="card_info">

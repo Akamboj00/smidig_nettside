@@ -19,8 +19,8 @@ require("url:../img/reportIconBlue.png")
 export const Learn = () => {
     const history = useHistory();
     if(sessionStorage.getItem("user") === null){
+        alert("Please select a user!")
         history.push("/users");
-        alert("Please select a user")
     }
     let location = useLocation()
     const [clicked, setClicked] = useState();
@@ -35,8 +35,6 @@ export const Learn = () => {
         if (key === undefined) return history.push("/login");
         return key;
     });
-
-
 
 
     const [testData] = useState([
