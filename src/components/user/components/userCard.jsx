@@ -1,0 +1,49 @@
+import React from "react";
+import userCard from "./userCard.css"
+
+export function UserCard({user, selected, onSelected}) {
+    return (
+            <div
+                key={user.userId}
+                className={(user.userId === selected) ? ("user_card user_card_selected") : ("user_card")}
+                onClick={() => {
+                    onSelected(user.userId);
+                    sessionStorage.setItem("user", user.userId);
+                    }
+                }
+            >
+                <div className={"user_card_inner_container"}>
+                <div className={"user_active_indicator"}/>
+                <div className={"user_card_image_container"}>
+                    <div className={"center user_card_image"}/>
+                </div>
+                <div className={"user_card_info_container"}>
+                    <div className={"center user_card_info"}>
+                        <div className={"user_card_name_container"}>
+                            <h6>NAME:</h6>
+                            <h5 className={"user_card_name"}>{user.firstName} {user.lastName}</h5>
+                        </div>
+                        <div className={"user_card_language_container"}>
+                            <h6>LANGUAGE:</h6>
+                            <h5 className={"user_card_language"}>{user.language}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div className={"user_card_right_top_container"}>
+                    <p className={"center"}>USER ID: {user.userId}</p>
+                </div>
+                <div className={"user_card_right_bottom_container"}>
+                    <p className={"user_card_admin_id_text"}>ADMIN ID: {user.id}</p>
+                </div>
+                </div>
+                <div className={"user_card_function_bar"}>
+                    <div className={"user_card_extra_info"}>
+                        <h6 className={"center"}>CERTIFICATES</h6>
+                    </div>
+                    <div className={"user_card_select_user"}>
+                        <h6 className={"center"}>SELECT USER</h6>
+                    </div>
+                </div>
+            </div>
+    )
+}

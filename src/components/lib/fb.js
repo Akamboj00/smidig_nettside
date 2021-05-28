@@ -1,4 +1,5 @@
 import fire from "../../server/firebase"
+import {forEach} from "react-bootstrap/ElementChildren";
 
 function getDatabaseRef() {
     return fire.database().ref();
@@ -339,93 +340,100 @@ export async function postProgress(){
 }
 */
 
+function getUserAuth() {
+    const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
+    return getSessionStorage(key);
+}
 
 export async function postUser(firstName, lastName, language) {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
     const userAuth = getSessionStorage(key);
+    let userKey = getDatabaseRef().child('users').child(userAuth.uid).push().key;
 
 
-    const data = await getDatabaseWithKey("users", userAuth.uid);
-    let count = 0;
-    if(data !== null){
-        count = data.length
-    }
     const newUser = {
         id: userAuth.uid,
-        userId: count,
+        userId: userKey,
         firstName: firstName,
         lastName: lastName,
         language: language,
         progress: {
             0: {
-                0:0,
-                1:0,
-                2:0,
-                3:0,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
+                0: 0,
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
             },
             1: {
-                0:0,
-                1:0,
-                2:0,
-                3:0,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
+                0: 0,
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
             },
             2: {
-                0:0,
-                1:0,
-                2:0,
-                3:0,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
+                0: 0,
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
             },
             3: {
-                0:0,
-                1:0,
-                2:0,
-                3:0,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
+                0: 0,
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
             },
             4: {
-                0:0,
-                1:0,
-                2:0,
-                3:0,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
+                0: 0,
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
             },
             5: {
-                0:0,
-                1:0,
-                2:0,
-                3:0,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
+                0: 0,
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
             }
         }
     }
 
     let posts = {};
-    posts[`users/${userAuth.uid}/${count}`] = newUser;
+    posts[`users/${userAuth.uid}/${userKey}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     //postProgress()
+    sessionStorage.setItem("user", userKey);
     return getDatabaseRef().update(posts);
+}
+
+export function deleteUser(key) {
+    const userAuth = getUserAuth();
+
+    return getDatabaseRef().child("users").child(userAuth.uid).child(key).remove();
 }
 
 

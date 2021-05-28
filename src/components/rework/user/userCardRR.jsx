@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {LoadingView} from "../../loadingView";
 
-export function UserCard(user) {
+export function UserCardRR(user) {
     if(user === null) return LoadingView();
     const {firstName, id, language, lastName, userId} = user;
     return (
@@ -70,7 +70,7 @@ export function UserCardsR(users, authKey) {
     const userCards = (
         <>
             {users.map(({firstName, id, language, lastName, userId}) => (
-                    <UserCard
+                    <UserCardRR
                         user={{firstName, id, language, lastName, userId}}
                     />
                 ))}

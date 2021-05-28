@@ -3,7 +3,7 @@ import "./user.css";
 import "../main.css";
 import {useHistory} from "react-router";
 import {getDatabaseWithKey, getSessionStorage} from "../../lib/fb";
-import {UserCardsR} from "./userCard";
+import {UserCardsR} from "./userCardRR";
 
 
 export function UserR() {

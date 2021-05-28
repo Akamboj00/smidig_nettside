@@ -11,7 +11,7 @@ require("url:../img/lampshade.png");
 require("url:../img/solarpanel.png");
 require("url:../img/turtlelamp.png");
 
-export const Product = (props) => {
+export const Product = () => {
   const [products, setProducts] = useState(null);
   const [productsOnUsers, setProductsOnUsers] = useState(null)
   const [authKey, setAuthKey] = useState(() => {
@@ -64,7 +64,7 @@ if(products === null || productsOnUsers === null){
             <Link
               style={
                 { textDecoration: "none",
-                  backgroundColor: (productsOnUsers[JSON.parse(sessionStorage.getItem("user"))].progress[id][part_id]) ? "green" : "red"
+                  backgroundColor: (productsOnUsers[sessionStorage.getItem("user")].progress[id][part_id]) ? "green" : "red"
               }
             }
               key={part_id}

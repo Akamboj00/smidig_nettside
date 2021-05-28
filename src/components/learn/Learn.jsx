@@ -20,7 +20,7 @@ export const Learn = () => {
     const history = useHistory();
     if(sessionStorage.getItem("user") === null){
         history.push("/users");
-        alert("Please select a user")
+        alert("Please select a user");
     }
     let location = useLocation()
     const [clicked, setClicked] = useState();
@@ -125,7 +125,7 @@ export const Learn = () => {
     }
 
     if(_progress === null){
-        const key = JSON.parse(sessionStorage.getItem("user"));
+        const key = sessionStorage.getItem("user");
         setProgress(users[key].progress);
     }
 
@@ -186,7 +186,7 @@ export const Learn = () => {
                 <div className={"wrap_container wrap_header"}>
                     <div className={"container_inner"}>
                         <div className="learn_heading_container">
-                            <h3 className="learn_text">Total learning progress for {users[parseInt(sessionStorage.getItem("user"))].firstName}</h3>
+                            <h3 className="learn_text">Total learning progress for {users[sessionStorage.getItem("user")].firstName}</h3>
                             <ProgressBar className="learn_total_progress">
                                 <ProgressBar
                                     className="learn_progress_background"

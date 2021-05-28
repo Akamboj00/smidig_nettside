@@ -28,7 +28,7 @@ export const Video = () => {
     fire.database()
     .ref('users')
     .child(authUser.uid)
-    .child(JSON.parse(sessionStorage.getItem("user")))
+    .child(sessionStorage.getItem("user"))
     .child("progress")
     .child(location.product)
     .child(location.part)

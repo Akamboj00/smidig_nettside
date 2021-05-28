@@ -4,19 +4,7 @@
 }
 
 .wrap_user_header {
-    background-image: url("../img/blur.jpg");
-    background-size: cover;
-    background-position: center;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes brightU {
-    0%   {filter: brightness(100%)}
-    25%  {filter: brightness(96%)}
-    50%  {filter: brightness(92%)}
-    75%  {filter: brightness(96%)}
-    100% {filter: brightness(100%)}
+    background: #c3dc93;
 }
 
 .wrap_user_list{
@@ -123,10 +111,10 @@
 .users_grid{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     height: fit-content;
     width: 80%;
-    gap: 20px;
+    gap: 30px;
     margin-left: auto;
     margin-right: auto;
     background: #ffffff;
@@ -134,157 +122,9 @@
     border-radius: 3px;
 }
 
-.user_card{
-    display: flex;
-    height: 200px;
-    width: 100%;
-    border-radius: 0;
-    background-color: white;
-    cursor: pointer;
-    position: relative;
-    transition: 0.1s;
-    border: 2px solid #eeeeee;
-}
-
-.user_card_selected{
-    transform: scale(1.05);
-    z-index: 1;
-    background: #ffffff;
-    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
-    border: 2px solid #c3dc93;
-    border-radius: 6px;
-}
-
-.user_active_indicator{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #08ff00;
-    right: -10px;
-    top: -10px;
-    border-radius: 100%;
-    display: none;
-
-    animation-name: onlineIndicator;
-    animation-iteration-count: infinite;
-    animation-duration: 7s;
-}
-
-@keyframes onlineIndicator {
-    0%   {box-shadow: 0 0 0 1px rgba(17, 255, 0, 0.1);}
-    25%  {box-shadow: 0 0 0 1.5px rgba(17, 255, 0, 0.2);}
-    50%  {box-shadow: 0 0 0 2px rgba(17, 255, 0, 0.3);}
-    75%  {box-shadow: 0 0 0 1.5px rgba(17, 255, 0, 0.2);}
-    100% {box-shadow: 0 0 0 1px rgba(17, 255, 0, 0.1);}
-}
-
-
-.user_card_selected .user_active_indicator{
-    display: block;
-}
-
-.card_selected{
-    background: orange;
-}
-
-.user_card_info_container{
-    position:absolute;
-    width: 60%;
-    height: 100%;
-    right: 0;
-}
-
-.user_card_image_container{
-    position: absolute;
-    width: 40%;
-    height: 100%;
-}
-
-.user_card_image{
-    height: 150px;
-    width: 150px;
-    border-radius: 100%;
-    background: #eeeeee;
-}
-
-.user_card_info{
-    width: 100%;
-    height: 70%;
-}
-
-.user_card_name_container{
-    position: absolute;
-    height: 50%;
-    width: 100%;
-}
-
-.user_card_name_container h5{
-    position: absolute;
-    bottom: 0;
-    font-weight: 600;
-}
-
-.user_card_name_container h6{
-    position: absolute;
-    bottom: 30px;
-    color: #434343;
-    font-weight: 400;
-}
-
-.user_card_language_container{
-    position: absolute;
-    height: 50%;
-    width: 100%;
-    bottom: 0;
-}
-
-.user_card_language_container h5{
-    position: absolute;
-    top: 30px;
-    font-weight: 600;
-}
-
-.user_card_language_container h6{
-    position: absolute;
-    top: 5px;
-    font-weight: 400;
-}
-
-.user_card_name{
-
-}
-
-.user_card_language{
-
-}
-
-.user_card_right_bottom_container{
-    position: absolute;
-    width: 70%;
-    right: 0;
-    bottom: 0;
-    height: 40px;
-}
-
-.user_card_right_top_container{
-    position: absolute;
-    width: 100px;
-    right: 0;
-    top: 0;
-    height: 40px;
-}
-
-.user_card_right_top_container p{
-    font-size: 12px;
-}
-
-.user_card_right_bottom_container p{
-    font-size: 12px;
-}
-
 .user_card_create_new_description{
     font-weight: 700;
-    color: #ffffff;
+    color: #434343;
 }
 
 .create_user_sub_description_container{
@@ -298,43 +138,27 @@
     color: #f2f2f2;
 }
 
-.user_card:hover{
-    transform: scale(1.04);
-    z-index: 1;
-    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
-    border: 2px solid #676767;
-    border-radius: 6px;
-}
-
-.create_new_user_initial:hover ~ .user_card{
-    filter: opacity(20%);
-}
-
-.user_card_admin_id_text{
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    padding: 0;
-    margin: 0;
-}
-
 #create_new_user{
     width: 100%;
 }
 
 .create_new_user_initial{
     display: flex;
-    height: 200px;
-    border-radius: 0;
-    background: #174a5b;
+    height: 230px;
+    width: 100%;
     cursor: pointer;
+    background: #c3dc93;
     position: relative;
     transition: 0.1s;
-    border: 2px solid #eeeeee;
+    border: 2px solid #174a5b;
+    max-width: 500px;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .create_new_user_initial:hover{
-    transform: scale(1.08);
+    transform: scale(1.04);
     z-index: 1;
     box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
     border: 2px solid #174a5b;

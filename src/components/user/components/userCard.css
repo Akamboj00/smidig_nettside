@@ -1,0 +1,220 @@
+.user_card_function_bar{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    background: #eeeeee;
+    border-radius: 0 0 6px 6px;
+}
+
+.user_card_select_user{
+    position: absolute;
+    right: 0;
+    width: calc(50%);
+    height: 100%;
+    border-radius: 0 0 6px 0;
+    background: #eeeeee;
+    border-left: 1px solid #676767;
+}
+
+.user_card_select_user:hover{
+    filter: brightness(95%);
+}
+
+.user_card_select_user h6{
+    color: #434343;
+    font-weight: 600;
+    font-family: Poppins, serif;
+    font-size: 16px;
+}
+
+.user_card_extra_info{
+    position: absolute;
+    left: 0;
+    width: calc(50%);
+    height: 100%;
+    border-radius: 0 0 0 6px;
+    background: #eeeeee;
+    border-right: 1px solid #676767;
+}
+
+.user_card_extra_info:hover{
+    filter: brightness(95%);
+}
+
+.user_card_extra_info h6{
+    color: #434343;
+    font-weight: 600;
+    font-family: Poppins, serif;
+    font-size: 16px;
+}
+
+.user_card_inner_container{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+.user_card{
+    display: flex;
+    height: 230px;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    transition: 0.1s;
+    border: 2px solid #eeeeee;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user_card_selected{
+    transform: scale(1.04);
+    background: #ffffff;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #434343;
+    border-radius: 6px;
+}
+
+.user_active_indicator{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #08ff00;
+    right: -7px;
+    top: -7px;
+    border-radius: 100%;
+    display: none;
+}
+
+.user_card_selected .user_active_indicator{
+    display: block;
+}
+
+.user_card_info_container{
+    position:absolute;
+    width: 65%;
+    height: 100%;
+    right: 0;
+}
+
+.user_card_image_container{
+    position: absolute;
+    width: 35%;
+    height: 100%;
+}
+
+.user_card_image{
+    height: 110px;
+    width: 110px;
+    border-radius: 100%;
+    background-image: url("https://thumbs-prod.si-cdn.com/p2xrA9gU624e8NzNzrOd1AvsyXg=/fit-in/1600x0/https://public-media.si-cdn.com/filer/4e/5e/4e5e5b38-0ba2-4cd1-8628-7bd2b5d88dc1/1024px-giraffe_close_up.jpg");
+    background-position: center;
+    background-size: cover;
+    border: 2px solid #676767;
+}
+
+.user_card_info{
+    width: 100%;
+    height: 70%;
+}
+
+.user_card_name_container{
+    position: absolute;
+    height: 50%;
+    width: 100%;
+}
+
+.user_card_name_container h5{
+    position: absolute;
+    bottom: 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user_card_name_container h6{
+    position: absolute;
+    bottom: 30px;
+    color: #434343;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.user_card_language_container{
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+}
+
+.user_card_language_container h5{
+    position: absolute;
+    top: 30px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user_card_language_container h6{
+    position: absolute;
+    top: 5px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.user_card_name{
+
+}
+
+.user_card_language{
+
+}
+
+.user_card_right_bottom_container{
+    position: absolute;
+    width: 70%;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+}
+
+.user_card_right_top_container{
+    position: absolute;
+    width: 100px;
+    right: 0;
+    top: 0;
+    height: 40px;
+}
+
+.user_card_right_top_container p{
+    font-size: 12px;
+}
+
+.user_card_right_bottom_container p{
+    font-size: 12px;
+}
+
+.user_card:hover{
+    transform: scale(1.02);
+    z-index: 1;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #676767;
+    border-radius: 6px;
+}
+
+.user_card_selected:hover{
+    transform: scale(1.04);
+}
+
+.create_new_user_initial:hover ~ .user_card{
+    filter: opacity(20%);
+}
+
+.user_card_admin_id_text{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    padding: 0;
+    margin: 0;
+}
