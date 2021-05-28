@@ -27,7 +27,7 @@ export async function getDatabaseSingleProgress(users, authUID, childKey, progre
 }
 
 //lage progress data i firebase
-
+/*
 export async function postProgress(){
     const createParts= {
             0:{
@@ -337,6 +337,7 @@ export async function postProgress(){
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     return getDatabaseRef().update(posts2)
 }
+*/
 
 
 export async function postUser(firstName, lastName, language) {
@@ -423,7 +424,7 @@ export async function postUser(firstName, lastName, language) {
     posts[`users/${userAuth.uid}/${count}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
-    postProgress()
+    //postProgress()
     return getDatabaseRef().update(posts);
 }
 
