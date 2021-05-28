@@ -1,121 +1,68 @@
-.center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
-/* HEADER TEXT
---------------------------------------------------------------------------*/
-.reportHeader_container {
-    position: relative;
+.top_container{
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
-    height: 190px;
-}
-.reportText {
-    padding-top: 50px;
-    padding-bottom: 0;
-    position: relative;
 }
 
-/* REPORT FORM
---------------------------------------------------------------------------*/
-.reportFormContainer{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-}
-.reportForm{
-    position: absolute;
+.report_card {
+    display: flex;
+    height: 200px;
     width: 100%;
-    height: 100%;
-}
-/* SELECT PRODUCT
---------------------------------------------------------------------------*/
-.productOption{
-    width: 300px;
-    height: 30px;
-    padding: 22px 0 22px 6px;
-    border: none;
-    border-radius: 3px;
-    pointer-events: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
-.productOption_container{
+    border-radius: 0;
+    background-color: white;
+    cursor: pointer;
+    padding: 0px;
     position: relative;
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
-    z-index: 3;
+    transition: 0.1s;
+    border: 2px solid #eeeeee;
 }
-/* REGISTRAION NUMBER
---------------------------------------------------------------------------*/
-.RegistrationNumber {
-    width: 300px;
-    height: 30px;
-    padding: 22px 0 22px 6px;
-    border: none;
-    border-radius: 3px;
-    pointer-events: auto;
-    position: relative;
-}
-.registrationNumberContainer{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
+
+.report_card:hover {
+    transform: scale(1.04);
     z-index: 1;
-}
-
-/* SELECT PART
---------------------------------------------------------------------------*/
-.partOption{
-    width: 300px;
-    height: 30px;
-    padding: 22px 0 22px 6px;
-    border: none;
-    border-radius: 3px;
-    pointer-events: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
-.partOption_container{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
-    z-index: 2;
-}
-
-/* REPORT BUTTON
---------------------------------------------------------------------------*/
-.reportButton {
-    all: unset;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    background: #174a5b;
-    width: 300px;
-    height: 60px;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #174a5b;
     border-radius: 6px;
-    pointer-events: auto;
 }
-.reportButton h5{
-    color: #f2f2f2;
-}
-.reportButton_container{
+
+.report_card_container {
     position: relative;
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
-    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
+    height: auto;
+    width: 62%;
+    margin-left: auto;
+    margin-right: auto;
+    row-gap: 25px;
+    column-gap: 25px;
+}
+
+.report_card_info{
+    position: relative;
+    width: 300px;
+    text-align: center;
+}
+.report_card_text {
+    position: relative;
+    line-height: 180px;
+    color: black;
+}
+
+.file_report_form{
+    text-align: center;
+}
+.file_report_input{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px !important;
+}
+.parts_card_container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    height: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
 }

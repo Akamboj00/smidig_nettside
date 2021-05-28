@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+ import React, {useState, useEffect} from "react";
 import "./learn.css";
 import {ProgressBar} from "react-bootstrap";
 import {Link, useLocation} from "react-router-dom";
@@ -19,8 +19,8 @@ require("url:../img/reportIconBlue.png")
 export const Learn = () => {
     const history = useHistory();
     if(sessionStorage.getItem("user") === null){
+        alert("Please select a user!")
         history.push("/users");
-        alert("Please select a user");
     }
     let location = useLocation()
     const [clicked, setClicked] = useState();
@@ -35,8 +35,6 @@ export const Learn = () => {
         if (key === undefined) return history.push("/login");
         return key;
     });
-
-
 
 
     const [testData] = useState([
@@ -214,7 +212,7 @@ export const Learn = () => {
                                         style={{textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
-                                        to={{pathname: `${"/product/" + product_id}`, _product_name : product_name}}
+                                        to={{pathname: `${"/product/" + product_id}`, _product_name : product_name, _product_id : product_id}}
                                         onClick={() => setClicked(testData[product_id])}
                                     >
                                         <img

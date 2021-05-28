@@ -22,12 +22,11 @@ export const Product = () => {
 });
   let location = useLocation();
   const { id } = useParams();
-  console.log(location._product_name)
 
 async function getDatabaseSingleProgress() {
   const dbReference = fire.database().ref();
 
-    dbReference.child("progress").child(id).once('value').then((snapshot) => {
+    dbReference.child("progress").child(sessionStorage.getItem("current_product_id")).once('value').then((snapshot) => {
         setProducts(snapshot.val());
     });
     const authUser = JSON.parse(sessionStorage.getItem(authKey.toString()));
@@ -39,8 +38,10 @@ async function getDatabaseSingleProgress() {
 useEffect(() => {
   getDatabaseSingleProgress()
 }, []);
-if(location._product_name){
+
+if(location._product_name && location._product_id){
   sessionStorage.setItem("current_product", location._product_name)
+  sessionStorage.setItem("current_product_id", location._product_id)
   }
 if(authKey === null){
   history.push("/users")
@@ -54,7 +55,6 @@ if(products === null || productsOnUsers === null){
       </div>
     )
 }else{
-  
   return (
     <>
       <div id={"container_main"}>
@@ -69,7 +69,7 @@ if(products === null || productsOnUsers === null){
             }
               key={part_id}
               className="learn_card"
-              to={{ pathname: "/video", video: part_video, product: id, part: part_id}}
+              to={{ pathname: "/video", video: part_video, product: id, part: part_id, _part_name: part_name}}
             >
               <img className="learn_card_icon" src={part_image} />
               <div className="card_info">
