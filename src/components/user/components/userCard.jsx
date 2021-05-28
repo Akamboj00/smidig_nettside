@@ -6,11 +6,6 @@ export function UserCard({user, selected, onSelected}) {
             <div
                 key={user.userId}
                 className={(user.userId === selected) ? ("user_card user_card_selected") : ("user_card")}
-                onClick={() => {
-                    onSelected(user.userId);
-                    sessionStorage.setItem("user", user.userId);
-                    }
-                }
             >
                 <div className={"user_card_inner_container"}>
                 <div className={"user_active_indicator"}/>
@@ -34,8 +29,13 @@ export function UserCard({user, selected, onSelected}) {
                     <div className={"user_card_extra_info"}>
                         <h6 className={"center"}>CERTIFICATES</h6>
                     </div>
-                    <div className={"user_card_select_user"}>
-                        <h6 className={"center"}>SELECT USER</h6>
+                    <div className={"user_card_select_user"}
+                         onClick={() => {
+                        onSelected(user.userId);
+                        sessionStorage.setItem("user", user.userId);
+                    }
+                    }>
+                        <h6 className={"center"} >SELECT USER</h6>
                     </div>
                 </div>
             </div>

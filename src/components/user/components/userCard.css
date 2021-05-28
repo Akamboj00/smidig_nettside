@@ -8,6 +8,7 @@
 }
 
 .user_card_select_user{
+    transition: 0.2s;
     position: absolute;
     right: 0;
     width: calc(50%);
@@ -21,6 +22,10 @@
     filter: brightness(95%);
 }
 
+.user_card_select_user:active{
+    filter: brightness(90%);
+}
+
 .user_card_select_user h6{
     color: #434343;
     font-weight: 600;
@@ -29,6 +34,7 @@
 }
 
 .user_card_extra_info{
+    transition: 0.2s;
     position: absolute;
     left: 0;
     width: calc(50%);
@@ -41,6 +47,11 @@
 .user_card_extra_info:hover{
     filter: brightness(95%);
 }
+
+.user_card_extra_info:active{
+    filter: brightness(90%);
+}
+
 
 .user_card_extra_info h6{
     color: #434343;
@@ -90,7 +101,7 @@
 }
 
 .user_card_selected .user_active_indicator{
-    display: block;
+    display: none;
 }
 
 .user_card_info_container{

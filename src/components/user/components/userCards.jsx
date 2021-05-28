@@ -110,7 +110,6 @@ export function UserCards({users, authKey, edit}) {
                     ?
                     (<UserCardEdit
                         user={users[index]}
-                        key={key}
                     />)
                     :
                     (<UserCard
