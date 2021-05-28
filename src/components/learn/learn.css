@@ -113,6 +113,11 @@
     margin-top: 60px;
 }
 
+.learn_card_icon{
+    max-height: 100%;
+    max-width: 100%;
+}
+
 @media (max-width:1400px){
     .learn_card_container {
         width: calc(100% - 100px);

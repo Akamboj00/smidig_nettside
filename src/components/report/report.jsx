@@ -5,12 +5,13 @@ import { InputField } from "../inputField";
 import {useHistory} from "react-router";
 import fire from "../../server/firebase";
 import { LoadingView } from "../loadingView";
+
 require("url:../img/test.png");
-require("url:../img/sunbell_image.png");
-require("url:../img/movesmart_image.png");
-require("url:../img/startpluss_image.png");
-require("url:../img/sunturtle_image.png");
-require("url:../img/home_image.png");
+require("url:../img/new/sunbell_image.png");
+require("url:../img/new/movesmart_image.png");
+require("url:../img/new/startpluss_image.png");
+require("url:../img/new/sunturtle_image.png");
+require("url:../img/new/home_image.png");
 require("url:../img/home_image.png");
 require("url:../img/reporticon.png");
 require("url:../img/reportIconBlue.png")
@@ -31,27 +32,27 @@ export function Report() {
     {
         product_id: 0,
         product_name: "Sunbell",
-        product_img: "url:../img/sunbell_image.png",
+        product_img: "url:../img/new/sunbell_image.png",
     },
     {
         product_id: 1,
         product_name: "MoveSmart",
-        product_img: "url:../img/movesmart_image.png",
+        product_img: "url:../img/new/movesmart_image.png",
     },
     {
         product_id: 2,
         product_name: "Start+",
-        product_img: "url:../img/startpluss_image.png",
+        product_img: "url:../img/new/startpluss_image.png",
     },
     {
         product_id: 3,
         product_name: "SunTurtle",
-        product_img: "url:../img/sunturtle_image.png",
+        product_img: "url:../img/new/sunturtle_image.png",
     },
     {
         product_id: 4,
         product_name: "Home",
-        product_img: "url:../img/home_image.png",
+        product_img: "url:../img/new/home_image.png",
     },
 ]);
 

@@ -6,7 +6,6 @@ import { LoadingView } from "../loadingView";
 export function Parts() {
     const [products, setProducts] = useState(null);
     let location = useLocation();
-    console.log(location._product_id)
 
     async function getDatabaseSingleProgress() {
         const dbReference = fire.database().ref();
