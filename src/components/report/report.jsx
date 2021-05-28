@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { InputField } from "../inputField";
+import {useHistory} from "react-router";
 import fire from "../../server/firebase";
 import { LoadingView } from "../loadingView";
 require("url:../img/test.png");
@@ -18,6 +19,12 @@ import "./report.css";
 export function Report() {
   const [clicked, setClicked] = useState();
   const [products, setProducts] = useState(null);
+  const history = useHistory()
+
+  if(sessionStorage.getItem("user") === null){
+    alert("Please select a user!")
+    history.push("/users");
+}
 
   
   const [data] = useState([
