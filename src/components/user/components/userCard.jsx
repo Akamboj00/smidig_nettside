@@ -10,7 +10,7 @@ export function UserCard({user, selected, onSelected}) {
                 <div className={"user_card_inner_container"}>
                 <div className={"user_active_indicator"}/>
                 <div className={"user_card_image_container"}>
-                    <div className={"center user_card_image"}/>
+                    <div className={"center user_card_image"} style={(user.image != null) ? ({backgroundImage: `url(${user.image})`}) : ({})}/>
                 </div>
                 <div className={"user_card_info_container"}>
                     <div className={"center user_card_info"}>

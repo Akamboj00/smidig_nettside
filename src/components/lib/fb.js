@@ -345,7 +345,7 @@ function getUserAuth() {
     return getSessionStorage(key);
 }
 
-export async function postUser(firstName, lastName, language) {
+export async function postUser(firstName, lastName, language, image) {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
     const userAuth = getSessionStorage(key);
     let userKey = getDatabaseRef().child('users').child(userAuth.uid).push().key;
@@ -418,7 +418,8 @@ export async function postUser(firstName, lastName, language) {
                 6: 0,
                 7: 0,
             }
-        }
+        },
+        image: image
     }
 
     let posts = {};
@@ -427,6 +428,26 @@ export async function postUser(firstName, lastName, language) {
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     //postProgress()
     sessionStorage.setItem("user", userKey);
+    return getDatabaseRef().update(posts);
+}
+
+export async function editUser(firstName, lastName, language, image, userId, progress){
+    const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
+    const userAuth = getSessionStorage(key);
+
+    const updateUser = {
+        id: userAuth.uid,
+        userId: userId,
+        firstName: firstName,
+        lastName: lastName,
+        language: language,
+        progress: progress,
+        image: image
+    }
+
+    let posts = {};
+    posts[`users/${userAuth.uid}/${userId}`] = updateUser;
+
     return getDatabaseRef().update(posts);
 }
 

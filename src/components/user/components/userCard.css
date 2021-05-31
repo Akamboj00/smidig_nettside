@@ -33,6 +33,11 @@
     font-size: 16px;
 }
 
+.user_card_extra_button{
+    all: unset;
+}
+
+
 .user_card_extra_info{
     transition: 0.2s;
     position: absolute;
@@ -59,7 +64,6 @@
     font-family: Poppins, serif;
     font-size: 16px;
 }
-
 .user_card_inner_container{
     position: relative;
     width: 100%;
@@ -275,4 +279,16 @@
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.user_input_edit_img{
+    position: absolute;
+    bottom: 10px;
+    width: calc(100% - 80px);
+    left: 40px;
+}
+
+.form_edit_user{
+    width: 100%;
+    height: 100%;
 }
