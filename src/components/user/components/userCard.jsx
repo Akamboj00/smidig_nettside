@@ -1,10 +1,10 @@
 import React from "react";
 import userCard from "./userCard.css"
 
-export function UserCard({user, selected, onSelected}) {
+export function UserCard({user, selected, onSelected, _key}) {
     return (
             <div
-                key={user.userId}
+                key={_key}
                 className={(user.userId === selected) ? ("user_card user_card_selected") : ("user_card")}
             >
                 <div className={"user_card_inner_container"}>

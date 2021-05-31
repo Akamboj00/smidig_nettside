@@ -149,7 +149,7 @@
 .users_grid_edit{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     height: fit-content;
     width: 80%;
     gap: 30px;
@@ -181,7 +181,7 @@
     height: 230px;
     width: 100%;
     cursor: pointer;
-    background: #c3dc93;
+    background: #eeeeee;
     position: relative;
     transition: 0.1s;
     border: 2px solid #174a5b;
@@ -191,7 +191,20 @@
     margin-right: auto;
 }
 
-.create_new_user_initial:hover{
+.exit_create_new_user{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    cursor: pointer;
+    background: #eeeeee;
+    position: relative;
+    transition: 0.1s;
+    border: 2px solid #174a5b;
+    max-width: 500px;
+    border-radius: 6px;
+}
+
+.exit_create_new_user:hover{
     transform: scale(1.04);
     z-index: 1;
     box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
@@ -200,11 +213,23 @@
 }
 
 
+.create_new_user_initial:hover{
+    transform: scale(1.02);
+    z-index: 1;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #174a5b;
+    border-radius: 6px;
+}
+
+.exit_create_new_user:hover ~ .create_new_user_toggle{
+    filter: opacity(20%);
+}
+
+
 .create_new_user_toggle{
     display: flex;
     height: 700px;
     width: 100%;
-    max-width: 500px;
     background-color: white;
     cursor: pointer;
     position: relative;
@@ -262,7 +287,7 @@
     height: 125px;
     border: 2px solid #434343;
     border-radius: 100%;
-    background-image: url("https://photos.google.com/photo/AF1QipMwefuixdemgV8l4wZejm5W7oSGuX7fjGn3PBZQ");
+    background: url("../img/default_image.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
