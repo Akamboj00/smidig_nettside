@@ -431,7 +431,7 @@ export async function postUser(firstName, lastName, language, image) {
     return getDatabaseRef().update(posts);
 }
 
-export async function editUser(firstName, lastName, language, image, userId, progress){
+export async function editUser(firstName, lastName, language, image, userId, progress) {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
     const userAuth = getSessionStorage(key);
 
@@ -449,6 +449,22 @@ export async function editUser(firstName, lastName, language, image, userId, pro
     posts[`users/${userAuth.uid}/${userId}`] = updateUser;
 
     return getDatabaseRef().update(posts);
+}
+
+export default function newReport(product_id, part_id, part_name, comment) {
+    const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
+    const userAuth = getSessionStorage(key);
+
+    const report = {
+        userId: sessionStorage.getItem('user'),
+        partNumber: part_id,
+        productId: product_id,
+        partName: part_name,
+        productName: sessionStorage.getItem("current_report_product_name"),
+        comment: comment
+    }
+
+    return getDatabaseRef().child("reports").child(userAuth.uid).push(report);
 }
 
 export function deleteUser(key) {

@@ -52,7 +52,7 @@ export function UserCardEdit({user, onDelete, _key}) {
 
                     <div className={"user_active_indicator"}/>
                     <div className={"user_card_image_container"}>
-                        <div className={"center user_card_image"} style={(user.image != null) ? ({backgroundImage: `url(${user.image})`}) : ({})}/>
+                        <div className={"center user_card_image"} style={(_image === user.image) ? ({backgroundImage: `url(${user.image})`}) : ({backgroundImage: `url(${_image})`})}/>
                         <select className={"user_input_edit_img"}
                                 type={"text"}
                                 value={_image}
