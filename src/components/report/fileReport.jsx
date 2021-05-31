@@ -16,12 +16,10 @@ export function FileReport() {
         history.push("/report")
     }
     const submitReport = () => {
-        console.log(location.part)
-
         var part_number = document.getElementById("part_number").value
         var optional_comment = document.getElementById("optional_comment").value
-        console.log(part_number)
         if(!part_number){
+            setSubmitted(false)
             setError("You need to fill in part number!")
         }else{
             setError(false)
@@ -33,6 +31,8 @@ export function FileReport() {
                     productName : sessionStorage.getItem("current_report_product_name"),
                     comment : optional_comment
             })
+            document.getElementById("part_number").value = ""
+            document.getElementById("optional_comment").value = ""
             setSubmitted(true)
         }
     }
