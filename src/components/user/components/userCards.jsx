@@ -27,7 +27,11 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
             if (firstName && lastName && language && image !== undefined)
             {
                 await postUser(firstName, lastName, language, image);
-                onDelete();
+                setFirstName("");
+                setLastName("");
+                setLanguage("EN");
+                setImage(undefined)
+                onCreate(true);
             }
             else
             {
@@ -74,7 +78,7 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
                     <>
                         <div className={"create_user_container"}>
                             <div className={"user_create_img_container"}>
-                                <div className={"user_create_img center"} style={(image != undefined) ? ({backgroundImage: `url(${image})`}) : ({})}/>
+                                <div className={"user_create_img center"} style={(image !== undefined) ? ({backgroundImage: `url(${image})`}) : ({})}/>
                             </div>
                             <form onSubmit={handleCreateUser}>
                                 <div className={"user_input_container"}>

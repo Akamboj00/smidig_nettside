@@ -23,15 +23,12 @@ export function UserHeader(authKey, switchEdit) {
         </>
     );
 
-    const logout = () => {
-        fire.auth().signOut().then(() => {
-            sessionStorage.removeItem("user");
-            history.push("/login");
-        }).catch((error) => {
-            alert("An error occurred on logout");
-        });
+    function reset(){
+        sessionStorage.delete("current_report_product_id");
+        sessionStorage.delete("current_product_id");
+        sessionStorage.delete("current_product");
+        sessionStorage.delete("current_report_product_name");
     }
-
 
     const open = (
         <>
@@ -48,7 +45,7 @@ export function UserHeader(authKey, switchEdit) {
                             if(confirm(`Confirm logout: ${authUser.email}`))
                             {
                                 fire.auth().signOut().then(() => {
-                                    sessionStorage.removeItem("user");
+                                    sessionStorage.clear();
                                     history.push("/login");
                                 }).catch((error) => {
                                     alert("An error occurred on logout");

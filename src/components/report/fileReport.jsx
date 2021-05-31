@@ -6,6 +6,7 @@ import {Form, Button} from 'react-bootstrap';
 import { errorView } from '../errorView';
 import Alert from 'react-bootstrap/Alert';
 import {useHistory} from "react-router";
+import newReport from "../lib/fb";
 
 export function FileReport() {
     const [error, setError] = useState(false)
@@ -23,14 +24,7 @@ export function FileReport() {
             setError("You need to fill in part number!")
         }else{
             setError(false)
-            fire.database().ref('reports').push({
-                    userId : sessionStorage.getItem('user'),
-                    partNumber : part_number,
-                    productId : location.part,
-                    partName: location._part_name,
-                    productName : sessionStorage.getItem("current_report_product_name"),
-                    comment : optional_comment
-            })
+            newReport(location.part, part_number, location._part_name, optional_comment);
             document.getElementById("part_number").value = ""
             document.getElementById("optional_comment").value = ""
             setSubmitted(true)
