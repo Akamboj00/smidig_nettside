@@ -59,6 +59,7 @@
     box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
     border: 2px solid #174a5b;
     border-radius: 6px;
+    opacity: 100% !important; 
 }
 
 .learn_card_text {
