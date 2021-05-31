@@ -44,10 +44,10 @@ export function Application() {
           <Route path={"/video"}>
             <Video />
           </Route>
-          <Route exact path={"/report/:p1?"}>
+          <Route exact path={"/report/:product_name"}>
             <Parts />
           </Route>
-          <Route  exact parth={"/report/:p1?/:p2?"}>
+          <Route  exact path={"/report/:p1?/:p2?"}>
             <FileReport/>
           </Route>
           <Route>page not found</Route>
