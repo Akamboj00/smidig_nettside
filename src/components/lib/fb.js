@@ -28,7 +28,7 @@ export async function getDatabaseSingleProgress(users, authUID, childKey, progre
 }
 
 //lage progress data i firebase
-/*
+
 export async function postProgress(){
     const createParts= {
             0:{
@@ -338,7 +338,7 @@ export async function postProgress(){
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     return getDatabaseRef().update(posts2)
 }
-*/
+
 
 function getUserAuth() {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
@@ -426,7 +426,7 @@ export async function postUser(firstName, lastName, language, image) {
     posts[`users/${userAuth.uid}/${userKey}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
-    //postProgress()
+    postProgress()
     sessionStorage.setItem("user", userKey);
     return getDatabaseRef().update(posts);
 }
