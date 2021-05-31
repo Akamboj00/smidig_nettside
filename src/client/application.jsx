@@ -13,6 +13,7 @@ import { Parts } from "../components/report/parts";
 import { FileReport } from '../components/report/fileReport'
 // Main Stylesheet -> Shared values between all pages
 import "../components/style/index.css";
+import { Language } from '../components/language/language'
 
 export function Application() {
   return (
@@ -31,6 +32,9 @@ export function Application() {
           </Route>
           <Route path={"/MainMenu"}>
             <MainMenu />
+          </Route>
+          <Route path={"/language"}>
+            <Language/>
           </Route>
           <Route exact path={"/"}>
             <Redirect to={"/login"} />

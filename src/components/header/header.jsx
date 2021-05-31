@@ -149,7 +149,7 @@ export const Header = () => {
             <div className="header_container">
                 <div className={"header"}>
                     <Link to={"/mainmenu"}>
-                        <h1 className="header_title">BR!GHT</h1>
+                        <h1 className="header_title notranslate">BR!GHT</h1>
                     </Link>
                     <ul className="header_urlContainer">
                         <Menu/>

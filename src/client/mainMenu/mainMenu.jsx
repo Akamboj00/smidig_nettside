@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./mainMenu.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Carousel, Image, Card, CardDeck, Row, CardGroup, Button, Container, Col} from "react-bootstrap";
