@@ -59,6 +59,8 @@ if(products === null || productsOnUsers === null){
     <>
       <div id={"container_main"}>
         <h2 className="product_name">{sessionStorage.getItem("current_product")}</h2>
+        <div className={"wrap_container wrap_content"}>
+                    <div className={"container_inner"}>
         <div className="learn_card_container">
           {products.map(({part_id, part_image, part_name, part_video}) => (
             <Link
@@ -77,6 +79,8 @@ if(products === null || productsOnUsers === null){
               </div>
             </Link>
           ))}
+          </div>
+          </div>
         </div>
       </div>
     </>

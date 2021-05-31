@@ -20,6 +20,7 @@ import "./report.css";
 export function Report() {
   const [clicked, setClicked] = useState();
   const [products, setProducts] = useState(null);
+  const [params, setParams] = useState(null)
   const history = useHistory()
 
   if(sessionStorage.getItem("user") === null){

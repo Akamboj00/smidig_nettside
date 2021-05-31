@@ -5,6 +5,7 @@ import { LoadingView } from "../loadingView";
 
 export function Parts() {
     const [products, setProducts] = useState(null);
+    const [params1, setParams1] = useState(null)
     let location = useLocation();
 
     async function getDatabaseSingleProgress() {
@@ -25,6 +26,7 @@ export function Parts() {
 
       useEffect(() => {
         getDatabaseSingleProgress()
+        setParams1(sessionStorage.getItem("current_report_product_name").toLowerCase())
       }, []);
 
       if(products === null){
@@ -51,7 +53,7 @@ export function Parts() {
                                 style={{textDecoration: "none"}}
                                 key={part_id}
                                 className="parts_report_card"
-                                to={{ pathname: `/report/${sessionStorage.getItem("current_report_product_name").toLowerCase()}/${part_id}`, part: part_id, _part_name: part_name}}
+                                to={{ pathname: `/report/${params1}/${part_id}`, part: part_id, _part_name: part_name}}
                                 >
                                 <div className="parts_image_container">
                                     <img className="parts_image" src={part_image} />
