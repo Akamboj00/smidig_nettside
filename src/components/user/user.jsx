@@ -14,11 +14,7 @@ export function User() {
         return key;
     });
     const [edit, setEdit] = useState(false);
-
-    const switchEdit = () => {
-        setEdit(!edit);
-        console.log(edit);
-    }
+    const [create, setCreate] = useState(true);
 
     const onDelete = () => {
         setUsers(null);
@@ -45,20 +41,28 @@ export function User() {
         });
     }
 
+    const switchEdit = () => {
+        setEdit(!edit);
+    }
+
+
     return (
         <div id={"container_main"}>
             {UserHeader(authKey, switchEdit)}
             <div className={"wrap_container wrap_content"}>
                 <div className={"container_inner"}>
                     <div className={"users_card_container"}>
-                        <div className={(!edit) ? ("users_grid") : ("users_grid_edit")}>
-                            <UserCards
-                                users={users}
-                                authKey={authKey}
-                                edit={edit}
-                                onDelete={onDelete}
-                            />
-                        </div>
+                            <div className={(create) ? "users_grid" : "users_grid_edit"}>
+                                <UserCards
+                                    users={users}
+                                    authKey={authKey}
+                                    edit={edit}
+                                    switchEdit={switchEdit}
+                                    create={create}
+                                    onCreate={(create) => setCreate(create)}
+                                    onDelete={onDelete}
+                                />
+                            </div>
                     </div>
                 </div>
             </div>

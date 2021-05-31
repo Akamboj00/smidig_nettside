@@ -4,7 +4,7 @@ import {useHistory} from "react-router";
 import {useSubmit} from "../../../client/lib/useSubmit";
 import {LoadingView} from "../../loadingView";
 
-export function UserCardEdit({user, onDelete}) {
+export function UserCardEdit({user, onDelete, _key}) {
     const [_firstName, setFirstName] = useState(user.firstName);
     const [_lastName, setLastName] = useState(user.lastName);
     const [_language, setLanguage] = useState(user.language);
@@ -44,7 +44,7 @@ export function UserCardEdit({user, onDelete}) {
     return (
 
         <div
-            key={user.userId}
+            key={_key}
             className={"user_card user_card_edit"}
         >
             <form onSubmit={handleEditUser} className={"form_edit_user"}>

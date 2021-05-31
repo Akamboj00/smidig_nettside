@@ -39,9 +39,10 @@ export function UserHeader(authKey, switchEdit) {
                 <div className={"admin_info_container"}>
                     <h5 className={"admin_email_user"}>Admin: {authUser.email}</h5>
                     <div className={"center admin-info-inner"}>
-                        <button className={"edit_button"} onClick={() => switchEdit()}>Edit
-                            users
-                        </button>
+                        <button className={"edit_button"} onClick={() => {
+                            switchEdit();
+                            setState(false);
+                        }}>Edit users</button>
                         <button className={"logout_button"} onClick={(e) => {
                             e.preventDefault();
                             if(confirm(`Confirm logout: ${authUser.email}`))
