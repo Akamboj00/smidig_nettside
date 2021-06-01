@@ -206,9 +206,8 @@ export const Learn = () => {
                                      product_total_parts,
                                      product_total_parts_done
                                  }) => (
-                                    <Link                                      
-                                        style={{ opacity: (product_total_parts === product_total_parts_done) ? "30%" : "100%",
-                                            backgroundColor: (product_total_parts === product_total_parts_done) ? "#c3dc93" : "",
+                                    <Link
+                                        style={{backgroundColor: (product_total_parts === product_total_parts_done) ? "#eeeeee" : "",
                                         textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
