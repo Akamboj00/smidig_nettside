@@ -50,8 +50,15 @@ html{
 }
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
-    } 
+} 
+
 body {
     top: 0px !important; 
-    }
+}
 
+.goog-tooltip.skiptranslate{
+    display: none !important;
+}
+#goog-gt-tt{
+    display: none !important;
+}
