@@ -2,17 +2,14 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    height: calc(100% - 60px);
+    width: 100%;
 }
 
 .video-js .vjs-big-play-button {
     border: none !important;
-    border-radius: 10px;  
  }
  .vjs-control-bar{
-     border-bottom-left-radius: 10px;
-     border-bottom-right-radius:10px ;
      background: #174A5B;
  }
 
@@ -27,21 +24,19 @@
 .video-js .vjs-volume-level{
     background: #C3DC93;
 }
-.headline h4 {
-    color: #C3DC93;
+.headline h5 {
     margin-top: auto;
-    font-size: 35px;
-    padding-top: 20px;
+    padding-top: 18px;
     position: relative;
     text-align: center;
+    font-weight: 500;
   }
+
 .headline{
-    background-color: #174A5B;
-    height: 80px;
+    background-color: #ffffff;
+    height: 60px;
     width: 100%;
-    position: relative;  
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    position: relative;
 }
 
 .headline h1{
@@ -52,30 +47,26 @@
 }
 
 .videoContainer{
-    display: grid;
-    justify-content: center;
     position: absolute;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows:    repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .player {
-    grid-column: 2;
-    grid-row: auto;
-    font-size: 5vh;
-    top: 22vh;
-    width: 750px;
+    top: 140px;
+    height: calc(100% - 200px);
+    width: 80%;
     position:relative;
     overflow: hidden;
-    border-radius: 15px;  
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #eeeeee;
 }
 
 .leftArrow{
     color: #174A5B;
     position: relative;
     cursor: pointer;
-    grid-column: 1;
-    grid-row:2;
 }
 
 .leftArrow:hover{

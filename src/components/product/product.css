@@ -1,11 +1,11 @@
 
-.product_name{
+.product_name {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-.learn_card_container_fix{
+.learn_card_container_fix {
     position: absolute;
     width: 100%;
     height: auto;
@@ -23,10 +23,24 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.learn_card_product_container {
+    margin-top: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    height: auto;
+    width: 80%;
+    gap: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .learn_card {
     display: flex;
     height: 200px;
     width: 100%;
+    max-width: 600px;
     border-radius: 0;
     background-color: white;
     cursor: pointer;
@@ -34,6 +48,29 @@
     position: relative;
     transition: 0.1s;
     border: 2px solid #eeeeee;
+}
+
+.learn_card_product{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 0;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    transition: 0.1s;
+    border: 2px solid #eeeeee;
+}
+
+.learn_card_product:hover{
+    transform: scale(1.01);
+    z-index: 1;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #174a5b;
+    border-radius: 6px;
 }
 
 .learn_card:hover {
@@ -59,13 +96,100 @@
     position: relative;
     width: 300px;
 }
-@media (max-width:1400px){
+
+.card_info_product{
+    position: absolute;
+    height: 20px;
+    width: 100%;
+}
+
+.learn_card_text_product{
+    position: absolute;
+    color: #434343;
+    left: 150px;
+    pointer-events: none;
+}
+
+.learn_product_image_container{
+    position: absolute;
+    width: 100px;
+    height: 100%;
+}
+
+.learn_card_icon_product{
+    height: 80px;
+    width: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.learn_card_product_watched_container{
+    position: absolute;
+    height: 100%;
+    width: 160px;
+    right: 0;
+}
+
+.learn_card_product_watched{
+    width: 80px;
+    height: 80px;
+}
+
+.checkmark_icon_learn_product{
+    width: 40px;
+    height: 40px;
+    fill: #1aa542;
+}
+
+.checkmark_icon_learn_product_empty{
+    width: 40px;
+    height: 40px;
+    fill: #434343;
+}
+
+.tooltip_learn {
+    position: absolute;
+    width: calc(100% - 260px);
+    height: 50px;
+    left: 100px;
+    top: -15px;
+}
+
+.tooltip_learn .tooltiptext {
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 50px;
+    background-color: #434343;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    bottom: 80px;
+    z-index: 1;
+}
+
+.tooltip_learn:hover .tooltiptext {
+    visibility: visible;
+    animation-name: tooltipPop;
+    animation-duration: 0.1s;
+}
+
+@keyframes tooltipPop {
+    0%   {filter: opacity(10%); transform: scale(0.8); bottom: 60px;}
+    100% {filter: opacity(100%); transform: scale(1);  bottom: 80px;}
+}
+
+@media (max-width: 1400px) {
     .learn_card_container {
         width: calc(100% - 100px);
     }
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1000px) {
     .learn_card_container {
         width: calc(80%);
     }
