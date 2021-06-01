@@ -106,10 +106,10 @@ export function UserCardEdit({user, onDelete, _key}) {
                                         setLanguage(e.target.value);
                                     }}
                                 >
-                                    <option value={"NO"}>Norwegian</option>
-                                    <option value={"SWE"}>Swedish</option>
-                                    <option value={"EN"}>English</option>
-                                    <option value={"DK"}>Danish</option>
+                                    <option value={"no"}>Norwegian</option>
+                                    <option value={"sv"}>Swedish</option>
+                                    <option value={"en"}>English</option>
+                                    <option value={"da"}>Danish</option>
                                 </select>
                             </div>
                         </div>

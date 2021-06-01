@@ -48,4 +48,10 @@ html{
     padding-top: 80px;
     padding-bottom: 80px;
 }
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+body {
+    top: 0px !important; 
+    }
 
