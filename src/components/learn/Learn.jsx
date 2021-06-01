@@ -40,7 +40,7 @@ export const Learn = () => {
     const [testData] = useState([
         {
             product_id: 0,
-            product_name: "Learn Sunbell",
+            product_name: "Sunbell",
             product_img: "url:../img/new/sunbell_image.png",
             product_total_parts: 0,
             product_total_parts_done:0,
@@ -48,7 +48,7 @@ export const Learn = () => {
         },
         {
             product_id: 1,
-            product_name: "Learn MoveSmart",
+            product_name: "MoveSmart",
             product_img: "url:../img/new/movesmart_image.png",
             product_total_parts: 0,
             product_total_parts_done:0,
@@ -56,7 +56,7 @@ export const Learn = () => {
         },
         {
             product_id: 2,
-            product_name: "Learn Start+",
+            product_name: "Start+",
             product_img: "url:../img/new/startpluss_image.png",
             product_total_parts: 0,
             product_total_parts_done:0,
@@ -64,7 +64,7 @@ export const Learn = () => {
         },
         {
             product_id: 3,
-            product_name: "Learn SunTurtle",
+            product_name: "SunTurtle",
             product_img: "url:../img/new/sunturtle_image.png",
             product_total_parts: 0,
             product_total_parts_done:0,
@@ -72,7 +72,7 @@ export const Learn = () => {
         },
         {
             product_id: 4,
-            product_name: "Learn Home",
+            product_name: "Home",
             product_img: "url:../img/new/home_image.png",
             product_total_parts: 0,
             product_total_parts_done:0,
@@ -80,7 +80,7 @@ export const Learn = () => {
         },
         {
             product_id: 5,
-            product_name: "Learn Report",
+            product_name: "Report",
             product_img: "url:../img/reportIconBlue.png",
             product_total_parts: 0,
             product_total_parts_done:0,
@@ -183,7 +183,7 @@ export const Learn = () => {
                 <div className={"wrap_container wrap_header"}>
                     <div className={"container_inner"}>
                         <div className="learn_heading_container">
-                            <h3 className="learn_text">Total learning progress for {users[sessionStorage.getItem("user")].firstName}</h3>
+                            <h3 className="learn_text">Total learning progress for <i class="notranslate">{users[sessionStorage.getItem("user")].firstName}</i></h3>
                             <ProgressBar className="learn_total_progress">
                                 <ProgressBar
                                     className="learn_progress_background"
@@ -221,7 +221,7 @@ export const Learn = () => {
                                             />
                                         </div>
                                         <div className="card_info">
-                                            <h4 className="learn_card_text">{product_name}</h4>
+                                            <h4 className="learn_card_text">Learn <i className={product_name != "Report" && "notranslate"}>{product_name}</i></h4>
                                             <ProgressBar className={"learn_single_progress"}>
                                                 <ProgressBar
                                                     className="progress_bar font-weight-bold"

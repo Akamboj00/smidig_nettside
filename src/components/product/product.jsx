@@ -23,6 +23,7 @@ export const Product = () => {
     });
     let location = useLocation();
     const {id} = useParams();
+    console.log(id)
 
     async function getDatabaseSingleProgress() {
         const dbReference = fire.database().ref();
@@ -41,10 +42,10 @@ export const Product = () => {
         getDatabaseSingleProgress()
     }, []);
 
-    if (location._product_name && location._product_id)
+    if (location._product_name != null && location._product_id != null)
     {
         sessionStorage.setItem("current_product", location._product_name)
-        sessionStorage.setItem("current_product_id", location._product_id)
+        sessionStorage.setItem("current_product_id", id)
     }
     if (authKey === null)
     {
