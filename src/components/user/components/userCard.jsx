@@ -16,11 +16,11 @@ export function UserCard({user, selected, onSelected, _key}) {
                     <div className={"center user_card_info"}>
                         <div className={"user_card_name_container"}>
                             <h6>NAME:</h6>
-                            <h5 className={"user_card_name"}>{user.firstName} {user.lastName}</h5>
+                            <h5 className={"user_card_name notranslate"}>{user.firstName} {user.lastName}</h5>
                         </div>
                         <div className={"user_card_language_container"}>
                             <h6>LANGUAGE:</h6>
-                            <h5 className={"user_card_language"}>{user.language}</h5>
+                            <h5 className={"user_card_language notranslate"}>{user.language}</h5>
                         </div>
                     </div>
                 </div>

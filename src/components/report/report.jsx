@@ -82,7 +82,7 @@ useEffect(() => {
     <div id={"container_main"}>
       <div className="top_container">
         <h1 >Report</h1>
-        <h3>Choose product</h3>
+        <h3>Choose a product</h3>
       </div>
       <div className={"wrap_container wrap_content"}>
                     <div className={"container_inner"}>
@@ -107,7 +107,7 @@ useEffect(() => {
                                           />
                                   </div>
                                     <div className="report_card_info">
-                                        <h4 className="report_card_text center">{product_name}</h4>
+                                        <h4 className="report_card_text center notranslate"><i>{product_name}</i></h4>
                                     </div>
                                   </Link>
                                 )
