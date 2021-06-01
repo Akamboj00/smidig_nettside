@@ -8,6 +8,7 @@ import {UserCard} from "./userCard";
 import {UserCardEdit} from "./userCardEdit";
 import {forEach} from "react-bootstrap/ElementChildren";
 import * as url from "url";
+import {LanguageCodes} from './languagecodes'
 
 export function UserCards({users, authKey, edit, switchEdit, create, onCreate, onDelete}) {
     if (users === null) return LoadingView();
@@ -21,8 +22,9 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [language, setLanguage] = useState("EN");
+    const [language, setLanguage] = useState("no");
     const [image, setImage] = useState(undefined);
+
 
     const {handleSubmit: handleCreateUser, submitting, error,} = useSubmit(async (e) => {
             if (firstName && lastName && language && image !== undefined)
@@ -30,7 +32,7 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
                 await postUser(firstName, lastName, language, image);
                 setFirstName("");
                 setLastName("");
-                setLanguage("EN");
+                setLanguage("no");
                 setImage(undefined)
                 onCreate(true);
             }
@@ -113,10 +115,9 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
                                                 onChange={(e) => setLanguage(e.target.value)}
                                         >
                                             <option value="" selected disabled hidden>Choose language</option>
-                                            <option value={"no"}>Norwegian</option>
-                                            <option value={"sv"}>Swedish</option>
-                                            <option value={"en"}>English</option>
-                                            <option value={"da"}>Danish</option>
+                                            {LanguageCodes.map(({English, alpha2}) => (
+                                                <option value={alpha2}>{English}</option>
+                                            ))}
                                         </select>
                                     </label>
                                 </div>
