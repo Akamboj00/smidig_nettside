@@ -3,6 +3,7 @@ import {deleteUser, editUser, postUser} from "../../lib/fb";
 import {useHistory} from "react-router";
 import {useSubmit} from "../../../client/lib/useSubmit";
 import {LoadingView} from "../../loadingView";
+import {LanguageCodes} from "./languagecodes";
 
 export function UserCardEdit({user, onDelete, _key}) {
     const [_firstName, setFirstName] = useState(user.firstName);
@@ -108,10 +109,9 @@ export function UserCardEdit({user, onDelete, _key}) {
                                         setLanguage(e.target.value);
                                     }}
                                 >
-                                    <option value={"no"}>Norwegian</option>
-                                    <option value={"sv"}>Swedish</option>
-                                    <option value={"en"}>English</option>
-                                    <option value={"da"}>Danish</option>
+                                    {LanguageCodes.map(({English, alpha2}) => (
+                                        <option value={alpha2}>{English}</option>
+                                    ))}
                                 </select>
                             </div>
                         </div>
