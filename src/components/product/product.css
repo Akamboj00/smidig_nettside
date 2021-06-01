@@ -38,13 +38,13 @@
 
 .learn_card {
     display: flex;
-    height: 200px;
+    height: 150px;
     width: 100%;
     max-width: 600px;
     border-radius: 0;
     background-color: white;
+    padding: 0 !important;
     cursor: pointer;
-    padding: 25px;
     position: relative;
     transition: 0.1s;
     border: 2px solid #eeeeee;
@@ -74,27 +74,16 @@
 }
 
 .learn_card:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
     z-index: 1;
     box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.1);
     border: 2px solid #174a5b;
     border-radius: 6px;
 }
 
-.learn_card_text {
-    position: relative;
-    text-align: center;
-    margin-top: 35px;
-    color: black;
-}
 
 .learn_single_progress {
     height: 25px !important;
-}
-
-.card_info {
-    position: relative;
-    width: 300px;
 }
 
 .card_info_product{
@@ -109,6 +98,7 @@
     left: 150px;
     pointer-events: none;
 }
+
 
 .learn_product_image_container{
     position: absolute;
@@ -137,15 +127,15 @@
 }
 
 .checkmark_icon_learn_product{
-    width: 40px;
-    height: 40px;
-    fill: #1aa542;
+    width: 30px;
+    height: 30px;
+    fill: #434343;
 }
 
 .checkmark_icon_learn_product_empty{
-    width: 40px;
-    height: 40px;
-    fill: #434343;
+    width: 30px;
+    height: 30px;
+    fill: #eeeeee;
 }
 
 .tooltip_learn {
