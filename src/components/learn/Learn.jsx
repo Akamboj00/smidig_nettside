@@ -6,6 +6,7 @@ import {useHistory} from "react-router";
 import {LoadingView} from '../loadingView'
 import fire from "../../server/firebase";
 import {forEach} from "react-bootstrap/ElementChildren";
+ import {CheckmarkEmptyIcon, CheckmarkIcon} from "../svg/svg";
 
 require("url:../img/test.png");
 require("url:../img/new/sunbell_image.png");
@@ -207,8 +208,9 @@ export const Learn = () => {
                                      product_total_parts_done
                                  }) => (
                                     <Link
-                                        style={{backgroundColor: (product_total_parts === product_total_parts_done) ? "#eeeeee" : "",
-                                        textDecoration: "none"}}
+                                        style={{backgroundColor: (product_total_parts === product_total_parts_done) ? "#f2f2f2" : "",
+                                        textDecoration: "none",
+                                            border: (product_total_parts === product_total_parts_done) ? "2px solid #434343" : "",}}
                                         key={product_id}
                                         className="learn_card"
                                         to={{pathname: `${"/product/" + product_id}`, _product_name : product_name, _product_id : product_id}}
@@ -216,19 +218,30 @@ export const Learn = () => {
                                     >
                                         <div className="learn_card_image">
                                             <img
-                                                className="learn_card_icon"
+                                                className="learn_card_icon center"
                                                 src={require(product_img)}
                                             />
                                         </div>
                                         <div className="card_info">
-                                            <h4 className="learn_card_text">Learn <i className={product_name != "Report" && "notranslate"}>{product_name}</i></h4>
+                                            <div className="learn_card_text">
+                                                <h5 className="center">Learn <i className={product_name != "Report" && "notranslate"}>{product_name}</i></h5>
+                                            </div>
                                             <ProgressBar className={"learn_single_progress"}>
                                                 <ProgressBar
                                                     className="progress_bar font-weight-bold"
                                                     now={Math.floor(product_total_parts_done/product_total_parts * 100)}
                                                 />
-                                                <h4 className="progress_on_card center h6 single_progress_text">{`${Math.floor(product_total_parts_done/product_total_parts * 100)}%`}</h4>
+                                                <h5 className="progress_on_card h6 single_progress_text center">{`${Math.floor(product_total_parts_done/product_total_parts * 100)}%`}</h5>
                                             </ProgressBar>
+                                        </div>
+                                        <div className={"learn_card_watched_container"}>
+                                            <div className={"learn_card_watched center"}>
+                                                {(product_total_parts === product_total_parts_done) ? (<CheckmarkIcon
+                                                    className={"checkmark_icon_learn_product center"}
+                                                />) : (  <CheckmarkEmptyIcon
+                                                    className={"checkmark_icon_learn_product_empty center"}
+                                                />)}
+                                            </div>
                                         </div>
                                     </Link>
                                 )

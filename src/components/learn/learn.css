@@ -65,29 +65,50 @@
 .learn_card_text {
     position: relative;
     text-align: center;
-    margin-top: 35px;
+    height: 60px;
     color: black;
 }
 
 .progress_bar {
-    position: relative;
-    width: 300px;
     background-color: #174859 !important;
+    border-radius: 15px !important;
+    height: 25px !important;
 }
 
 .learn_single_progress {
+    position: absolute !important;
+    bottom: 15px !important;
+    right: 0;
     height: 25px !important;
+    max-width: 300px !important;
+    border-radius: 15px !important;
+    width: 100%;
+    overflow: initial !important;
 }
 
 .card_info {
     position: relative;
-    width: 300px;
+    width: calc(100% - 160px);
 }
 
 .learn_total_progress {
     width: 400px;
     margin: auto;
     height: 25px !important;
+    border-radius: 6px !important;
+}
+
+.learn_card_watched_container{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 0;
+    top: 0;
+}
+
+.learn_card_watched{
+    width: 50px;
+    height: 50px;
 }
 
 .progress_total_text {
@@ -96,8 +117,16 @@
 }
 
 .single_progress_text{
-    margin-top: 20px;
-    font-weight: 600 !important;
+    position: absolute;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: -30px !important;
+    font-style: unset !important;
+    font-weight: 700 !important;
+}
+
+.learn_card_text h5{
+    font-weight: 600;
 }
 
 .progress_on_card {
@@ -115,8 +144,14 @@
 }
 
 .learn_card_icon{
-    max-height: 100%;
-    max-width: 100%;
+    height: 125px;
+    width: 125px;
+}
+
+.learn_card_image{
+    position: relative;
+    width: 150px;
+    height: auto;
 }
 
 
