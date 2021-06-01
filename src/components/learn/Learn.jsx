@@ -187,7 +187,6 @@ export const Learn = () => {
                             <ProgressBar className="learn_total_progress">
                                 <ProgressBar
                                     className="learn_progress_background"
-                                    animated
                                     now={total_progress}
                                 />
                                 <h5 className="progress_total_text h5 center">{`${total_progress}%`}</h5>
@@ -207,9 +206,8 @@ export const Learn = () => {
                                      product_total_parts,
                                      product_total_parts_done
                                  }) => (
-                                    <Link                                      
-                                        style={{ opacity: (product_total_parts === product_total_parts_done) ? "30%" : "100%",
-                                            backgroundColor: (product_total_parts === product_total_parts_done) ? "#c3dc93" : "",
+                                    <Link
+                                        style={{backgroundColor: (product_total_parts === product_total_parts_done) ? "#eeeeee" : "",
                                         textDecoration: "none"}}
                                         key={product_id}
                                         className="learn_card"
@@ -227,7 +225,6 @@ export const Learn = () => {
                                             <ProgressBar className={"learn_single_progress"}>
                                                 <ProgressBar
                                                     className="progress_bar font-weight-bold"
-                                                    animated
                                                     now={Math.floor(product_total_parts_done/product_total_parts * 100)}
                                                 />
                                                 <h4 className="progress_on_card center h6 single_progress_text">{`${Math.floor(product_total_parts_done/product_total_parts * 100)}%`}</h4>
