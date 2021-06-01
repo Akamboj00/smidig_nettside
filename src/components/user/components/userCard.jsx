@@ -56,13 +56,22 @@ useEffect(() => {
                     </div>
                     <div className={"user_card_select_user"}
                          onClick={() => {
-                        onSelected(user.userId);
-                        sessionStorage.setItem("user", user.userId);
-                        sessionStorage.setItem("user_language", user.language)
-                        setLanguage()
-                    }
-                    }>
-                        <h6 className={"center"} >SELECT USER</h6>
+                            onSelected(user.userId);
+                            sessionStorage.setItem("user", user.userId);
+                            sessionStorage.setItem("user_language", user.language)
+                            setLanguage()
+                         }
+                         }>
+                        <h6 className={"center"}>SELECT USER</h6>
+                    </div>
+                </div>
+                <div className={"learn_card_watched_container"}>
+                    <div className={"learn_card_watched center"}>
+                        {(user.userId === selected) ? (<StarIcon
+                            className={"checkmark_icon_learn_product star_user center"}
+                        />) : (<StarIcon
+                            className={"checkmark_icon_learn_product_empty center"}
+                        />)}
                     </div>
                 </div>
             </div>
