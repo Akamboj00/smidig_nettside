@@ -16,7 +16,8 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
         return sessionStorage.getItem("user");
     });
 
-    if (selected !== sessionStorage.getItem("user")) setSelected(sessionStorage.getItem("user"));
+    if (selected !== sessionStorage.getItem("user")) 
+    setSelected(sessionStorage.getItem("user"));
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -112,10 +113,10 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
                                                 onChange={(e) => setLanguage(e.target.value)}
                                         >
                                             <option value="" selected disabled hidden>Choose language</option>
-                                            <option value={"NO"}>Norwegian</option>
-                                            <option value={"SWE"}>Swedish</option>
-                                            <option value={"EN"}>English</option>
-                                            <option value={"DK"}>Danish</option>
+                                            <option value={"no"}>Norwegian</option>
+                                            <option value={"sv"}>Swedish</option>
+                                            <option value={"en"}>English</option>
+                                            <option value={"da"}>Danish</option>
                                         </select>
                                     </label>
                                 </div>

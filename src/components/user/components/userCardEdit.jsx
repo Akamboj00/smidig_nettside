@@ -96,23 +96,23 @@ export function UserCardEdit({user, onDelete, _key}) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={"user_card_language_container"}>
-                                    <h6>LANGUAGE:</h6>
-                                    <select
-                                        className={"user_card_language_input"}
-                                        type={"text"}
-                                        placeholder={user.language}
-                                        value={_language}
-                                        onChange={(e) => {
-                                            setLanguage(e.target.value);
-                                        }}
-                                    >
-                                        <option value={"NO"}>Norwegian</option>
-                                        <option value={"SWE"}>Swedish</option>
-                                        <option value={"EN"}>English</option>
-                                        <option value={"DK"}>Danish</option>
-                                    </select>
-                                </div>
+                            </div>
+                            <div className={"user_card_language_container"}>
+                                <h6>LANGUAGE:</h6>
+                                <select
+                                    className={"user_card_language_input"}
+                                    type={"text"}
+                                    placeholder={user.language}
+                                    value={_language}
+                                    onChange={(e) => {
+                                        setLanguage(e.target.value);
+                                    }}
+                                >
+                                    <option value={"no"}>Norwegian</option>
+                                    <option value={"sv"}>Swedish</option>
+                                    <option value={"en"}>English</option>
+                                    <option value={"da"}>Danish</option>
+                                </select>
                             </div>
                         </div>
                         {/*
