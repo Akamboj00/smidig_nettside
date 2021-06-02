@@ -101,7 +101,7 @@ export const Product = () => {
                                             <div className="tooltip_learn">
                                                 <span className="tooltiptext"><p className={"center"}>{part_name}</p></span>
                                             </div>
-                                            <h6 className="learn_card_text_product">{part_name}</h6>
+                                            <h5 className="learn_card_text_product">{part_name}</h5>
                                         </div>
                                     </Link>
                                 ))}
