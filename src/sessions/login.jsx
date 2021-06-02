@@ -8,6 +8,8 @@ import firebase from "firebase";
 import "./login.css";
 import {LoadingView} from "../components/loadingView";
 import Alert from 'react-bootstrap/Alert'
+import Cookies from 'js-cookie'
+
 
 export function Login() {
     const [email, setEmail] = useState("");
@@ -25,8 +27,10 @@ export function Login() {
                 return firebase.auth().signInWithEmailAndPassword(email, password);
             })
             await postJson("/api/login", {email: email, password});
+            Cookies.remove('googtrans'),
+            Cookies.remove('GoogleAccountsLocale_session')
         },
-        () => history.push("/users")
+        () => history.push("/users"),
     );
 
     const [trigger, setTrigger] = useState(false);

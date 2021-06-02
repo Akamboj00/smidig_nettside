@@ -15,6 +15,7 @@ import { FileReport } from '../components/report/fileReport'
 import "../components/style/index.css";
 import { Language } from '../components/language/language'
 
+
 export function Application() {
   return (
     <>

@@ -116,7 +116,7 @@ export function UserCards({users, authKey, edit, switchEdit, create, onCreate, o
                                         >
                                             <option value="" selected disabled hidden>Choose language</option>
                                             {LanguageCodes.map(({English, alpha2}) => (
-                                                <option value={alpha2}>{English}</option>
+                                                <option className="notranslate" value={alpha2}>{English}</option>
                                             ))}
                                         </select>
                                     </label>

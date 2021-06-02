@@ -19,12 +19,15 @@ export function FileReport() {
     const submitReport = () => {
         var part_number = document.getElementById("part_number").value
         var optional_comment = document.getElementById("optional_comment").value
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
         if(!part_number){
             setSubmitted(false)
             setError("You need to fill in part number!")
         }else{
             setError(false)
-            newReport(location.part, part_number, location._part_name, optional_comment);
+            newReport(location.part, part_number, location._part_name, optional_comment, time, date);
             document.getElementById("part_number").value = ""
             document.getElementById("optional_comment").value = ""
             setSubmitted(true)

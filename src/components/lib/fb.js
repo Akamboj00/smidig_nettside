@@ -451,7 +451,7 @@ export async function editUser(firstName, lastName, language, image, userId, pro
     return getDatabaseRef().update(posts);
 }
 
-export default function newReport(product_id, part_id, part_name, comment) {
+export default function newReport(product_id, part_id, part_name, comment, time, date) {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
     const userAuth = getSessionStorage(key);
 
@@ -461,7 +461,9 @@ export default function newReport(product_id, part_id, part_name, comment) {
         productId: product_id,
         partName: part_name,
         productName: sessionStorage.getItem("current_report_product_name"),
-        comment: comment
+        comment: comment,
+        dateOfReport: date,
+        timeOfReport: time
     }
 
     return getDatabaseRef().child("reports").child(userAuth.uid).push(report);
