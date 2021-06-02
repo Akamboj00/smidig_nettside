@@ -184,7 +184,7 @@ export const Learn = () => {
                 <div className={"wrap_container wrap_header"}>
                     <div className={"container_inner"}>
                         <div className="learn_heading_container">
-                            <h3 className="learn_text">Total learning progress for <i class="notranslate">{users[sessionStorage.getItem("user")].firstName}</i></h3>
+                            <h3 className="learn_text">Total learning progress for <span className="notranslate">{users[sessionStorage.getItem("user")].firstName}</span></h3>
                             <ProgressBar className="learn_total_progress">
                                 <ProgressBar
                                     className="learn_progress_background"
@@ -224,7 +224,7 @@ export const Learn = () => {
                                         </div>
                                         <div className="card_info">
                                             <div className="learn_card_text">
-                                                <h5 className="center">Learn <i className={product_name != "Report" && "notranslate"}>{product_name}</i></h5>
+                                                <h5 className="center">Learn <span className={product_name != "Report" ? "notranslate" : ""}>{product_name}</span></h5>
                                             </div>
                                             <ProgressBar className={"learn_single_progress"}>
                                                 <ProgressBar

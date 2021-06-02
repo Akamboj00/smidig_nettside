@@ -107,7 +107,7 @@ useEffect(() => {
                                           />
                                   </div>
                                     <div className="report_card_info">
-                                        <h4 className="report_card_text center notranslate"><i>{product_name}</i></h4>
+                                        <h4 className="report_card_text center notranslate"><span>{product_name}</span></h4>
                                     </div>
                                   </Link>
                                 )

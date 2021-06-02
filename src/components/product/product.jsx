@@ -66,7 +66,7 @@ export const Product = () => {
         return (
             <>
                 <div id={"container_main"}>
-                    <h2 className="product_name">{sessionStorage.getItem("current_product")}</h2>
+                    <h2 className="product_name"><span className={sessionStorage.getItem("current_product") == "Home" ? "notranslate" : ""}>{sessionStorage.getItem("current_product")}</span></h2>
                     <div className={"wrap_container wrap_content"}>
                         <div className={"container_inner"}>
                             <div className="learn_card_product_container">

@@ -43,10 +43,10 @@ export function UserHeader(authKey, switchEdit) {
                         <button className={"logout_button"} onClick={(e) => {
                             e.preventDefault();
                             if(confirm(`Confirm logout: ${authUser.email}`))
+                            window.location.href = "/login"
                             {
                                 fire.auth().signOut().then(() => {
                                     sessionStorage.clear();
-                                    history.push("/login");
                                 }).catch((error) => {
                                     alert("An error occurred on logout");
                                 });

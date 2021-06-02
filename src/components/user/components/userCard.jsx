@@ -7,13 +7,7 @@ import Cookies from 'js-cookie'
 
 export function UserCard({user, selected, onSelected, _key}) {
    //language stuff
-   function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
-        autoDisplay: false
-    }, 'google_translate_element');
-}
+
 function setLanguage(){
 Cookies.remove('googtrans',{path:'', domain: 'domainNameNoDot.com'});
 Cookies.remove('googtrans',{path:'', domain: '.domainNamePrecedDot.com'});
@@ -21,10 +15,6 @@ Cookies.set('GoogleAccountsLocale_session', `${sessionStorage.getItem("user_lang
 Cookies.set('googtrans', `/en/${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
 location.reload()
 }
-
-useEffect(() => {
-    googleTranslateElementInit()
-    }, []);
 
     return (
         <div
