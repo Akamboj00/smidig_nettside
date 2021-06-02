@@ -74,14 +74,6 @@ export function Menu() {
                         <h5 className={"center"}>USERS</h5>
                     </div>
                 </Link>
-                <Link onClick={() => openHamburger()} to={"/language"}>
-                    <div className={"header-item-hamburger"}>
-                        <LanguageIcon
-                            className={"hamburger-svg"}
-                        />
-                        <h5 className={"center"}>LANGUAGE</h5>
-                    </div>
-                </Link>
             </div>
         </>
     );
@@ -115,16 +107,6 @@ export function Menu() {
                     />
                     <div className="header_links_text_container">
                         <h6 className="header_linkName center">USERS</h6>
-                    </div>
-                </li>
-            </Link>
-            <Link to={"/language"}>
-                <li className="header_links">
-                    <LanguageIcon
-                        className={"header_svg"}
-                    />
-                    <div className="header_links_text_container">
-                        <h6 className="header_linkName center">LANGUAGE</h6>
                     </div>
                 </li>
             </Link>
