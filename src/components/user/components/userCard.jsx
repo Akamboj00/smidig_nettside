@@ -67,9 +67,9 @@ useEffect(() => {
                 </div>
                 <div className={"learn_card_watched_container"}>
                     <div className={"learn_card_watched center"}>
-                        {(user.userId === selected) ? (<StarIcon
+                        {(user.userId === selected) ? (<CheckmarkIcon
                             className={"checkmark_icon_learn_product star_user center"}
-                        />) : (<StarIcon
+                        />) : (<CheckmarkIcon
                             className={"checkmark_icon_learn_product_empty center"}
                         />)}
                     </div>

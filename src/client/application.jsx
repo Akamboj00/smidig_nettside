@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Header } from "../components/header/header";
 import { Redirect, Route, Switch } from "react-router";
 import { MainMenu } from "./mainMenu/mainMenu";
@@ -14,6 +14,7 @@ import { FileReport } from '../components/report/fileReport'
 // Main Stylesheet -> Shared values between all pages
 import "../components/style/index.css";
 import { Language } from '../components/language/language'
+import Cookies from 'js-cookie'
 
 
 export function Application() {
