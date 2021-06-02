@@ -43,11 +43,11 @@ export function FileReport() {
               <div className={"wrap_container wrap_content"}>
                         <div className={"container_inner"}>
                         <Form.Group className="file_report_form">
-                            <h3>Part number*</h3>
-                            <Form.Control id="part_number" className="file_report_input" size="lg" type="text" placeholder="part number*" />
+                            <h3>Part number *</h3>
+                            <Form.Control id="part_number" className="file_report_input" size="lg" type="text" placeholder="Part number*" />
                             <br />
                             <h3>Comment (optional)</h3>
-                            <Form.Control id="optional_comment" className="file_report_input_comment" size="lg" type="text" placeholder="optional comment" />
+                            <Form.Control id="optional_comment" className="file_report_input_comment" size="lg" type="text" placeholder="Optional comment" />
                             <br/>
                             <Button type="submit" onClick={() => submitReport()} >Submit report</Button>
                             {error && <Alert className="error" variant="danger">

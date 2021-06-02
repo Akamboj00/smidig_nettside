@@ -15,6 +15,7 @@ import { FileReport } from '../components/report/fileReport'
 import "../components/style/index.css";
 import { Language } from '../components/language/language'
 import Cookies from 'js-cookie'
+import { ReportDocumentationModal } from "./mainMenu/documentation/reportdocumentation";
 
 
 export function Application() {
@@ -55,6 +56,9 @@ export function Application() {
           </Route>
           <Route  exact path={"/report/:p1?/:p2?"}>
             <FileReport/>
+          </Route>
+          <Route path={"/reportdocumentation"}>
+            <ReportDocumentationModal/>
           </Route>
           <Route>page not found</Route>
         </Switch>
