@@ -22,6 +22,12 @@ export function Report() {
   const [products, setProducts] = useState(null);
   const [params, setParams] = useState(null)
   const history = useHistory()
+  const [authKey, setAuthKey] = useState(() => {
+    let key = Object.keys(window.sessionStorage)
+        .filter(item => item.startsWith('firebase:authUser'))[0];
+    if (key === undefined) return history.push("/login");
+    return key;
+});
 
   if(sessionStorage.getItem("user") === null){
     alert("Please select a user!")

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {Carousel, Image, Card, CardDeck, Row, CardGroup, Button, Container, Col} from "react-bootstrap";
 import {BrowserRouter, Link} from "react-router-dom";
 import {HamburgerIcon, ReportIcon, LearnIcon, UserIcon, LanguageIcon} from "../../components/svg/svg"
+import {useHistory} from "react-router";
 import image1 from "url:../../components/img/mainMenu/bright1.jpeg";
 import image2 from "url:../../components/img/mainMenu/bright2.webp";
 import image3 from "url:../../components/img/mainMenu/bright3.jpeg";
@@ -23,6 +24,12 @@ require("url:../../components/img/learnicon.png")
 require("url:../../components/img/learnicon.png")
 
 export function MainMenu() {
+    const history = useHistory();
+    const [authKey, setAuthKey] = useState(() => {
+        let key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
+        if (key === undefined) return history.push("/login");
+        return key;
+    });
 
     return (
         <>

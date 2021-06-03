@@ -29,7 +29,7 @@
     "prettier": "^2.3.0"
   },
   "scripts": {
-    "start": "node src/server/server.js",
+    "start": "concurrently npm:server npm:client",
     "client": "parcel src/client/index.html",
     "server": "nodemon --watch src/server src/server/server.js",
     "format": "prettier --write src"
