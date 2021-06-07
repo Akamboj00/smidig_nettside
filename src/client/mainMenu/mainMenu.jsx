@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {Carousel, Image, Card, CardDeck, Row, CardGroup, Button, Container, Col} from "react-bootstrap";
 import {BrowserRouter, Link} from "react-router-dom";
 import {HamburgerIcon, ReportIcon, LearnIcon, UserIcon, LanguageIcon} from "../../components/svg/svg"
+import {useHistory} from "react-router";
 import image1 from "url:../../components/img/mainMenu/bright1.jpeg";
 import image2 from "url:../../components/img/mainMenu/bright2.webp";
 import image3 from "url:../../components/img/mainMenu/bright3.jpeg";
@@ -13,6 +14,9 @@ import image6 from "url:../../components/img/mainMenu/bright6.jpeg";
 import image7 from "url:../../components/img/mainMenu/bright7.jpeg";
 import image8 from "url:../../components/img/mainMenu/bright8.jpeg";
 import image9 from "url:../../components/img/mainMenu/bright9.jpeg";
+import { ReportDocumentationModal } from "./documentation/reportdocumentation";
+import { LearnDocumentationModal } from "./documentation/learndocumentation"
+import { UserDocumentationModal } from "./documentation/userdocumentation"
 
 require("url:../../components/img/profileicon.png");
 require("url:../../components/img/reporticon.png")
@@ -20,6 +24,13 @@ require("url:../../components/img/learnicon.png")
 require("url:../../components/img/learnicon.png")
 
 export function MainMenu() {
+    const history = useHistory();
+    const [authKey, setAuthKey] = useState(() => {
+        let key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
+        if (key === undefined) return history.push("/login");
+        return key;
+    });
+
     return (
         <>
             <div id="container_main">
@@ -30,24 +41,28 @@ export function MainMenu() {
                     <div className={"container_inner"}>
                         <div className="main_content">
                             <Container className="main_card_container">
-                                <Row md={4}>
+                                <Row md={3}>
                                     <Col>
                                         <Card className="main_card">
-                                            <div className="card_img_container">
-                                                <ReportIcon
-                                                    className={"main_card_icon center"}
-                                                />
-                                            </div>
-                                            <Card.Body className="card_text">
-                                                <Card.Title>Report</Card.Title>
-                                                <Card.Text>
-                                                    Component documentation
-                                                </Card.Text>
-                                            </Card.Body>
+                                            <Link
+                                            style={{textDecoration: "none", color: "black"}}
+                                            to={{pathname: "/reportdocumentation"}}>
+                                                <div className="card_img_container">
+                                                    <ReportIcon
+                                                        className={"main_card_icon center"}
+                                                    />
+                                                </div>
+                                                <Card.Body className="card_text">
+                                                    <Card.Title>Report</Card.Title>
+                                                    <Card.Text>
+                                                        Component documentation
+                                                    </Card.Text>
+                                                </Card.Body>
+                                            </Link>
                                         </Card>
                                     </Col>
                                     <Col>
-                                        <Card className="main_card">
+                                        <Card onClick={() => setLearnDocumentation(true)} className="main_card">
                                             <div className="card_img_container">
                                                 <LearnIcon
                                                     className={"main_card_icon center"}
@@ -62,7 +77,7 @@ export function MainMenu() {
                                         </Card>
                                     </Col>
                                     <Col>
-                                        <Card className="main_card">
+                                        <Card onClick={() => setUserDocumentation(true)} className="main_card">
                                             <div className="card_img_container">
                                                 <UserIcon
                                                     className={"main_card_icon center"}
@@ -70,21 +85,6 @@ export function MainMenu() {
                                             </div>
                                             <Card.Body className="card_text">
                                                 <Card.Title>Users</Card.Title>
-                                                <Card.Text>
-                                                    Component documentation
-                                                </Card.Text>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                    <Col>
-                                        <Card className="main_card">
-                                            <div className="card_img_container">
-                                                <LanguageIcon
-                                                    className={"main_card_icon center"}
-                                                />
-                                            </div>
-                                            <Card.Body className="card_text">
-                                                <Card.Title>Language</Card.Title>
                                                 <Card.Text>
                                                     Component documentation
                                                 </Card.Text>

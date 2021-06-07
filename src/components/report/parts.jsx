@@ -56,10 +56,13 @@ export function Parts() {
                                 to={{ pathname: `/report/${params1}/${part_id}`, part: part_id, _part_name: part_name}}
                                 >
                                 <div className="parts_image_container">
-                                    <img className="parts_image" src={part_image} />
+                                    <img className="parts_image center" src={part_image} />
                                 </div>
-                                <div className="parts_card_info">
-                                    <h4 className="learn_card_text">{part_name}</h4>
+                                <div className="parts_card_info center">
+                                    <div className="tooltip_learn">
+                                      <span className="tooltiptext"><p className={"center"}>{part_name}</p></span>
+                                    </div>
+                                    <h5 className="parts_card_text">{part_name}</h5>
                                 </div>
                                 </Link>
                         ))}

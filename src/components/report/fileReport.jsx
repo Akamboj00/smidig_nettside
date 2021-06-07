@@ -16,12 +16,15 @@ export function FileReport() {
     const submitReport = () => {
         var part_number = document.getElementById("part_number").value
         var optional_comment = document.getElementById("optional_comment").value
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
         if(!part_number){
             setSubmitted(false)
             setError("You need to fill in part number!")
         }else{
             setError(false)
-            newReport(location.part, part_number, location._part_name, optional_comment);
+            newReport(location.part, part_number, location._part_name, optional_comment, time, date);
             document.getElementById("part_number").value = ""
             document.getElementById("optional_comment").value = ""
             setSubmitted(true)
@@ -37,11 +40,11 @@ export function FileReport() {
               <div className={"wrap_container wrap_content"}>
                         <div className={"container_inner"}>
                         <Form.Group className="file_report_form">
-                            <h3>Part number*</h3>
-                            <Form.Control id="part_number" className="file_report_input" size="lg" type="text" placeholder="part number*" />
+                            <h3>Part number *</h3>
+                            <Form.Control id="part_number" className="file_report_input" size="lg" type="text" placeholder="Part number*" />
                             <br />
                             <h3>Comment (optional)</h3>
-                            <Form.Control id="optional_comment" className="file_report_input_comment" size="lg" type="text" placeholder="optional comment" />
+                            <Form.Control id="optional_comment" className="file_report_input_comment" size="lg" type="text" placeholder="Optional comment" />
                             <br/>
                             <Button type="submit" onClick={() => submitReport()} >Submit report</Button>
                             {error && <Alert className="error" variant="danger">

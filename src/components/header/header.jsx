@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import "./header.css";
 import {HamburgerIcon, ReportIcon, LearnIcon, UserIcon, LanguageIcon} from "../svg/svg"
 import {useLocation} from "react-router";
+import Cookies from 'js-cookie'
 
 export function Menu() {
     const [size, setSize] = useState(() => {
@@ -19,6 +20,14 @@ export function Menu() {
             setSize(false);
         }
     })
+
+    //oversetter alle sider
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+        })
+    }
+    
 
     function openHamburger() {
         const burgerMenu = document.getElementById("burgerMenu");
@@ -40,6 +49,11 @@ export function Menu() {
             burgerContainer.style.background = "#ffffff";
         }
     }
+
+    //caller på googletranslate for hver gang headern rendres, også timeout for å "vente" på google
+    useEffect(() => {
+        setTimeout(function(){ googleTranslateElementInit() }, 100);
+        }, []);
 
     const burger = (
         <>
@@ -72,14 +86,6 @@ export function Menu() {
                             className={"hamburger-svg"}
                         />
                         <h5 className={"center"}>USERS</h5>
-                    </div>
-                </Link>
-                <Link onClick={() => openHamburger()} to={"/language"}>
-                    <div className={"header-item-hamburger"}>
-                        <LanguageIcon
-                            className={"hamburger-svg"}
-                        />
-                        <h5 className={"center"}>LANGUAGE</h5>
                     </div>
                 </Link>
             </div>
@@ -115,16 +121,6 @@ export function Menu() {
                     />
                     <div className="header_links_text_container">
                         <h6 className="header_linkName center">USERS</h6>
-                    </div>
-                </li>
-            </Link>
-            <Link to={"/language"}>
-                <li className="header_links">
-                    <LanguageIcon
-                        className={"header_svg"}
-                    />
-                    <div className="header_links_text_container">
-                        <h6 className="header_linkName center">LANGUAGE</h6>
                     </div>
                 </li>
             </Link>

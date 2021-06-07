@@ -5,25 +5,15 @@ import {Link} from "react-router-dom";
 import Cookies from 'js-cookie'
 
 export function UserCard({user, selected, onSelected, _key}) {
-    //language stuff
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
-            autoDisplay: false
-        }, 'google_translate_element');
-    }
-    function setLanguage(){
-        Cookies.remove('googtrans',{path:'', domain: 'domainNameNoDot.com'});
-        Cookies.remove('googtrans',{path:'', domain: '.domainNamePrecedDot.com'});
-        Cookies.set('GoogleAccountsLocale_session', `${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
-        Cookies.set('googtrans', `/en/${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
-        location.reload()
-    }
+   //language stuff
 
-    useEffect(() => {
-        googleTranslateElementInit()
-    }, []);
+function setLanguage(){
+Cookies.remove('googtrans',{path:'', domain: 'domainNameNoDot.com'});
+Cookies.remove('googtrans',{path:'', domain: '.domainNamePrecedDot.com'});
+Cookies.set('GoogleAccountsLocale_session', `${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
+Cookies.set('googtrans', `/en/${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
+location.reload()
+}
 
     return (
         <div
@@ -66,9 +56,9 @@ export function UserCard({user, selected, onSelected, _key}) {
                 </div>
                 <div className={"learn_card_watched_container"}>
                     <div className={"learn_card_watched center"}>
-                        {(user.userId === selected) ? (<StarIcon
+                        {(user.userId === selected) ? (<CheckmarkIcon
                             className={"checkmark_icon_learn_product star_user center"}
-                        />) : (<StarIcon
+                        />) : (<CheckmarkIcon
                             className={"checkmark_icon_learn_product_empty center"}
                         />)}
                     </div>

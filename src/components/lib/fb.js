@@ -28,307 +28,307 @@ export async function getDatabaseSingleProgress(users, authUID, childKey, progre
 }
 
 //lage progress data i firebase
-
+/*
 export async function postProgress(){
     const createParts= {
             0:{
                 0:{
                     part_id: 0,
                     part_name: "Sunbell 2.0 Solar panel complete 4m cable",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 1:{
                     part_id: 1,
                     part_name: "Sunbell solar cable including plug. 4m",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
                     part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 3:{
                     part_id: 3,
                     part_name: "Sunbell 2.0 Battery pack and light unit complete",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 4:{
                     part_id: 4,
                     part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/whole.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 }, 
                 5:{
                     part_id: 5,
                     part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
                 6:{
                     part_id: 6,
                     part_name: "Sunbell 2.0/ REV D power switch cover",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
                     part_name: "Battery box and PCBA screws Torx",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/necklight.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
             },
             1:{
                 0:{
                     part_id: 0,
                     part_name: "Sunbell 2.0 Solar panel complete 4m cable",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 1:{
                     part_id: 1,
                     part_name: "Sunbell solar cable including plug. 4m",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
                     part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 3:{
                     part_id: 3,
                     part_name: "Sunbell 2.0 Battery pack and light unit complete",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 4:{
                     part_id: 4,
                     part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/whole.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 }, 
                 5:{
                     part_id: 5,
                     part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
                 6:{
                     part_id: 6,
                     part_name: "Sunbell 2.0/ REV D power switch cover",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
                     part_name: "Battery box and PCBA screws Torx",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/necklight.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
             },
             2:{
                 0:{
                     part_id: 0,
                     part_name: "Sunbell 2.0 Solar panel complete 4m cable",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 1:{
                     part_id: 1,
                     part_name: "Sunbell solar cable including plug. 4m",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
                     part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 3:{
                     part_id: 3,
                     part_name: "Sunbell 2.0 Battery pack and light unit complete",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 4:{
                     part_id: 4,
                     part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/whole.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 }, 
                 5:{
                     part_id: 5,
                     part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
                 6:{
                     part_id: 6,
                     part_name: "Sunbell 2.0/ REV D power switch cover",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
                     part_name: "Battery box and PCBA screws Torx",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/necklight.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
             },
             3:{
                 0:{
                     part_id: 0,
                     part_name: "Sunbell 2.0 Solar panel complete 4m cable",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 1:{
                     part_id: 1,
                     part_name: "Sunbell solar cable including plug. 4m",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
                     part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 3:{
                     part_id: 3,
                     part_name: "Sunbell 2.0 Battery pack and light unit complete",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 4:{
                     part_id: 4,
                     part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/whole.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 }, 
                 5:{
                     part_id: 5,
                     part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
                 6:{
                     part_id: 6,
                     part_name: "Sunbell 2.0/ REV D power switch cover",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
                     part_name: "Battery box and PCBA screws Torx",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/necklight.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
             },
             4:{
                 0:{
                     part_id: 0,
                     part_name: "Sunbell 2.0 Solar panel complete 4m cable",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 1:{
                     part_id: 1,
                     part_name: "Sunbell solar cable including plug. 4m",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
                     part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 3:{
                     part_id: 3,
                     part_name: "Sunbell 2.0 Battery pack and light unit complete",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 4:{
                     part_id: 4,
                     part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/whole.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 }, 
                 5:{
                     part_id: 5,
                     part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
                 6:{
                     part_id: 6,
                     part_name: "Sunbell 2.0/ REV D power switch cover",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
                     part_name: "Battery box and PCBA screws Torx",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/necklight.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
             },
             5:{
                 0:{
                     part_id: 0,
                     part_name: "Sunbell 2.0 Solar panel complete 4m cable",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 1:{
                     part_id: 1,
                     part_name: "Sunbell solar cable including plug. 4m",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 2:{
                     part_id: 2,
                     part_name: "Sunbell 2.0 / rev D battery 18650-LifePO- 3,2V-1600mAh",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 3:{
                     part_id: 3,
                     part_name: "Sunbell 2.0 Battery pack and light unit complete",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"https://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/battery.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/How-to+SunBell+(1).mp4",
                 },
                 4:{
                     part_id: 4,
                     part_name: "Sunbell 2.0 Light and gooseneck unit. including battery box-top and switch covers",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/whole.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 }, 
                 5:{
                     part_id: 5,
                     part_name: "Sunbell 2.0 PCBA/Sunbell REV D PCBA",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/panelcable.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
                 6:{
                     part_id: 6,
                     part_name: "Sunbell 2.0/ REV D power switch cover",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/solarpanel.png",
                     part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
                 },
                 7:{
                     part_id: 7,
                     part_name: "Battery box and PCBA screws Torx",
-                    part_image:"https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
-                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/bright.mp4",
+                    part_image:"http://mybrightbucket.s3.eu-north-1.amazonaws.com/ikoner/necklight.png",
+                    part_video: "https://mybrightbucket.s3.eu-north-1.amazonaws.com/BRIG0001+YT+04+Bright+multifunksjonell+15+sek+v5.mp4",
                 },
             }
     };
@@ -337,7 +337,7 @@ export async function postProgress(){
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
     return getDatabaseRef().update(posts2)
-}
+}*/
 
 
 function getUserAuth() {
@@ -426,7 +426,7 @@ export async function postUser(firstName, lastName, language, image) {
     posts[`users/${userAuth.uid}/${userKey}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
-    postProgress()
+    //postProgress()
     sessionStorage.setItem("user", userKey);
     return getDatabaseRef().update(posts);
 }
@@ -451,7 +451,7 @@ export async function editUser(firstName, lastName, language, image, userId, pro
     return getDatabaseRef().update(posts);
 }
 
-export default function newReport(product_id, part_id, part_name, comment) {
+export default function newReport(product_id, part_id, part_name, comment, time, date) {
     const key = Object.keys(window.sessionStorage).filter(item => item.startsWith('firebase:authUser'))[0];
     const userAuth = getSessionStorage(key);
 
@@ -461,7 +461,9 @@ export default function newReport(product_id, part_id, part_name, comment) {
         productId: product_id,
         partName: part_name,
         productName: sessionStorage.getItem("current_report_product_name"),
-        comment: comment
+        comment: comment,
+        dateOfReport: date,
+        timeOfReport: time
     }
 
     return getDatabaseRef().child("reports").child(userAuth.uid).push(report);
