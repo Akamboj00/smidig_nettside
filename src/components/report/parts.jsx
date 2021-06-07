@@ -4,6 +4,7 @@ import fire from "../../server/firebase";
 import { LoadingView } from "../loadingView";
 
 export function Parts() {
+  const [imageLoaded, setImageLoaded] = useState(false)
     const [products, setProducts] = useState(null);
     const [params1, setParams1] = useState(null)
     let location = useLocation();
@@ -23,6 +24,10 @@ export function Parts() {
       sessionStorage.setItem("current_report_product_name", location._product_name)
       }
       console.log(sessionStorage.getItem("current_report_product_id"))
+
+      function ifImageIsLoaded(){
+        setImageLoaded(true)
+      }
 
       useEffect(() => {
         getDatabaseSingleProgress()
@@ -56,7 +61,8 @@ export function Parts() {
                                 to={{ pathname: `/report/${params1}/${part_id}`, part: part_id, _part_name: part_name}}
                                 >
                                 <div className="parts_image_container">
-                                    <img className="parts_image center" src={part_image} />
+                                    <img className="parts_image center" onLoad={()=> ifImageIsLoaded()} src={part_image} />
+                                    {!imageLoaded && <div className="center"><LoadingView></LoadingView></div>}
                                 </div>
                                 <div className="parts_card_info center">
                                     <div className="tooltip_learn">

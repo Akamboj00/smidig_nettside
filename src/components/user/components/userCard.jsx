@@ -3,8 +3,14 @@ import userCard from "./userCard.css"
 import {CheckmarkEmptyIcon, CheckmarkIcon, StarIcon} from "../../svg/svg";
 import {Link} from "react-router-dom";
 import Cookies from 'js-cookie'
+import { LoadingView } from "../../loadingView";
 
 export function UserCard({user, selected, onSelected, _key}) {
+    const [imageLoaded, setImageLoaded] = useState(false)
+
+    function ifImageIsLoaded(){
+        setImageLoaded(true)
+    }
    //language stuff
 
 function setLanguage(){
@@ -24,7 +30,8 @@ location.reload()
                 <div className={"user_card_inner_container"}>
                     <div className={"user_active_indicator"}/>
                     <div className={"user_card_image_container"}>
-                        <div className={"center user_card_image"} style={(user.image != null) ? ({backgroundImage: `url(${user.image})`}) : ({})}/>
+                        <img className={"center user_card_image"} onLoad={()=>ifImageIsLoaded()} src={(user.image)}/>
+                        {!imageLoaded && <div className="center"><LoadingView></LoadingView></div>}
                     </div>
                     <div className={"user_card_info_container"}>
                         <div className={"center user_card_info"}>

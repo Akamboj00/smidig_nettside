@@ -13,6 +13,7 @@ require("url:../img/solarpanel.png");
 require("url:../img/turtlelamp.png");
 
 export const Product = () => {
+    const [imageLoaded, setImageLoaded] = useState(false)
     const [products, setProducts] = useState(null);
     const [productsOnUsers, setProductsOnUsers] = useState(null)
     const [authKey, setAuthKey] = useState(() => {
@@ -37,6 +38,10 @@ export const Product = () => {
             setProductsOnUsers(snapshot.val())
         })
     }
+
+    function ifImageIsLoaded(){
+        setImageLoaded(true)
+      }
 
     useEffect(() => {
         getDatabaseSingleProgress()
@@ -95,7 +100,8 @@ export const Product = () => {
                                             </div>
                                         </div>
                                         <div className={"learn_product_image_container"}>
-                                            <img className="learn_card_icon_product center" src={part_image}/>
+                                            <img className="learn_card_icon_product center" onLoad={()=> ifImageIsLoaded()} src={part_image}/>
+                                            {!imageLoaded && <div className="center"><LoadingView></LoadingView></div>}
                                         </div>
                                         <div className="card_info_product center">
                                             <div className="tooltip_learn">

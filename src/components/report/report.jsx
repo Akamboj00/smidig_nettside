@@ -17,7 +17,8 @@ require("url:../img/reporticon.png");
 require("url:../img/reportIconBlue.png")
 import "./report.css";
 
-export function Report() {
+export function Report() {    
+  const [imageLoaded, setImageLoaded] = useState(false)
   const [clicked, setClicked] = useState();
   const [products, setProducts] = useState(null);
   const [params, setParams] = useState(null)
@@ -32,6 +33,9 @@ export function Report() {
   if(sessionStorage.getItem("user") === null){
     alert("Please select a user!")
     history.push("/users");
+}
+function ifImageIsLoaded(){
+  setImageLoaded(true)
 }
 
   
@@ -108,9 +112,11 @@ useEffect(() => {
                               >
                                   <div className="image_container">
                                           <img
+                                              onLoad={()=>ifImageIsLoaded()}
                                               className="report_card_icon center"
                                               src={require(product_img)}
                                           />
+                                          {!imageLoaded && <div className="center"><LoadingView></LoadingView></div>}
                                   </div>
                                     <div className="report_card_info">
                                         <h4 className="report_card_text center notranslate"><span>{product_name}</span></h4>

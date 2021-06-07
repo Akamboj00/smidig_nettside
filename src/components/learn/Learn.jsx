@@ -31,6 +31,7 @@ export const Learn = () => {
     const [total, setTotal] = useState(null);
     const [totalFinished, setTotalFinished] = useState(null);
     const [totalPercent ,setTotalPercent] = useState(null);
+    const [imageLoaded, setImageLoaded] = useState(false)
     const [authKey, setAuthKey] = useState(() => {
         let key = Object.keys(window.sessionStorage)
             .filter(item => item.startsWith('firebase:authUser'))[0];
@@ -110,6 +111,10 @@ export const Learn = () => {
             // TODO -> HOW TO SET ITEM
             //dbReference.child('users').child(authUser.uid).child("3").child("1").set(0);
         }
+    }
+
+    function ifImageIsLoaded(){
+        setImageLoaded(true)
     }
 
     useEffect(() => {
@@ -218,8 +223,10 @@ export const Learn = () => {
                                         <div className="learn_card_image">
                                             <img
                                                 className="learn_card_icon center"
+                                                onLoad={() => ifImageIsLoaded()}
                                                 src={require(product_img)}
                                             />
+                                            {!imageLoaded && <div className="center"><LoadingView></LoadingView></div>}
                                         </div>
                                         <div className="card_info">
                                             <div className="learn_card_text">
