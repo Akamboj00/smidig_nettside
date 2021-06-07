@@ -1,21 +1,23 @@
-import React from "react";
-import { Header } from "../components/header/header";
-import { Redirect, Route, Switch } from "react-router";
-import { MainMenu } from "./mainMenu/mainMenu";
-import { Learn } from "../components/learn/Learn";
-import { User } from "../components/user/user";
-import { Login } from "../sessions/login";
-import { BrowserRouter } from "react-router-dom";
-import { Product } from "../components/product/product";
-import { Report } from "../components/report/report";
-import { Video } from "../components/video/video";
-import { Parts } from "../components/report/parts";
-import { FileReport } from '../components/report/fileReport'
+import React, {useEffect} from "react";
+import {Header} from "../components/header/header";
+import {Redirect, Route, Switch} from "react-router";
+import {MainMenu} from "./mainMenu/mainMenu";
+import {Learn} from "../components/learn/Learn";
+import {User} from "../components/user/user";
+import {Login} from "../sessions/login";
+import {BrowserRouter} from "react-router-dom";
+import {Product} from "../components/product/product";
+import {Report} from "../components/report/report";
+import {Video} from "../components/video/video";
+import {Parts} from "../components/report/parts";
+import {FileReport} from '../components/report/fileReport'
 // Main Stylesheet -> Shared values between all pages
 import "../components/style/index.css";
-import { Language } from '../components/language/language'
+import {Language} from '../components/language/language'
+import Cookies from "js-cookie";
 
 export function Application() {
+
   return (
     <>
       <BrowserRouter>

@@ -2,28 +2,27 @@ import React, {useState, useEffect} from "react";
 import userCard from "./userCard.css"
 import {CheckmarkEmptyIcon, CheckmarkIcon, StarIcon} from "../../svg/svg";
 import {Link} from "react-router-dom";
-import { Language } from '../../../components/language/language'
 import Cookies from 'js-cookie'
 
 export function UserCard({user, selected, onSelected, _key}) {
-   //language stuff
-   function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
-        autoDisplay: false
-    }, 'google_translate_element');
-}
-function setLanguage(){
-Cookies.remove('googtrans',{path:'', domain: 'domainNameNoDot.com'});
-Cookies.remove('googtrans',{path:'', domain: '.domainNamePrecedDot.com'});
-Cookies.set('GoogleAccountsLocale_session', `${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
-Cookies.set('googtrans', `/en/${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
-location.reload()
-}
+    //language stuff
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+    function setLanguage(){
+        Cookies.remove('googtrans',{path:'', domain: 'domainNameNoDot.com'});
+        Cookies.remove('googtrans',{path:'', domain: '.domainNamePrecedDot.com'});
+        Cookies.set('GoogleAccountsLocale_session', `${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
+        Cookies.set('googtrans', `/en/${sessionStorage.getItem("user_language").toLowerCase()}`, { expires: 999});
+        location.reload()
+    }
 
-useEffect(() => {
-    googleTranslateElementInit()
+    useEffect(() => {
+        googleTranslateElementInit()
     }, []);
 
     return (
@@ -58,8 +57,8 @@ useEffect(() => {
                          onClick={() => {
                             onSelected(user.userId);
                             sessionStorage.setItem("user", user.userId);
-                            sessionStorage.setItem("user_language", user.language)
-                            setLanguage()
+                            sessionStorage.setItem("user_language", user.language);
+                            setLanguage();
                          }
                          }>
                         <h6 className={"center"}>SELECT USER</h6>

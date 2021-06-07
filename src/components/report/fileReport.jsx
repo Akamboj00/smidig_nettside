@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import fire from "../../server/firebase";
-import { LoadingView } from "../loadingView";
+import { useLocation } from "react-router-dom";
 import {Form, Button} from 'react-bootstrap';
-import { errorView } from '../errorView';
 import Alert from 'react-bootstrap/Alert';
 import {useHistory} from "react-router";
 import newReport from "../lib/fb";

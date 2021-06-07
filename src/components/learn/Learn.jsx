@@ -7,6 +7,7 @@ import {LoadingView} from '../loadingView'
 import fire from "../../server/firebase";
 import {forEach} from "react-bootstrap/ElementChildren";
  import {CheckmarkEmptyIcon, CheckmarkIcon} from "../svg/svg";
+ import Cookies from "js-cookie";
 
 require("url:../img/test.png");
 require("url:../img/new/sunbell_image.png");
@@ -36,7 +37,6 @@ export const Learn = () => {
         if (key === undefined) return history.push("/login");
         return key;
     });
-
 
     const [testData] = useState([
         {
@@ -176,7 +176,6 @@ export const Learn = () => {
     }
 
     const total_progress = Math.floor(totalPercent);
-    console.log()
 
     return (
         <>
@@ -266,5 +265,6 @@ export function loadComponent() {
             </div>
         </div>
     </div>
+
     )
 }
