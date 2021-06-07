@@ -426,7 +426,7 @@ export async function postUser(firstName, lastName, language, image) {
     posts[`users/${userAuth.uid}/${userKey}`] = newUser;
 
     //let userRef = fire.database().ref(`users/${userAuth.uid}/${userId}`);
-    //postProgress()
+    //postProgress() //Kun for å pushe progress data "template" til databasen
     sessionStorage.setItem("user", userKey);
     return getDatabaseRef().update(posts);
 }

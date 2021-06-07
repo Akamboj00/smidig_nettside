@@ -9,7 +9,7 @@ const firebaseConfig = {
   appId: process.env.APP_ID,
   measurementId: process.env.MEASUREMENT_ID,
   databaseURL:
-    "https://cursedatabase-default-rtdb.europe-west1.firebasedatabase.app/",
+    "https://reportapp-36c50-default-rtdb.europe-west1.firebasedatabase.app/",
 };
 
 try {
