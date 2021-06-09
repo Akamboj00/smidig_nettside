@@ -60,12 +60,12 @@ export function UserCardEdit({user, onDelete, _key}) {
                                     value={_image}
                                     onChange={(e) => setImage(e.target.value)}
                             >
-                                <option value={"https://raw.githubusercontent.com/Akamboj00/smidig_nettside/main/src/components/img/userimg/user_images-01.png?token=ANMGHR55KID2FE3TKYMSWQTAYCPNM"}>Blue</option>
-                                <option value={"https://raw.githubusercontent.com/Akamboj00/smidig_nettside/main/src/components/img/userimg/user_images-02.png?token=ANMGHRZL4LOSVASQKXQTZFTAYCPRI"}>Purple</option>
-                                <option value={"https://raw.githubusercontent.com/Akamboj00/smidig_nettside/main/src/components/img/userimg/user_images-03.png?token=ANMGHR2GWJKWXWAOOSJZREDAYCPUU"}>Pink</option>
-                                <option value={"https://raw.githubusercontent.com/Akamboj00/smidig_nettside/main/src/components/img/userimg/user_images-04.png?token=ANMGHR6RIESKXBVJP2DF3Z3AYCPVO"}>Green</option>
-                                <option value={"https://raw.githubusercontent.com/Akamboj00/smidig_nettside/main/src/components/img/userimg/user_images-05.png?token=ANMGHR6KKZ4ABOFHT5EBTSDAYCPXA"}>Yellow</option>
-                                <option value={"https://raw.githubusercontent.com/Akamboj00/smidig_nettside/main/src/components/img/userimg/user_images-06.png?token=ANMGHR2OL5QTMAHXYODYPJTAYCPYM"}>Orange</option>
+                                <option value={"https://i.imgur.com/kFCFd94.png"}>Blue</option>
+                                <option value={"https://i.imgur.com/83ejAzc.png"}>Purple</option>
+                                <option value={"https://i.imgur.com/Sa2jYJD.png"}>Pink</option>
+                                <option value={"https://i.imgur.com/IiI4VS6.png"}>Green</option>
+                                <option value={"https://i.imgur.com/vK5OEH6.png"}>Yellow</option>
+                                <option value={"https://i.imgur.com/wnxrocF.png"}>Orange</option>
                             </select>
                         </div>
                         <div className={"user_card_info_container"}>

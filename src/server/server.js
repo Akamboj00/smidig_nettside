@@ -29,6 +29,7 @@ app.get("/api/profile", (req, res) => {
 
 app.post("/api/login", (req, res) => {
   const { email } = req.body;
+  console.log(email)
   req.session.email = email;
   res.end();
 });

@@ -100,7 +100,7 @@ export const Learn = () => {
             dbReference.child('users').child(authUser.uid).once('value').then((snapshot) => {
                 if(!snapshot.exists()){
                     history.push("/users");
-                    alert("Please create a user")
+                    alert("Please create a user!")
                 }
                 if (snapshot.val() != null)
                 {
