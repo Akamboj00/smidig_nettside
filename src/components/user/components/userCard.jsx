@@ -46,10 +46,7 @@ location.reload()
                         </div>
                     </div>
                 </div>
-                <div className={"user_card_function_bar"}>
-                    <div className={"user_card_extra_info"}>
-                        <h6 className={"center"}>CERTIFICATES</h6>
-                    </div>
+                <div className={"user_card_function_bar_first"}>
                     <div className={"user_card_select_user"}
                          onClick={() => {
                             onSelected(user.userId);
